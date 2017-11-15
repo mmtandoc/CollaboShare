@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9D15442-FE7C-4866-9D76-4003F6038FF9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CollaboShare_Prototype_1.My.MyApplication</StartupObject>
+    <RootNamespace>CollaboShare_Prototype_1</RootNamespace>
+    <AssemblyName>CollaboShare</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CollaboShare.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CollaboShare.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Notification.vb" />
+    <Compile Include="Recurrence.vb" />
+    <Compile Include="State.vb" />
+    <Compile Include="ToDoList.vb" />
+    <Compile Include="UI\Controls\ChoreItem.Designer.vb">
+      <DependentUpon>ChoreItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ChoreItem.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ChoreItemControl.Designer.vb">
+      <DependentUpon>ChoreItemControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ChoreItemControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ChoreRatingControl.Designer.vb">
+      <DependentUpon>ChoreRatingControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ChoreRatingControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\HouseholdControl.Designer.vb">
+      <DependentUpon>HouseholdControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\HouseholdControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\RecurrenceControl.Designer.vb">
+      <DependentUpon>RecurrenceControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\RecurrenceControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\IDialogControl.vb" />
+    <Compile Include="UI\Dialogs\JoinHouseholdDialog.Designer.vb">
+      <DependentUpon>JoinHouseholdDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\JoinHouseholdDialog.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\RequestControl.Designer.vb">
+      <DependentUpon>RequestControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\RequestControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\ResultControl.Designer.vb">
+      <DependentUpon>ResultControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\ResultControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Views\To-Do List\ViewTaskView.Designer.vb">
+      <DependentUpon>ViewTaskView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\To-Do List\ViewTaskView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Trading\BulletinView.Designer.vb">
+      <DependentUpon>BulletinView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Trading\BulletinView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chore.vb" />
+    <Compile Include="UI\Views\Chores\ChoresView.Designer.vb">
+      <DependentUpon>ChoresView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Chores\ChoresView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Chores\CreateChoreView.Designer.vb">
+      <DependentUpon>CreateChoreView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Chores\CreateChoreView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\CreateHouseholdView.Designer.vb">
+      <DependentUpon>CreateHouseholdView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\CreateHouseholdView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Startup\CreateUserView.Designer.vb">
+      <DependentUpon>CreateUserView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Startup\CreateUserView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Chores\EditChoreView.Designer.vb">
+      <DependentUpon>EditChoreView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Chores\EditChoreView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Profile\EditProfileView.Designer.vb">
+      <DependentUpon>EditProfileView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Profile\EditProfileView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\HomeView.Designer.vb">
+      <DependentUpon>HomeView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\HomeView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Household.vb" />
+    <Compile Include="UI\Views\Household\HouseholdView.Designer.vb">
+      <DependentUpon>HouseholdView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Household\HouseholdView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Housemate.vb" />
+    <Compile Include="UI\Views\Household\HousematesView.Designer.vb">
+      <DependentUpon>HousematesView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Household\HousematesView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PhoneForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PhoneForm.Designer.vb">
+      <DependentUpon>PhoneForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\Views\Startup\JoinHouseholdView.Designer.vb">
+      <DependentUpon>JoinHouseholdView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Startup\JoinHouseholdView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Profile\ProfileView.Designer.vb">
+      <DependentUpon>ProfileView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Profile\ProfileView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\To-Do List\ToDoListView.Designer.vb">
+      <DependentUpon>ToDoListView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\To-Do List\ToDoListView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Trading\CreateCounterofferView.Designer.vb">
+      <DependentUpon>CreateCounterofferView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Trading\CreateCounterofferView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Trading\CreateTradeView.Designer.vb">
+      <DependentUpon>CreateTradeView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Trading\CreateTradeView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Trading\ViewCounterofferView.Designer.vb">
+      <DependentUpon>ViewCounterofferView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Trading\ViewCounterofferView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Trading\ViewTradeView.Designer.vb">
+      <DependentUpon>ViewTradeView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Trading\ViewTradeView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Controls\ChoreItemControl.resx">
+      <DependentUpon>ChoreItemControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ChoreRatingControl.resx">
+      <DependentUpon>ChoreRatingControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\HouseholdControl.resx">
+      <DependentUpon>HouseholdControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\RecurrenceControl.resx">
+      <DependentUpon>RecurrenceControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\JoinHouseholdDialog.resx">
+      <DependentUpon>JoinHouseholdDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\RequestControl.resx">
+      <DependentUpon>RequestControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\ResultControl.resx">
+      <DependentUpon>ResultControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\Trading\BulletinView.resx">
+      <DependentUpon>BulletinView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\Chores\ChoresView.resx">
+      <DependentUpon>ChoresView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\CreateHouseholdView.resx">
+      <DependentUpon>CreateHouseholdView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\Startup\CreateUserView.resx">
+      <DependentUpon>CreateUserView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\HomeView.resx">
+      <DependentUpon>HomeView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\Household\HouseholdView.resx">
+      <DependentUpon>HouseholdView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\Household\HousematesView.resx">
+      <DependentUpon>HousematesView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PhoneForm.resx">
+      <DependentUpon>PhoneForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\Startup\JoinHouseholdView.resx">
+      <DependentUpon>JoinHouseholdView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\Profile\ProfileView.resx">
+      <DependentUpon>ProfileView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\To-Do List\ToDoListView.resx">
+      <DependentUpon>ToDoListView.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star-ratings-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\001-man-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002-meeting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003-wiping-swipe-for-floors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-home.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
