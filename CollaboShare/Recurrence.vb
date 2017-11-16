@@ -1,4 +1,4 @@
-﻿Imports CollaboShare_Prototype_1
+﻿Imports CollaboShare
 
 Public Interface IRecurrence
     Property StartDate As DateTime

@@ -50,7 +50,7 @@ Namespace UI
             '
             'BulletinButton
             '
-            Me.BulletinButton.BackgroundImage = Global.CollaboShare_Prototype_1.My.Resources.Resources.Meeting
+            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Meeting
             Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.BulletinButton.Location = New System.Drawing.Point(231, 2)
             Me.BulletinButton.Margin = New System.Windows.Forms.Padding(2)
@@ -61,7 +61,7 @@ Namespace UI
             '
             'TodoListButton
             '
-            Me.TodoListButton.BackgroundImage = Global.CollaboShare_Prototype_1.My.Resources.Resources.List
+            Me.TodoListButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.List
             Me.TodoListButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.TodoListButton.Location = New System.Drawing.Point(175, 2)
             Me.TodoListButton.Margin = New System.Windows.Forms.Padding(2)
@@ -72,7 +72,7 @@ Namespace UI
             '
             'ChoresButton
             '
-            Me.ChoresButton.BackgroundImage = Global.CollaboShare_Prototype_1.My.Resources.Resources.Chore
+            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Chore
             Me.ChoresButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.ChoresButton.Location = New System.Drawing.Point(119, 2)
             Me.ChoresButton.Margin = New System.Windows.Forms.Padding(2)
@@ -83,7 +83,7 @@ Namespace UI
             '
             'HouseholdButton
             '
-            Me.HouseholdButton.BackgroundImage = Global.CollaboShare_Prototype_1.My.Resources.Resources.Home
+            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Home
             Me.HouseholdButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.HouseholdButton.Location = New System.Drawing.Point(7, 2)
             Me.HouseholdButton.Margin = New System.Windows.Forms.Padding(2)
@@ -94,7 +94,7 @@ Namespace UI
             '
             'ProfileButton
             '
-            Me.ProfileButton.BackgroundImage = Global.CollaboShare_Prototype_1.My.Resources.Resources.User
+            Me.ProfileButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.User
             Me.ProfileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.ProfileButton.Location = New System.Drawing.Point(63, 2)
             Me.ProfileButton.Margin = New System.Windows.Forms.Padding(2)
