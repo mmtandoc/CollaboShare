@@ -1,6 +1,6 @@
 ﻿Namespace UI.Views
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-    Partial Class CreateHouseholdView
+    Partial Class CreateUserView
         Inherits System.Windows.Forms.UserControl
 
         'UserControl overrides dispose to clean up the component list.
@@ -27,11 +27,14 @@
             Me.Label1 = New System.Windows.Forms.Label()
             Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
             Me.Label5 = New System.Windows.Forms.Label()
-            Me.NameTextBox = New System.Windows.Forms.TextBox()
+            Me.FullNameTextBox = New System.Windows.Forms.TextBox()
             Me.Label2 = New System.Windows.Forms.Label()
-            Me.AddressTextBox = New System.Windows.Forms.TextBox()
-            Me.CancelButton = New System.Windows.Forms.Button()
+            Me.PhoneNumberTextBox = New System.Windows.Forms.TextBox()
+            Me.Label3 = New System.Windows.Forms.Label()
+            Me.EmailAddressTextBox = New System.Windows.Forms.TextBox()
             Me.ConfirmButton = New System.Windows.Forms.Button()
+            Me.CancelButton = New System.Windows.Forms.Button()
+            Me.Label4 = New System.Windows.Forms.Label()
             Me.Panel1.SuspendLayout()
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
@@ -51,22 +54,25 @@
             Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label1.Location = New System.Drawing.Point(3, 7)
             Me.Label1.Name = "Label1"
-            Me.Label1.Size = New System.Drawing.Size(205, 24)
+            Me.Label1.Size = New System.Drawing.Size(216, 24)
             Me.Label1.TabIndex = 1
-            Me.Label1.Text = "Enter household info"
+            Me.Label1.Text = "Enter user information"
             '
             'FlowLayoutPanel1
             '
             Me.FlowLayoutPanel1.Controls.Add(Me.Panel1)
             Me.FlowLayoutPanel1.Controls.Add(Me.Label5)
-            Me.FlowLayoutPanel1.Controls.Add(Me.NameTextBox)
+            Me.FlowLayoutPanel1.Controls.Add(Me.FullNameTextBox)
             Me.FlowLayoutPanel1.Controls.Add(Me.Label2)
-            Me.FlowLayoutPanel1.Controls.Add(Me.AddressTextBox)
+            Me.FlowLayoutPanel1.Controls.Add(Me.PhoneNumberTextBox)
+            Me.FlowLayoutPanel1.Controls.Add(Me.Label3)
+            Me.FlowLayoutPanel1.Controls.Add(Me.EmailAddressTextBox)
+            Me.FlowLayoutPanel1.Controls.Add(Me.Label4)
             Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
             Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
             Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
             Me.FlowLayoutPanel1.Size = New System.Drawing.Size(267, 357)
-            Me.FlowLayoutPanel1.TabIndex = 7
+            Me.FlowLayoutPanel1.TabIndex = 4
             '
             'Label5
             '
@@ -74,17 +80,17 @@
             Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label5.Location = New System.Drawing.Point(3, 46)
             Me.Label5.Name = "Label5"
-            Me.Label5.Size = New System.Drawing.Size(134, 20)
+            Me.Label5.Size = New System.Drawing.Size(82, 20)
             Me.Label5.TabIndex = 1
-            Me.Label5.Text = "Household name:"
+            Me.Label5.Text = "Full name:"
             '
-            'NameTextBox
+            'FullNameTextBox
             '
-            Me.NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.NameTextBox.Location = New System.Drawing.Point(3, 69)
-            Me.NameTextBox.Name = "NameTextBox"
-            Me.NameTextBox.Size = New System.Drawing.Size(251, 26)
-            Me.NameTextBox.TabIndex = 0
+            Me.FullNameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.FullNameTextBox.Location = New System.Drawing.Point(3, 69)
+            Me.FullNameTextBox.Name = "FullNameTextBox"
+            Me.FullNameTextBox.Size = New System.Drawing.Size(251, 26)
+            Me.FullNameTextBox.TabIndex = 0
             '
             'Label2
             '
@@ -92,47 +98,74 @@
             Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label2.Location = New System.Drawing.Point(3, 98)
             Me.Label2.Name = "Label2"
-            Me.Label2.Size = New System.Drawing.Size(72, 20)
+            Me.Label2.Size = New System.Drawing.Size(117, 20)
             Me.Label2.TabIndex = 5
-            Me.Label2.Text = "Address:"
+            Me.Label2.Text = "Phone number:"
             '
-            'AddressTextBox
+            'PhoneNumberTextBox
             '
-            Me.AddressTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.AddressTextBox.Location = New System.Drawing.Point(3, 121)
-            Me.AddressTextBox.Name = "AddressTextBox"
-            Me.AddressTextBox.Size = New System.Drawing.Size(251, 26)
-            Me.AddressTextBox.TabIndex = 4
+            Me.PhoneNumberTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.PhoneNumberTextBox.Location = New System.Drawing.Point(3, 121)
+            Me.PhoneNumberTextBox.Name = "PhoneNumberTextBox"
+            Me.PhoneNumberTextBox.Size = New System.Drawing.Size(251, 26)
+            Me.PhoneNumberTextBox.TabIndex = 4
             '
-            'CancelButton
+            'Label3
             '
-            Me.CancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.CancelButton.Location = New System.Drawing.Point(10, 373)
-            Me.CancelButton.Name = "CancelButton"
-            Me.CancelButton.Size = New System.Drawing.Size(75, 27)
-            Me.CancelButton.TabIndex = 9
-            Me.CancelButton.Text = "Cancel"
-            Me.CancelButton.UseVisualStyleBackColor = True
+            Me.Label3.AutoSize = True
+            Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label3.Location = New System.Drawing.Point(3, 150)
+            Me.Label3.Name = "Label3"
+            Me.Label3.Size = New System.Drawing.Size(113, 20)
+            Me.Label3.TabIndex = 7
+            Me.Label3.Text = "Email address:"
+            '
+            'EmailAddressTextBox
+            '
+            Me.EmailAddressTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.EmailAddressTextBox.Location = New System.Drawing.Point(3, 173)
+            Me.EmailAddressTextBox.Name = "EmailAddressTextBox"
+            Me.EmailAddressTextBox.Size = New System.Drawing.Size(251, 26)
+            Me.EmailAddressTextBox.TabIndex = 6
             '
             'ConfirmButton
             '
             Me.ConfirmButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.ConfirmButton.Location = New System.Drawing.Point(179, 373)
+            Me.ConfirmButton.Location = New System.Drawing.Point(179, 375)
             Me.ConfirmButton.Name = "ConfirmButton"
             Me.ConfirmButton.Size = New System.Drawing.Size(75, 27)
-            Me.ConfirmButton.TabIndex = 8
+            Me.ConfirmButton.TabIndex = 5
             Me.ConfirmButton.Text = "Confirm"
             Me.ConfirmButton.UseVisualStyleBackColor = True
             '
-            'CreateHouseholdView
+            'CancelButton
+            '
+            Me.CancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.CancelButton.Location = New System.Drawing.Point(16, 375)
+            Me.CancelButton.Name = "CancelButton"
+            Me.CancelButton.Size = New System.Drawing.Size(75, 27)
+            Me.CancelButton.TabIndex = 6
+            Me.CancelButton.Text = "Cancel"
+            Me.CancelButton.UseVisualStyleBackColor = True
+            '
+            'Label4
+            '
+            Me.Label4.AutoSize = True
+            Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label4.Location = New System.Drawing.Point(3, 202)
+            Me.Label4.Name = "Label4"
+            Me.Label4.Size = New System.Drawing.Size(196, 20)
+            Me.Label4.TabIndex = 8
+            Me.Label4.Text = "Choose a photo (optional):"
+            '
+            'CreateUserView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.Controls.Add(Me.FlowLayoutPanel1)
             Me.Controls.Add(Me.CancelButton)
             Me.Controls.Add(Me.ConfirmButton)
-            Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-            Me.Name = "CreateHouseholdView"
+            Me.Controls.Add(Me.FlowLayoutPanel1)
+            Me.Name = "CreateUserView"
             Me.Size = New System.Drawing.Size(267, 416)
             Me.Panel1.ResumeLayout(False)
             Me.Panel1.PerformLayout()
@@ -146,10 +179,13 @@
         Friend WithEvents Label1 As Label
         Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
         Friend WithEvents Label5 As Label
-        Friend WithEvents NameTextBox As TextBox
+        Friend WithEvents FullNameTextBox As TextBox
         Friend WithEvents Label2 As Label
-        Friend WithEvents AddressTextBox As TextBox
-        Friend WithEvents CancelButton As Button
+        Friend WithEvents PhoneNumberTextBox As TextBox
+        Friend WithEvents Label3 As Label
+        Friend WithEvents EmailAddressTextBox As TextBox
+        Friend WithEvents Label4 As Label
         Friend WithEvents ConfirmButton As Button
+        Friend WithEvents CancelButton As Button
     End Class
 End NameSpace

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D9D15442-FE7C-4866-9D76-4003F6038FF9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>CollaboShare_Prototype_1.My.MyApplication</StartupObject>
-    <RootNamespace>CollaboShare_Prototype_1</RootNamespace>
+    <StartupObject>CollaboShare.My.MyApplication</StartupObject>
+    <RootNamespace>CollaboShare</RootNamespace>
     <AssemblyName>CollaboShare</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
@@ -130,29 +130,29 @@
     <Compile Include="UI\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Views\To-Do List\ViewTaskView.Designer.vb">
+    <Compile Include="UI\Views\ViewTaskView.Designer.vb">
       <DependentUpon>ViewTaskView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\To-Do List\ViewTaskView.vb">
+    <Compile Include="UI\Views\ViewTaskView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Trading\BulletinView.Designer.vb">
+    <Compile Include="UI\Views\BulletinView.Designer.vb">
       <DependentUpon>BulletinView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Trading\BulletinView.vb">
+    <Compile Include="UI\Views\BulletinView.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Chore.vb" />
-    <Compile Include="UI\Views\Chores\ChoresView.Designer.vb">
+    <Compile Include="UI\Views\ChoresView.Designer.vb">
       <DependentUpon>ChoresView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Chores\ChoresView.vb">
+    <Compile Include="UI\Views\ChoresView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Chores\CreateChoreView.Designer.vb">
+    <Compile Include="UI\Views\CreateChoreView.Designer.vb">
       <DependentUpon>CreateChoreView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Chores\CreateChoreView.vb">
+    <Compile Include="UI\Views\CreateChoreView.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Views\CreateHouseholdView.Designer.vb">
@@ -161,22 +161,22 @@
     <Compile Include="UI\Views\CreateHouseholdView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Startup\CreateUserView.Designer.vb">
+    <Compile Include="UI\Views\CreateUserView.Designer.vb">
       <DependentUpon>CreateUserView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Startup\CreateUserView.vb">
+    <Compile Include="UI\Views\CreateUserView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Chores\EditChoreView.Designer.vb">
+    <Compile Include="UI\Views\EditChoreView.Designer.vb">
       <DependentUpon>EditChoreView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Chores\EditChoreView.vb">
+    <Compile Include="UI\Views\EditChoreView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Profile\EditProfileView.Designer.vb">
+    <Compile Include="UI\Views\EditProfileView.Designer.vb">
       <DependentUpon>EditProfileView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Profile\EditProfileView.vb">
+    <Compile Include="UI\Views\EditProfileView.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Views\HomeView.Designer.vb">
@@ -186,17 +186,17 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Household.vb" />
-    <Compile Include="UI\Views\Household\HouseholdView.Designer.vb">
+    <Compile Include="UI\Views\HouseholdView.Designer.vb">
       <DependentUpon>HouseholdView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Household\HouseholdView.vb">
+    <Compile Include="UI\Views\HouseholdView.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Housemate.vb" />
-    <Compile Include="UI\Views\Household\HousematesView.Designer.vb">
+    <Compile Include="UI\Views\HousematesView.Designer.vb">
       <DependentUpon>HousematesView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Household\HousematesView.vb">
+    <Compile Include="UI\Views\HousematesView.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\PhoneForm.vb">
@@ -221,46 +221,46 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="UI\Views\Startup\JoinHouseholdView.Designer.vb">
+    <Compile Include="UI\Views\JoinHouseholdView.Designer.vb">
       <DependentUpon>JoinHouseholdView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Startup\JoinHouseholdView.vb">
+    <Compile Include="UI\Views\JoinHouseholdView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Profile\ProfileView.Designer.vb">
+    <Compile Include="UI\Views\ProfileView.Designer.vb">
       <DependentUpon>ProfileView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Profile\ProfileView.vb">
+    <Compile Include="UI\Views\ProfileView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\To-Do List\ToDoListView.Designer.vb">
+    <Compile Include="UI\Views\ToDoListView.Designer.vb">
       <DependentUpon>ToDoListView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\To-Do List\ToDoListView.vb">
+    <Compile Include="UI\Views\ToDoListView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Trading\CreateCounterofferView.Designer.vb">
+    <Compile Include="UI\Views\CreateCounterofferView.Designer.vb">
       <DependentUpon>CreateCounterofferView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Trading\CreateCounterofferView.vb">
+    <Compile Include="UI\Views\CreateCounterofferView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Trading\CreateTradeView.Designer.vb">
+    <Compile Include="UI\Views\CreateTradeView.Designer.vb">
       <DependentUpon>CreateTradeView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Trading\CreateTradeView.vb">
+    <Compile Include="UI\Views\CreateTradeView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Trading\ViewCounterofferView.Designer.vb">
+    <Compile Include="UI\Views\ViewCounterofferView.Designer.vb">
       <DependentUpon>ViewCounterofferView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Trading\ViewCounterofferView.vb">
+    <Compile Include="UI\Views\ViewCounterofferView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\Trading\ViewTradeView.Designer.vb">
+    <Compile Include="UI\Views\ViewTradeView.Designer.vb">
       <DependentUpon>ViewTradeView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\Trading\ViewTradeView.vb">
+    <Compile Include="UI\Views\ViewTradeView.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -289,25 +289,31 @@
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\Trading\BulletinView.resx">
+    <EmbeddedResource Include="UI\Views\CreateChoreView.resx">
+      <DependentUpon>CreateChoreView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\EditChoreView.resx">
+      <DependentUpon>EditChoreView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\BulletinView.resx">
       <DependentUpon>BulletinView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\Chores\ChoresView.resx">
+    <EmbeddedResource Include="UI\Views\ChoresView.resx">
       <DependentUpon>ChoresView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CreateHouseholdView.resx">
       <DependentUpon>CreateHouseholdView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\Startup\CreateUserView.resx">
+    <EmbeddedResource Include="UI\Views\CreateUserView.resx">
       <DependentUpon>CreateUserView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\HomeView.resx">
       <DependentUpon>HomeView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\Household\HouseholdView.resx">
+    <EmbeddedResource Include="UI\Views\HouseholdView.resx">
       <DependentUpon>HouseholdView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\Household\HousematesView.resx">
+    <EmbeddedResource Include="UI\Views\HousematesView.resx">
       <DependentUpon>HousematesView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PhoneForm.resx">
@@ -319,18 +325,17 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\Startup\JoinHouseholdView.resx">
+    <EmbeddedResource Include="UI\Views\JoinHouseholdView.resx">
       <DependentUpon>JoinHouseholdView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\Profile\ProfileView.resx">
+    <EmbeddedResource Include="UI\Views\ProfileView.resx">
       <DependentUpon>ProfileView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\To-Do List\ToDoListView.resx">
+    <EmbeddedResource Include="UI\Views\ToDoListView.resx">
       <DependentUpon>ToDoListView.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

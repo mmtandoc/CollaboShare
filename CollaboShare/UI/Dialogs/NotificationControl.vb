@@ -1,15 +1,17 @@
-﻿Public Class NotificationControl
-    Public Property Closed = False
-    Public Sub New(notification As Notification)
+﻿Namespace UI.Dialogs
+    Public Class NotificationControl
+        Public Property Closed = False
+        Public Sub New(notification As Notification)
 
-        ' This call is required by the designer.
-        InitializeComponent()
+            ' This call is required by the designer.
+            InitializeComponent()
 
-        ' Add any initialization after the InitializeComponent() call.
-        Me.MessageLabel.Text = notification.Message
-    End Sub
+            ' Add any initialization after the InitializeComponent() call.
+            Me.MessageLabel.Text = notification.Message
+        End Sub
 
-    Private Sub AcceptButton_Click(sender As Object, e As EventArgs) Handles AcceptButton.Click
-        Closed = True
-    End Sub
-End Class
+        Private Sub AcceptButton_Click(sender As Object, e As EventArgs) Handles AcceptButton.Click
+            Closed = True
+        End Sub
+    End Class
+End NameSpace

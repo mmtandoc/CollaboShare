@@ -1,9 +1,11 @@
-﻿Public Class ChoreItem
+﻿Namespace UI.Controls
+    Public Class ChoreItem
 
-    Protected Overrides Sub OnPaint(ByVal e As System.Windows.Forms.PaintEventArgs)
-        MyBase.OnPaint(e)
+        Protected Overrides Sub OnPaint(ByVal e As System.Windows.Forms.PaintEventArgs)
+            MyBase.OnPaint(e)
 
-        'Add your custom paint code here
-    End Sub
+            'Add your custom paint code here
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -1,44 +1,46 @@
-﻿Public Class ChoreItemControl
-    Public Event View As EventHandler
-    Public Event Volunteer As EventHandler
-    Public Event Exclude As EventHandler
-    Public Event Delete As EventHandler
-    Public Event Edit As EventHandler
+﻿Namespace UI.Controls
+    Public Class ChoreItemControl
+        Public Event View As EventHandler
+        Public Event Volunteer As EventHandler
+        Public Event Exclude As EventHandler
+        Public Event Delete As EventHandler
+        Public Event Edit As EventHandler
 
-    Public Property Chore As Chore
-    Public Sub New(ByRef chore As Chore)
-        Me.Chore = chore
-        ' This call is required by the designer.
-        InitializeComponent()
+        Public Property Chore As Chore
+        Public Sub New(ByRef chore As Chore)
+            Me.Chore = chore
+            ' This call is required by the designer.
+            InitializeComponent()
 
-        ' Add any initialization after the InitializeComponent() call.
-        Me.ChoreButton.Text = chore.Name
-    End Sub
+            ' Add any initialization after the InitializeComponent() call.
+            Me.ChoreButton.Text = chore.Name
+        End Sub
 
-    Private Sub OverflowButton_Click(sender As Object, e As EventArgs) Handles OverflowButton.Click
-        Dim btnSender As Button = sender
-        Dim ptLowerLeft = New Point(0, btnSender.Height)
-        ptLowerLeft = btnSender.PointToScreen(ptLowerLeft)
-        ContextMenuStrip1.Show(ptLowerLeft)
-    End Sub
+        Private Sub OverflowButton_Click(sender As Object, e As EventArgs) Handles OverflowButton.Click
+            Dim btnSender As Button = sender
+            Dim ptLowerLeft = New Point(0, btnSender.Height)
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft)
+            ContextMenuStrip1.Show(ptLowerLeft)
+        End Sub
 
-    Private Sub ChoreButton_Click(sender As Object, e As EventArgs) Handles ChoreButton.Click
-        RaiseEvent View(Me, EventArgs.Empty)
-    End Sub
+        Private Sub ChoreButton_Click(sender As Object, e As EventArgs) Handles ChoreButton.Click
+            RaiseEvent View(Me, EventArgs.Empty)
+        End Sub
 
-    Private Sub VolunteerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolunteerToolStripMenuItem.Click
-        RaiseEvent Volunteer(Me, EventArgs.Empty)
-    End Sub
+        Private Sub VolunteerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolunteerToolStripMenuItem.Click
+            RaiseEvent Volunteer(Me, EventArgs.Empty)
+        End Sub
 
-    Private Sub ExcludeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcludeToolStripMenuItem.Click
-        RaiseEvent Exclude(Me, EventArgs.Empty)
-    End Sub
+        Private Sub ExcludeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcludeToolStripMenuItem.Click
+            RaiseEvent Exclude(Me, EventArgs.Empty)
+        End Sub
 
-    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
-        RaiseEvent Edit(Me, EventArgs.Empty)
-    End Sub
+        Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+            RaiseEvent Edit(Me, EventArgs.Empty)
+        End Sub
 
-    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
-        RaiseEvent Delete(Me, EventArgs.Empty)
-    End Sub
-End Class
+        Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+            RaiseEvent Delete(Me, EventArgs.Empty)
+        End Sub
+    End Class
+End NameSpace

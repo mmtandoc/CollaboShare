@@ -71,6 +71,30 @@ Public Class Response
         Me.Message = message
         Me.OriginalRequest = originalRequest
     End Sub
+
+    Public Sub New(success As Boolean, originalRequest As Request)
+        Select Case originalRequest.RequestedAction
+            Case Request.RequestAction.JoinHousehold
+                If success Then
+                    Me.Message = "You have been accepted into the household."
+                Else
+                    Me.Message = "You were not accepted into the household."
+                End If
+            Case Request.RequestAction.ProposedDistribution
+
+            Case Request.RequestAction.CustomDistribution
+
+            Case Request.RequestAction.Trade
+
+            Case Request.RequestAction.Excuse
+
+            Case Request.RequestAction.Volunteer
+
+            Case Request.RequestAction.Exclusion
+
+        End Select
+    End Sub
+
 End Class
 
 Public Class RequestEventArgs

@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.CollaboShare_Prototype_1.MainForm
+            Me.MainForm = Global.CollaboShare.MainForm
         End Sub
     End Class
 End Namespace

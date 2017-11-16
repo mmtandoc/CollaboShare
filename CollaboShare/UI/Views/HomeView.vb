@@ -1,21 +1,23 @@
-﻿Public Class HomeView
-    Private Sub ToDoListButton_Click(sender As Object, e As EventArgs) Handles ToDoListButton.Click
+﻿Namespace UI.Views
+    Public Class HomeView
+        Private Sub ToDoListButton_Click(sender As Object, e As EventArgs) Handles ToDoListButton.Click
 
-    End Sub
+        End Sub
 
-    Private Sub MyProfileButton_Click(sender As Object, e As EventArgs) Handles MyProfileButton.Click
+        Private Sub MyProfileButton_Click(sender As Object, e As EventArgs) Handles MyProfileButton.Click
 
-    End Sub
+        End Sub
 
-    Private Sub ChoresButton_Click(sender As Object, e As EventArgs) Handles ChoresButton.Click
+        Private Sub ChoresButton_Click(sender As Object, e As EventArgs) Handles ChoresButton.Click
 
-    End Sub
+        End Sub
 
-    Private Sub HousematesButton_Click(sender As Object, e As EventArgs)
+        Private Sub HousematesButton_Click(sender As Object, e As EventArgs)
 
-    End Sub
+        End Sub
 
-    Private Sub HouseholdButton_Click(sender As Object, e As EventArgs) Handles HouseholdButton.Click, BulletinButton.Click
+        Private Sub HouseholdButton_Click(sender As Object, e As EventArgs) Handles HouseholdButton.Click, BulletinButton.Click
 
-    End Sub
-End Class
+        End Sub
+    End Class
+End NameSpace
