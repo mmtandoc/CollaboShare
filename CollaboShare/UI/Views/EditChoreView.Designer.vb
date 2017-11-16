@@ -30,7 +30,7 @@ Namespace UI.Views
             Me.Label2 = New System.Windows.Forms.Label()
             Me.Label5 = New System.Windows.Forms.Label()
             Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
-            Me.RecurrenceControl1 = New CollaboShare_Prototype_1.RecurrenceControl()
+            Me.RecurrenceControl1 = New CollaboShare.RecurrenceControl()
             Me.Panel2 = New System.Windows.Forms.Panel()
             Me.Label4 = New System.Windows.Forms.Label()
             Me.Label3 = New System.Windows.Forms.Label()

@@ -1,4 +1,4 @@
-﻿Imports CollaboShare_Prototype_1
+﻿Imports CollaboShare
 
 Public Class Chore
     Public defaultChores As List(Of String) = New List(Of String) From
