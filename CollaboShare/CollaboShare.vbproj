@@ -100,6 +100,12 @@
     <Compile Include="UI\Controls\HouseholdControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\Controls\HousemateItemControl.Designer.vb">
+      <DependentUpon>HousemateItemControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\HousemateItemControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Controls\RecurrenceControl.Designer.vb">
       <DependentUpon>RecurrenceControl.vb</DependentUpon>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\HouseholdControl.resx">
       <DependentUpon>HouseholdControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\HousemateItemControl.resx">
+      <DependentUpon>HousemateItemControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\RecurrenceControl.resx">
       <DependentUpon>RecurrenceControl.vb</DependentUpon>

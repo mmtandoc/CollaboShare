@@ -3,12 +3,6 @@ Imports CollaboShare.UI.Controls
 
 Namespace UI.Views
     Public Class ChoresView
-        Public Event CreateChore As EventHandler
-        Public Event ViewChore As EventHandler
-        Public Event EditChore As EventHandler
-        Public Event DeleteChore As EventHandler
-        Public Event VolunteerChore As EventHandler
-        Public Event ExcludeChore As EventHandler
 
         <DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)>
         Public ReadOnly Property Household() As Household
