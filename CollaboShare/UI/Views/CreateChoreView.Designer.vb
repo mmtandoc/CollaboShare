@@ -62,6 +62,7 @@ Namespace UI.Views
             Me.FlowLayoutPanel1.Controls.Add(Me.DescriptionTextBox)
             Me.FlowLayoutPanel1.Controls.Add(Me.RecurrenceControl1)
             Me.FlowLayoutPanel1.Controls.Add(Me.Panel2)
+            Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
             Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 41)
             Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
             Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)

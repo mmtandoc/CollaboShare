@@ -20,6 +20,7 @@
 
         Public Sub New(ByRef joinedHousehold As Household, ByRef profile As Housemate)
             Me.JoinedHousehold = joinedHousehold
+            Me.Profile = profile
         End Sub
 
         Public Function IsEmpty() As Boolean

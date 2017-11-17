@@ -124,11 +124,17 @@
     <Compile Include="UI\Dialogs\ResponseControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\MainForm.Designer.vb">
-      <DependentUpon>MainForm.vb</DependentUpon>
+    <Compile Include="UI\ControlForm.Designer.vb">
+      <DependentUpon>ControlForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\MainForm.vb">
+    <Compile Include="UI\ControlForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Views\ViewChoreView.Designer.vb">
+      <DependentUpon>ViewChoreView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\ViewChoreView.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Views\ViewTaskView.Designer.vb">
       <DependentUpon>ViewTaskView.vb</DependentUpon>
@@ -286,8 +292,8 @@
     <EmbeddedResource Include="UI\Dialogs\ResponseControl.resx">
       <DependentUpon>ResponseControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\MainForm.resx">
-      <DependentUpon>MainForm.vb</DependentUpon>
+    <EmbeddedResource Include="UI\ControlForm.resx">
+      <DependentUpon>ControlForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CreateChoreView.resx">
       <DependentUpon>CreateChoreView.vb</DependentUpon>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CreateUserView.resx">
       <DependentUpon>CreateUserView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\EditProfileView.resx">
+      <DependentUpon>EditProfileView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\HomeView.resx">
       <DependentUpon>HomeView.vb</DependentUpon>
@@ -333,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\ToDoListView.resx">
       <DependentUpon>ToDoListView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\ViewChoreView.resx">
+      <DependentUpon>ViewChoreView.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

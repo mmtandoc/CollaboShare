@@ -27,13 +27,13 @@
             '
             'BulletinView
             '
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+            Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
             Me.Name = "BulletinView"
-            Me.Size = New System.Drawing.Size(400, 640)
+            Me.Size = New System.Drawing.Size(267, 416)
             Me.ResumeLayout(False)
 
         End Sub
-
     End Class
 End Namespace

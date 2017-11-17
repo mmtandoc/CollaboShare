@@ -8,6 +8,8 @@ Public Interface IRecurrence
 
     Function GetNextDate(afterDate As DateTime) As DateTime
 
+    Function GetAverageFrequency() As TimeSpan
+
 End Interface
 
 
@@ -32,6 +34,10 @@ Public Class DailyRecurrence
         End While
         Return nextDate
     End Function
+    Public Function GetAverageFrequency() As TimeSpan Implements IRecurrence.GetAverageFrequency
+        Return TimeSpan.FromDays(Interval)
+    End Function
+
 End Class
 
 Public Class WeeklyRecurrence
@@ -71,6 +77,10 @@ Public Class WeeklyRecurrence
     Public Function GetNextDate(afterDate As DateTime) As DateTime Implements IRecurrence.GetNextDate
         Return DateTime.Now
     End Function
+
+    Public Function GetAverageFrequency() As TimeSpan Implements IRecurrence.GetAverageFrequency
+        Return TimeSpan.FromDays((Interval * 7) / DaysOfWeek.Count(Function(x) x = True))
+    End Function
 End Class
 
 Public Class MonthlyRecurrence
@@ -96,6 +106,10 @@ Public Class MonthlyRecurrence
         End While
         Return nextDate
     End Function
+
+    Public Function GetAverageFrequency() As TimeSpan Implements IRecurrence.GetAverageFrequency
+        Return TimeSpan.FromDays(Interval * 30.44)
+    End Function
 End Class
 
 Public Class YearlyRecurrence
@@ -118,6 +132,10 @@ Public Class YearlyRecurrence
             nextDate = nextDate.AddYears(Me.Interval)
         End While
         Return nextDate
+    End Function
+
+    Public Function GetAverageFrequency() As TimeSpan Implements IRecurrence.GetAverageFrequency
+        Return TimeSpan.FromDays(Interval * 365.25)
     End Function
 End Class
 

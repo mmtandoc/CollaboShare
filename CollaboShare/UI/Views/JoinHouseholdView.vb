@@ -37,11 +37,9 @@ Namespace UI.Views
                     .Font = New Font("Microsoft Sans Serif", 14.25!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte)),
                     .Location = New Point(4, 70),
                     .Margin = New Padding(4, 5, 4, 5),
-                    .Size = New Size(350, 55),
-                    .TabIndex = 7,
+                    .Size = New Size(247, 36),
                     .Text = household.Name,
-                    .TextAlign = ContentAlignment.MiddleLeft,
-                    .UseVisualStyleBackColor = True
+                    .TextAlign = ContentAlignment.MiddleLeft
                     }
             AddHandler householdButton.Click, AddressOf HouseholdButton_Click
             HouseholdsFlowLayoutPanel.Controls.Add(householdButton)
@@ -49,7 +47,7 @@ Namespace UI.Views
 
 
         Private Sub HouseholdButton_Click(sender As Object, e As EventArgs) Handles Household3Button.Click, Household2Button.Click, Household1Button.Click
-            'TODO: Show confirmation dialog ("Request to join household? Yes/No?"
+            'TODO: Show confirmation dialog ("Request to join household? Yes/No?")
             Dim requestedHousehold = Households.ElementAt(HouseholdsFlowLayoutPanel.Controls.IndexOf(sender))
             Dim request As Request = New Request.JoinHouseholdRequest(Profile, requestedHousehold)
             RaiseEvent RequestingHousehold(sender, New RequestEventArgs(request))

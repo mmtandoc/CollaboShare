@@ -36,10 +36,10 @@ Public Class Request
         Public Sub New(ByRef sender As Housemate, ByRef household As Household)
             Me.Sender = sender
             RequestedObject = household
-            Me.Recipients = household.Housemates
-            Me.Message = sender.Name + " would like to join your household."
-            Me.Type = RequestType.YesNo
-            Me.RequestedAction = RequestAction.JoinHousehold
+            Recipients = household.Housemates
+            Message = sender.Name + " would like to join your household."
+            Type = RequestType.YesNo
+            RequestedAction = RequestAction.JoinHousehold
             ViewPage = Nothing
             ViewObject = Nothing
         End Sub
@@ -50,7 +50,7 @@ Public Class Request
         Public Sub New(ByRef sender As Housemate, ByRef household As Household, ByRef chore As Chore)
             Me.Sender = sender
             RequestedObject = chore
-            Me.Recipients = household.Housemates.FindAll(Function(h) h.Name.Equals(Me.Sender.Name))
+            Recipients = household.Housemates.FindAll(Function(h) h.Name.Equals(Me.Sender.Name))
             RequestedAction = RequestAction.Volunteer
             Type = RequestType.YesNo
             ViewPage = Nothing
@@ -73,25 +73,51 @@ Public Class Response
     End Sub
 
     Public Sub New(success As Boolean, originalRequest As Request)
+        Me.Success = success
+        Me.OriginalRequest = originalRequest
         Select Case originalRequest.RequestedAction
             Case Request.RequestAction.JoinHousehold
                 If success Then
-                    Me.Message = "You have been accepted into the household."
+                    Message = "You have been accepted into the household."
                 Else
-                    Me.Message = "You were not accepted into the household."
+                    Message = "You were not accepted into the household."
                 End If
             Case Request.RequestAction.ProposedDistribution
-
+                If success Then
+                    Message = "You have been accepted into the household."
+                Else
+                    Message = "You were not accepted into the household."
+                End If
             Case Request.RequestAction.CustomDistribution
-
+                If success Then
+                    Message = "You have been accepted into the household."
+                Else
+                    Message = "You were not accepted into the household."
+                End If
             Case Request.RequestAction.Trade
-
+                If success Then
+                    Message = "You have been accepted into the household."
+                Else
+                    Message = "You were not accepted into the household."
+                End If
             Case Request.RequestAction.Excuse
-
+                If success Then
+                    Message = "You have been accepted into the household."
+                Else
+                    Message = "You were not accepted into the household."
+                End If
             Case Request.RequestAction.Volunteer
-
+                If success Then
+                    Message = "Your request to volunteer for the chore '" + CType(originalRequest.RequestedObject, Chore).Name + "' has been accepted."
+                Else
+                    Message = "Your request to volunteer for the chore '" + CType(originalRequest.RequestedObject, Chore).Name + "' has been accepted."
+                End If
             Case Request.RequestAction.Exclusion
-
+                If success Then
+                    Message = "You have been accepted into the household."
+                Else
+                    Message = "You were not accepted into the household."
+                End If
         End Select
     End Sub
 

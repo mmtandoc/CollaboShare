@@ -61,12 +61,15 @@
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+            Me.BackColor = System.Drawing.SystemColors.ControlLight
+            Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
             Me.Controls.Add(Me.MessageLabel)
             Me.Controls.Add(Me.AcceptButton)
             Me.Controls.Add(Me.CancelButton)
+            Me.Location = New System.Drawing.Point(16, 143)
             Me.Margin = New System.Windows.Forms.Padding(2)
             Me.Name = "RequestControl"
-            Me.Size = New System.Drawing.Size(236, 132)
+            Me.Size = New System.Drawing.Size(234, 130)
             Me.ResumeLayout(False)
 
         End Sub

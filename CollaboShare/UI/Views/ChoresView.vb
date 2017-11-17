@@ -38,27 +38,27 @@ Namespace UI.Views
 
         Private Sub ChoreItem_View(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            RaiseEvent ViewChore(choreItem.Chore, e)
+            RaiseEvent ViewChore(choreItem, e)
         End Sub
 
         Private Sub ChoreItem_Volunteer(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            RaiseEvent VolunteerChore(choreItem.Chore, e)
+            RaiseEvent VolunteerChore(choreItem, e)
         End Sub
 
         Private Sub ChoreItem_Exclude(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            RaiseEvent ExcludeChore(choreItem.Chore, e)
+            RaiseEvent ExcludeChore(choreItem, e)
         End Sub
 
         Private Sub ChoreItem_Edit(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            RaiseEvent EditChore(choreItem.Chore, e)
+            RaiseEvent EditChore(choreItem, e)
         End Sub
 
         Private Sub ChoreItem_Delete(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            RaiseEvent DeleteChore(choreItem.Chore, e)
+            RaiseEvent DeleteChore(choreItem, e)
         End Sub
 
         Private Sub NewChoreButton_Click(sender As Object, e As EventArgs) Handles NewChoreButton.Click
