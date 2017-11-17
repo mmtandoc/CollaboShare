@@ -18,12 +18,6 @@ Namespace UI.Views
             End Get
         End Property
 
-        Public ReadOnly Property Phone() As PhoneForm
-            Get
-                Return FindForm()
-            End Get
-        End Property
-
         Protected Overrides Sub OnLoad(e As EventArgs)
             MyBase.OnLoad(e)
             Me.ChoresFlowLayoutPanel.Controls.Clear()
@@ -44,36 +38,31 @@ Namespace UI.Views
 
         Private Sub ChoreItem_View(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            'RaiseEvent ViewChore(choreItem, e)
-            Phone.ChangeView(New ViewChoreView(choreItem.Chore))
+            RaiseEvent ViewChore(choreItem, e)
         End Sub
 
         Private Sub ChoreItem_Volunteer(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            'RaiseEvent VolunteerChore(choreItem, e)
+            RaiseEvent VolunteerChore(choreItem, e)
         End Sub
 
         Private Sub ChoreItem_Exclude(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            'RaiseEvent ExcludeChore(choreItem, e)
+            RaiseEvent ExcludeChore(choreItem, e)
         End Sub
 
         Private Sub ChoreItem_Edit(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            'RaiseEvent EditChore(choreItem, e)
-            Phone.ChangeView(New EditChoreView(choreItem.Chore))
+            RaiseEvent EditChore(choreItem, e)
         End Sub
 
         Private Sub ChoreItem_Delete(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            'RaiseEvent DeleteChore(choreItem, e)
-            Phone.Household.Chores.Remove(choreItem.Chore)
-            ChoresFlowLayoutPanel.Controls.Remove(choreItem)
+            RaiseEvent DeleteChore(choreItem, e)
         End Sub
 
         Private Sub NewChoreButton_Click(sender As Object, e As EventArgs) Handles NewChoreButton.Click
-            'RaiseEvent CreateChore(Me, EventArgs.Empty)
-            Phone.ChangeView(New CreateChoreView)
+            RaiseEvent CreateChore(Me, EventArgs.Empty)
         End Sub
 
 

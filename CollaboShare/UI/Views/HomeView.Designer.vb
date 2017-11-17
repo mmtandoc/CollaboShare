@@ -53,7 +53,7 @@
             Me.TableLayoutPanel1.Controls.Add(Me.Label4, 1, 3)
             Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 5)
             Me.TableLayoutPanel1.Location = New System.Drawing.Point(19, 21)
-            Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
+            Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
             Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
             Me.TableLayoutPanel1.RowCount = 6
             Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
@@ -68,9 +68,9 @@
             'ToDoListButton
             '
             Me.ToDoListButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.ToDoListButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.List
+                                               Or System.Windows.Forms.AnchorStyles.Left) _
+                                              Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.ToDoListButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.List
             Me.ToDoListButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.ToDoListButton.Location = New System.Drawing.Point(7, 7)
             Me.ToDoListButton.Margin = New System.Windows.Forms.Padding(7)
@@ -83,9 +83,9 @@
             'MyProfileButton
             '
             Me.MyProfileButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.MyProfileButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.User
+                                                Or System.Windows.Forms.AnchorStyles.Left) _
+                                               Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.MyProfileButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.User
             Me.MyProfileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.MyProfileButton.Location = New System.Drawing.Point(123, 7)
             Me.MyProfileButton.Margin = New System.Windows.Forms.Padding(7)
@@ -98,9 +98,9 @@
             'ChoresButton
             '
             Me.ChoresButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Chore
+                                             Or System.Windows.Forms.AnchorStyles.Left) _
+                                            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Chore
             Me.ChoresButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.ChoresButton.Location = New System.Drawing.Point(7, 130)
             Me.ChoresButton.Margin = New System.Windows.Forms.Padding(7)
@@ -113,9 +113,9 @@
             'HouseholdButton
             '
             Me.HouseholdButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Home
+                                                Or System.Windows.Forms.AnchorStyles.Left) _
+                                               Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Home
             Me.HouseholdButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.HouseholdButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
             Me.HouseholdButton.Location = New System.Drawing.Point(123, 130)
@@ -129,9 +129,9 @@
             'BulletinButton
             '
             Me.BulletinButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Meeting
+                                               Or System.Windows.Forms.AnchorStyles.Left) _
+                                              Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Meeting
             Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.BulletinButton.Location = New System.Drawing.Point(7, 253)
             Me.BulletinButton.Margin = New System.Windows.Forms.Padding(7)
@@ -144,7 +144,7 @@
             'Label1
             '
             Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                                      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label1.Location = New System.Drawing.Point(3, 226)
             Me.Label1.Name = "Label1"
@@ -156,7 +156,7 @@
             'Label2
             '
             Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                                      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label2.Location = New System.Drawing.Point(3, 103)
             Me.Label2.Name = "Label2"
@@ -168,7 +168,7 @@
             'Label3
             '
             Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                                      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label3.Location = New System.Drawing.Point(119, 103)
             Me.Label3.Name = "Label3"
@@ -180,7 +180,7 @@
             'Label4
             '
             Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                                      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label4.Location = New System.Drawing.Point(119, 226)
             Me.Label4.Name = "Label4"
@@ -192,7 +192,7 @@
             'Label5
             '
             Me.Label5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                                      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label5.Location = New System.Drawing.Point(3, 349)
             Me.Label5.Name = "Label5"
@@ -206,7 +206,7 @@
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.Controls.Add(Me.TableLayoutPanel1)
-            Me.Margin = New System.Windows.Forms.Padding(2)
+            Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
             Me.Name = "HomeView"
             Me.Size = New System.Drawing.Size(267, 416)
             Me.TableLayoutPanel1.ResumeLayout(False)

@@ -83,6 +83,7 @@ Namespace UI
 
         Protected Overrides Sub OnLoad(e As EventArgs)
             CreateDefaultStates()
+            ChangeState(states("Scenario 1"))
         End Sub
 
         Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Scenario1Button.Click
