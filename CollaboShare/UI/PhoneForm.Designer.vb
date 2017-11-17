@@ -143,4 +143,4 @@ Namespace UI
         Friend WithEvents ProfileButton As Button
         Friend WithEvents ViewPanel As Panel
     End Class
-End NameSpace
+End Namespace

@@ -34,37 +34,18 @@ Namespace UI
         Private Sub AddViewEventHandlers(ByRef viewControl As Control)
             Select Case viewControl.GetType()
                 Case GetType(CreateUserView)
-                    AddHandler DirectCast(viewControl, CreateUserView).Confirmed, AddressOf CreateUserView_Confirmed
                 Case GetType(JoinHouseholdView)
                     AddHandler DirectCast(viewControl, JoinHouseholdView).RequestingHousehold,
-                        AddressOf JoinHouseholdView_JoiningHousehold
-                    AddHandler DirectCast(viewControl, JoinHouseholdView).CreatingHousehold,
-                        AddressOf JoinHouseholdView_CreatingHousehold
+                        Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
                 Case GetType(CreateHouseholdView)
-                    AddHandler DirectCast(viewControl, CreateHouseholdView).Cancelled,
-                        AddressOf CreateHouseholdView_Cancelled
-                    AddHandler DirectCast(viewControl, CreateHouseholdView).Confirmed,
-                        AddressOf CreateHouseholdView_Confirmed
+
                 Case GetType(HomeView)
-                    AddHandler DirectCast(viewControl, HomeView).HouseholdButton.Click,
-                        Sub(s As Object, e As EventArgs) ChangeView(New HouseholdView)
-                    AddHandler DirectCast(viewControl, HomeView).ChoresButton.Click,
-                        Sub(s As Object, e As EventArgs) ChangeView(New ChoresView)
-                    AddHandler DirectCast(viewControl, HomeView).MyProfileButton.Click,
-                        Sub(s As Object, e As EventArgs) ChangeView(New ProfileView(Profile))
-                    AddHandler DirectCast(viewControl, HomeView).ToDoListButton.Click,
-                        Sub(s As Object, e As EventArgs) ChangeView(New ToDoListView(Profile))
-                    AddHandler DirectCast(viewControl, HomeView).BulletinButton.Click,
-                        Sub(s As Object, e As EventArgs) ChangeView(New BulletinView)
+
                 Case GetType(ChoresView)
-                    AddHandler DirectCast(viewControl, ChoresView).ViewChore, AddressOf ChoresView_ViewChore
-                    AddHandler DirectCast(viewControl, ChoresView).CreateChore, Sub(s As Object, e As EventArgs) ChangeView(New CreateChoreView)
                 Case GetType(ViewChoreView)
-                    AddHandler DirectCast(viewControl, ViewChoreView).BackButton.Click, AddressOf ViewChoreView_Back
 
                 Case GetType(CreateChoreView)
-                    AddHandler DirectCast(viewControl, CreateChoreView).Confirmed, AddressOf CreateChoreView_Accepted
-                    AddHandler DirectCast(viewControl, CreateChoreView).Cancelled, AddressOf CreateChoreView_Cancelled
+
                 Case GetType(EditChoreView)
 
                 Case Else
@@ -73,9 +54,8 @@ Namespace UI
         End Sub
 
 
-
         Public Sub ToggleNavBar(newView As Control)
-            Dim viewType = TypeName(newView).GetType
+            Dim viewType = newView.GetType
             Dim hideNavBarViews =
                     {GetType(JoinHouseholdView), GetType(CreateUserView), GetType(CreateHouseholdView),
                      GetType(HomeView)}
@@ -155,17 +135,6 @@ Namespace UI
             End If
         End Sub
 
-
-        'CreateUserView event handlers
-
-        Public Sub CreateUserView_Confirmed(sender As Object, e As EventArgs)
-            Dim view As CreateUserView = sender
-            Me.Profile = New Housemate(view.FullNameTextBox.Text, view.PhoneNumberTextBox.Text,
-                                       view.EmailAddressTextBox.Text, New Bitmap(50, 60))
-            ChangeView(New JoinHouseholdView)
-        End Sub
-
-
         'JoinHouseholdView event handlers
 
         Public Sub JoinHouseholdView_JoiningHousehold(sender As Object, e As EventArgs)
@@ -177,86 +146,6 @@ Namespace UI
             Household = joiningHousehold
             ChangeView(New HomeView)
         End Sub
-
-        Public Sub JoinHouseholdView_CreatingHousehold(sender As Object, e As EventArgs)
-            ChangeView(New CreateHouseholdView)
-        End Sub
-
-        'CreateHouseholdView event handlers
-
-        Public Sub CreateHouseholdView_Confirmed(sender As Object, e As EventArgs)
-            Dim viewSender As CreateHouseholdView = sender
-            Household = New Household(viewSender.NameTextBox.Text, viewSender.AddressTextBox.Text)
-            Households.Add(Household)
-            ChangeView(New HomeView)
-        End Sub
-
-        Public Sub CreateHouseholdView_Cancelled(sender As Object, e As EventArgs)
-            ChangeView(New JoinHouseholdView)
-        End Sub
-
-        'HomeView event handlers
-
-        'ChoresView event handlers
-        Public Sub ChoresView_ViewChore(sender As Object, e As EventArgs)
-            Dim chosenChore As Chore = CType(sender, ChoreItemControl).Chore
-            ChangeView(New ViewChoreView(chosenChore))
-        End Sub
-
-        'ViewChoreView events handlers
-        Public Sub ViewChoreView_Back(sender As Object, e As EventArgs)
-            ChangeView(New ChoresView)
-        End Sub
-
-        'CreateChoreView event handlers
-        Public Sub CreateChoreView_Cancelled(sender As Object, e As EventArgs)
-            ChangeView(New ChoresView)
-        End Sub
-
-        Public Sub CreateChoreView_Accepted(sender As Object, e As EventArgs)
-            Dim viewSender As CreateChoreView = sender
-            Household.AddChore(viewSender.CreateChore)
-            ChangeView(New ChoresView)
-        End Sub
-
-        'EditChoreView event handlers
-
-        'HouseholdView events handlers
-
-        'HousemateView event handlers
-
-        'HousemateToDoListView
-
-        'ToDoListView event handlers
-
-        'ViewTaskView event handlers
-
-        'ProfileView event handlers
-
-        'EditProfileView event handlers
-
-        'ChorePreferencesView eventhandlers
-
-        'CurrentDistributionsView event handlers
-
-        'ProposedDistributionView event handlers
-
-        'CustomDistributionView event handlers
-
-        'BulletinView event handlers
-
-        'ViewTradeView event handlers
-
-        'CreateTradeView event handlers
-
-        'CreateCounterofferView event handlers
-
-        'ViewCounterofferView event handlers
-
-        'PollResultsView event handlers
-
-        'VotePollView event handlers
-
 
         Private Sub ProfileButton_Click(sender As Object, e As EventArgs) Handles ProfileButton.Click
             ChangeView(New ProfileView(Profile))
@@ -278,4 +167,4 @@ Namespace UI
             ChangeView(New BulletinView)
         End Sub
     End Class
-End NameSpace
+End Namespace
