@@ -8,16 +8,25 @@ Namespace UI.Views
 
         Private _households As New List(Of Household)
 
-        Public ReadOnly Property Phone() As PhoneForm
+        <DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)>
+        Public ReadOnly Property Households() As List(Of Household)
             Get
-                Return FindForm()
+                Dim phone As PhoneForm = Me.FindForm()
+                Return phone.Households
+            End Get
+        End Property
+
+        Public ReadOnly Property Profile As Housemate
+            Get
+                Dim phone As PhoneForm = Me.FindForm()
+                Return phone.Profile
             End Get
         End Property
 
         Protected Overrides Sub OnLoad(e As EventArgs)
             MyBase.OnLoad(e)
             Me.HouseholdsFlowLayoutPanel.Controls.Clear()
-            For Each household As Household In PhoneForm.Households
+            For Each household As Household In Households
                 AddNewHouseholdButton(household)
             Next
         End Sub
@@ -39,13 +48,13 @@ Namespace UI.Views
 
         Private Sub HouseholdButton_Click(sender As Object, e As EventArgs) Handles Household3Button.Click, Household2Button.Click, Household1Button.Click
             'TODO: Show confirmation dialog ("Request to join household? Yes/No?")
-            Dim requestedHousehold = PhoneForm.Households.ElementAt(HouseholdsFlowLayoutPanel.Controls.IndexOf(sender))
-            Dim request As Request = New Request.JoinHouseholdRequest(Phone.Profile, requestedHousehold)
+            Dim requestedHousehold = Households.ElementAt(HouseholdsFlowLayoutPanel.Controls.IndexOf(sender))
+            Dim request As Request = New Request.JoinHouseholdRequest(Profile, requestedHousehold)
             RaiseEvent RequestingHousehold(sender, New RequestEventArgs(request))
         End Sub
 
         Private Sub NewHouseholdButton_Click(sender As Object, e As EventArgs) Handles NewHouseholdButton.Click
-            Phone.ChangeView(New CreateHouseholdView)
+            RaiseEvent CreatingHousehold(sender, EventArgs.Empty)
         End Sub
     End Class
 End NameSpace
