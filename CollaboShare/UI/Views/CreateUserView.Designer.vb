@@ -1,10 +1,10 @@
 ﻿Namespace UI.Views
-    <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+    <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class CreateUserView
         Inherits System.Windows.Forms.UserControl
 
         'UserControl overrides dispose to clean up the component list.
-        <System.Diagnostics.DebuggerNonUserCode()> _
+        <System.Diagnostics.DebuggerNonUserCode()>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
             Try
                 If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@
         'NOTE: The following procedure is required by the Windows Form Designer
         'It can be modified using the Windows Form Designer.  
         'Do not modify it using the code editor.
-        <System.Diagnostics.DebuggerStepThrough()> _
+        <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
             Me.Panel1 = New System.Windows.Forms.Panel()
             Me.Label1 = New System.Windows.Forms.Label()
@@ -34,7 +34,6 @@
             Me.EmailAddressTextBox = New System.Windows.Forms.TextBox()
             Me.Label4 = New System.Windows.Forms.Label()
             Me.ConfirmButton = New System.Windows.Forms.Button()
-            Me.CancelButton = New System.Windows.Forms.Button()
             Me.Panel1.SuspendLayout()
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
@@ -147,22 +146,11 @@
             Me.ConfirmButton.Text = "Confirm"
             Me.ConfirmButton.UseVisualStyleBackColor = True
             '
-            'CancelButton
-            '
-            Me.CancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.CancelButton.Location = New System.Drawing.Point(16, 375)
-            Me.CancelButton.Name = "CancelButton"
-            Me.CancelButton.Size = New System.Drawing.Size(75, 27)
-            Me.CancelButton.TabIndex = 6
-            Me.CancelButton.Text = "Cancel"
-            Me.CancelButton.UseVisualStyleBackColor = True
-            '
             'CreateUserView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.Controls.Add(Me.Panel1)
-            Me.Controls.Add(Me.CancelButton)
             Me.Controls.Add(Me.ConfirmButton)
             Me.Controls.Add(Me.FlowLayoutPanel1)
             Me.Name = "CreateUserView"
@@ -186,6 +174,5 @@
         Friend WithEvents EmailAddressTextBox As TextBox
         Friend WithEvents Label4 As Label
         Friend WithEvents ConfirmButton As Button
-        Friend WithEvents CancelButton As Button
     End Class
 End NameSpace

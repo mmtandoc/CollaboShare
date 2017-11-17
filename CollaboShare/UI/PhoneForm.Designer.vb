@@ -52,7 +52,7 @@ Namespace UI
             'BulletinButton
             '
             Me.BulletinButton.BackColor = System.Drawing.SystemColors.Control
-            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Meeting
+            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Meeting
             Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.BulletinButton.Location = New System.Drawing.Point(217, 8)
             Me.BulletinButton.Margin = New System.Windows.Forms.Padding(2)
@@ -64,7 +64,7 @@ Namespace UI
             'TodoListButton
             '
             Me.TodoListButton.BackColor = System.Drawing.SystemColors.Control
-            Me.TodoListButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.List
+            Me.TodoListButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.List
             Me.TodoListButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.TodoListButton.Location = New System.Drawing.Point(165, 8)
             Me.TodoListButton.Margin = New System.Windows.Forms.Padding(2)
@@ -76,7 +76,7 @@ Namespace UI
             'ChoresButton
             '
             Me.ChoresButton.BackColor = System.Drawing.SystemColors.Control
-            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Chore
+            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Chore
             Me.ChoresButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.ChoresButton.Location = New System.Drawing.Point(113, 8)
             Me.ChoresButton.Margin = New System.Windows.Forms.Padding(2)
@@ -88,7 +88,7 @@ Namespace UI
             'HouseholdButton
             '
             Me.HouseholdButton.BackColor = System.Drawing.SystemColors.Control
-            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Home
+            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Home
             Me.HouseholdButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.HouseholdButton.Location = New System.Drawing.Point(9, 8)
             Me.HouseholdButton.Margin = New System.Windows.Forms.Padding(2)
@@ -100,7 +100,7 @@ Namespace UI
             'ProfileButton
             '
             Me.ProfileButton.BackColor = System.Drawing.SystemColors.Control
-            Me.ProfileButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.User
+            Me.ProfileButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.User
             Me.ProfileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
             Me.ProfileButton.Location = New System.Drawing.Point(61, 8)
             Me.ProfileButton.Margin = New System.Windows.Forms.Padding(2)
@@ -124,7 +124,9 @@ Namespace UI
             Me.ClientSize = New System.Drawing.Size(267, 468)
             Me.Controls.Add(Me.ViewPanel)
             Me.Controls.Add(Me.NavPanel)
+            Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
             Me.Margin = New System.Windows.Forms.Padding(2)
+            Me.MaximizeBox = False
             Me.Name = "PhoneForm"
             Me.Text = "PhoneForm"
             Me.NavPanel.ResumeLayout(False)
