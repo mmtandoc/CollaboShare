@@ -70,7 +70,7 @@
             Me.ToDoListButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.ToDoListButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.List
+            Me.ToDoListButton.BackgroundImage = Global.CollaboShare.My.Resources.List
             Me.ToDoListButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.ToDoListButton.Location = New System.Drawing.Point(7, 7)
             Me.ToDoListButton.Margin = New System.Windows.Forms.Padding(7)
@@ -85,7 +85,7 @@
             Me.MyProfileButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.MyProfileButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.User
+            Me.MyProfileButton.BackgroundImage = Global.CollaboShare.My.Resources.User
             Me.MyProfileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.MyProfileButton.Location = New System.Drawing.Point(123, 7)
             Me.MyProfileButton.Margin = New System.Windows.Forms.Padding(7)
@@ -100,7 +100,7 @@
             Me.ChoresButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Chore
+            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My.Resources.Chore
             Me.ChoresButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.ChoresButton.Location = New System.Drawing.Point(7, 130)
             Me.ChoresButton.Margin = New System.Windows.Forms.Padding(7)
@@ -115,7 +115,7 @@
             Me.HouseholdButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Home
+            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My.Resources.Home
             Me.HouseholdButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.HouseholdButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
             Me.HouseholdButton.Location = New System.Drawing.Point(123, 130)
@@ -131,7 +131,7 @@
             Me.BulletinButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My_Project.Resources.Meeting
+            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Meeting
             Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.BulletinButton.Location = New System.Drawing.Point(7, 253)
             Me.BulletinButton.Margin = New System.Windows.Forms.Padding(7)
