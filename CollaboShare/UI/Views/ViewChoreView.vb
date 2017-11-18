@@ -27,6 +27,7 @@ Namespace UI.Views
             End If
             PeopleRequiredLabel.Text = chore.PeopleRequired.ToString
             DueDateLabel.Text = "Due date: " + chore.DueDate.ToShortDateString
+            FrequencyLabel.Text = chore.Frequency.ToString
             DescriptionLabel.Text = chore.Description
         End Sub
 
