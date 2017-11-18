@@ -13,14 +13,14 @@ Namespace UI
 
         Public Property Profile As Housemate
 
-        Private ReadOnly firstRun As Boolean = True
+        Private ReadOnly _firstRun As Boolean = True
 
 
         Public Sub New(userState As State.UserState)
             If userState.IsEmpty Then
-                Me.firstRun = True
+                _firstRun = True
             Else
-                firstRun = False
+                _firstRun = False
 
                 Me.Household = userState.JoinedHousehold
                 Me.Profile = userState.Profile
@@ -33,28 +33,14 @@ Namespace UI
 
         Private Sub AddViewEventHandlers(ByRef viewControl As Control)
             Select Case viewControl.GetType()
-                Case GetType(CreateUserView)
                 Case GetType(JoinHouseholdView)
                     AddHandler DirectCast(viewControl, JoinHouseholdView).RequestingHousehold,
                         Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
-                Case GetType(CreateHouseholdView)
-
-                Case GetType(HomeView)
-
-                Case GetType(ChoresView)
-                Case GetType(ViewChoreView)
-
-                Case GetType(CreateChoreView)
-
-                Case GetType(EditChoreView)
-
-                Case Else
-
             End Select
         End Sub
 
 
-        Public Sub ToggleNavBar(newView As Control)
+        Private Sub ToggleNavBar(newView As Control)
             Dim viewType = newView.GetType
             Dim hideNavBarViews =
                     {GetType(JoinHouseholdView), GetType(CreateUserView), GetType(CreateHouseholdView),
@@ -74,9 +60,7 @@ Namespace UI
             Me.Controls.Add(requestControl)
             DirectCast(requestControl, Control).BringToFront()
             Dim getResultTask As DialogResult = Await Task.Run(Function()
-                                                                   Do Until Not (requestControl.DialogResult = DialogResult.None)
-
-                                                                   Loop
+                                                                   Threading.SpinWait.SpinUntil(Function() requestControl.DialogResult <> DialogResult.None)
                                                                    Return requestControl.DialogResult
                                                                End Function)
             Me.Controls.Remove(requestControl)
@@ -87,9 +71,7 @@ Namespace UI
             Controls.Add(responseControl)
             responseControl.BringToFront()
             Await Task.Run(Sub()
-                               Do Until responseControl.Closed
-
-                               Loop
+                               Threading.SpinWait.SpinUntil(Function() responseControl.Closed)
                            End Sub)
             Me.Controls.Remove(responseControl)
         End Sub
@@ -98,9 +80,7 @@ Namespace UI
             Me.Controls.Add(notificationControl)
             notificationControl.BringToFront()
             Await Task.Run(Sub()
-                               Do Until notificationControl.Closed
-
-                               Loop
+                               Threading.SpinWait.SpinUntil(Function() notificationControl.Closed)
                            End Sub)
             Me.Controls.Remove(notificationControl)
         End Sub
@@ -116,19 +96,8 @@ Namespace UI
             End Select
         End Sub
 
-        'Private Sub RequestControl_Close(sender As Object, e As EventArgs)
-        '    Dim requestControl As RequestControl = sender
-        '    dialogControlResult = requestControl.DialogResult
-        'End Sub
-
-
-        'Private Sub DialogControl_Closing(sender As Object, e As EventArgs)
-        '    Dim dialogControl As IDialogControl = sender
-        '    dialogControlResult = dialogControl.DialogResult
-        'End Sub
-
         Protected Overrides Sub OnLoad(e As EventArgs)
-            If firstRun Then
+            If _firstRun Then
                 ChangeView(New CreateUserView)
             Else
                 ChangeView(New HomeView)
