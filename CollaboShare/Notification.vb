@@ -14,5 +14,4 @@ Public Class NotificationEventArgs
     Public Sub New(notification As Notification)
         Me.Notification = notification
     End Sub
-
 End Class

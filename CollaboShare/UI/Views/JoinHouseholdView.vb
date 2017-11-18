@@ -37,7 +37,7 @@ Namespace UI.Views
         End Sub
 
 
-        Private Sub HouseholdButton_Click(sender As Object, e As EventArgs) Handles Household3Button.Click, Household2Button.Click, Household1Button.Click
+        Private Sub HouseholdButton_Click(sender As Object, e As EventArgs)
             'TODO: Show confirmation dialog ("Request to join household? Yes/No?")
             Dim requestedHousehold = PhoneForm.Households.ElementAt(HouseholdsFlowLayoutPanel.Controls.IndexOf(sender))
             Dim request As Request = New Request.JoinHouseholdRequest(Phone.Profile, requestedHousehold)
