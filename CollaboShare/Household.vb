@@ -23,22 +23,6 @@
         Return Not answers.Contains(True)
     End Function
 
-    Public Sub AddHousemate(ByRef housemate)
-        Housemates.Add(housemate)
-    End Sub
-
-    Public Sub RemoveHousemate(ByRef removedHousemate)
-        Housemates.Remove(removedHousemate)
-    End Sub
-
-    Public Sub AddChore(ByRef newChore)
-        Chores.Add(newChore)
-    End Sub
-
-    Public Sub RemoveChore(ByRef removedChore)
-        Chores.Remove(removedChore)
-    End Sub
-
     Public Sub DistributeChores()
 
     End Sub

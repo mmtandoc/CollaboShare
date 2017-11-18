@@ -10,7 +10,6 @@ Namespace UI
             InitializeComponent()
 
             ' Add any initialization after the InitializeComponent() call.
-
         End Sub
 
         Public Sub ChangeState(state As State)
@@ -44,20 +43,25 @@ Namespace UI
             Dim stateHousehold As New Household("B's Household")
 
             stateHousehold.Housemates.AddRange({
-                                              New Housemate("B User", "301-252-7823", "b.user@email.com"),
-                                              New Housemate("John Smith", "123-123-1234", "john.smith@email.com")
-                                          })
+                                                   New Housemate("B User", "301-252-7823", "b.user@email.com"),
+                                                   New Housemate("John Smith", "123-123-1234", "john.smith@email.com")
+                                               })
             stateHousehold.Chores.AddRange({
                                                New Chore("Wash the dishes", "", New DailyRecurrence(Date.Now, 2),
-                                                         New TimeSpan(0, 20, 0), Date.Now.AddDays(1), 1, stateHousehold.Housemates(0)),
+                                                         New TimeSpan(0, 20, 0), Date.Now.AddDays(1), 1,
+                                                         stateHousehold.Housemates(0)),
                                                New Chore("Clean the kitchen", "",
                                                          New WeeklyRecurrence(Date.Now.AddDays(-1), 1),
-                                                         New TimeSpan(0, 20, 0), Date.Now.AddDays(1), 1, stateHousehold.Housemates(1)),
+                                                         New TimeSpan(0, 20, 0), Date.Now.AddDays(1), 1,
+                                                         stateHousehold.Housemates(1)),
                                                New Chore("Take out the garbage", "",
                                                          New WeeklyRecurrence(Date.Now.AddDays(-1), 1),
-                                                         New TimeSpan(0, 10, 0), Date.Now.AddDays(1), 1, stateHousehold.Housemates(0)),
-                                               New Chore("Buy groceries", "", New WeeklyRecurrence(Date.Now.AddDays(-1), 1),
-                                                         New TimeSpan(0, 10, 0), Date.Now.AddDays(1), 1, stateHousehold.Housemates(1))
+                                                         New TimeSpan(0, 10, 0), Date.Now.AddDays(1), 1,
+                                                         stateHousehold.Housemates(0)),
+                                               New Chore("Buy groceries", "",
+                                                         New WeeklyRecurrence(Date.Now.AddDays(-1), 1),
+                                                         New TimeSpan(0, 10, 0), Date.Now.AddDays(1), 1,
+                                                         stateHousehold.Housemates(1))
                                            })
             states.Add("Scenario 1",
                        New State({stateHousehold}.ToList(), New State.UserState(),

@@ -17,7 +17,7 @@
         End Sub
 
         Private Sub ConfirmButton_Click(sender As Object, e As EventArgs) Handles ConfirmButton.Click
-            Phone.Household.AddChore(CreateChore())
+            Phone.Household.Chores.Add(CreateChore())
             Phone.ChangeView(New ChoresView)
         End Sub
     End Class

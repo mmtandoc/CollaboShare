@@ -4,6 +4,8 @@
     Public Property Email As String
     Public Property Photo As Image
 
+    Public Property ToDoList As New ToDoList
+
     Public Sub New(name As String, phoneNumber As String, email As String)
         Me.New(name, phoneNumber, email, New Bitmap(40, 60))
     End Sub

@@ -74,14 +74,10 @@
   <ItemGroup>
     <Compile Include="Notification.vb" />
     <Compile Include="Recurrence.vb" />
+    <Compile Include="Request.vb" />
+    <Compile Include="Response.vb" />
     <Compile Include="State.vb" />
     <Compile Include="ToDoList.vb" />
-    <Compile Include="UI\Controls\ChoreItem.Designer.vb">
-      <DependentUpon>ChoreItem.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Controls\ChoreItem.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="UI\Controls\ChoreItemControl.Designer.vb">
       <DependentUpon>ChoreItemControl.vb</DependentUpon>
     </Compile>
@@ -112,6 +108,18 @@
     <Compile Include="UI\Controls\RecurrenceControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\Controls\ResizableCheckBox.Designer.vb">
+      <DependentUpon>ResizableCheckBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ResizableCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TaskItemControl.Designer.vb">
+      <DependentUpon>TaskItemControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TaskItemControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Dialogs\NotificationControl.Designer.vb">
       <DependentUpon>NotificationControl.vb</DependentUpon>
     </Compile>
@@ -135,6 +143,12 @@
     </Compile>
     <Compile Include="UI\ControlForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Views\ExtensionView.Designer.vb">
+      <DependentUpon>ExtensionView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\ExtensionView.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Views\ViewChoreView.Designer.vb">
       <DependentUpon>ViewChoreView.vb</DependentUpon>
@@ -292,6 +306,9 @@
     <EmbeddedResource Include="UI\Controls\RecurrenceControl.resx">
       <DependentUpon>RecurrenceControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\TaskItemControl.resx">
+      <DependentUpon>TaskItemControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Dialogs\NotificationControl.resx">
       <DependentUpon>NotificationControl.vb</DependentUpon>
     </EmbeddedResource>
@@ -387,6 +404,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\005-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoreVertical.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

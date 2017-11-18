@@ -142,7 +142,7 @@ Namespace UI
         End Sub
 
         Public Sub JoinHousehold(ByRef joiningHousehold As Household)
-            joiningHousehold.AddHousemate(Me.Profile)
+            joiningHousehold.Housemates.Add(Me.Profile)
             Household = joiningHousehold
             ChangeView(New HomeView)
         End Sub
