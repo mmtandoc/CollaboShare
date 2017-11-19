@@ -35,7 +35,8 @@
 
         Private Function CreateChoreListItem(ByRef chore As Chore, rank As Integer) As ListViewItem
             Dim item As New ListViewItem With {
-                .Text = chore.Name
+                .Text = chore.Name,
+                .Tag = chore
             }
             item.SubItems.Add(rank.ToString)
             Return item
@@ -79,7 +80,12 @@
         End Sub
 
         Private Sub ConfirmButton_Click(sender As Object, e As EventArgs) Handles ConfirmButton.Click
+            Housemate.ChorePreferences.Clear()
+            For Each item As ListViewItem In ChoreRankListView.Items
+                Housemate.ChorePreferences.Add(item.Tag, Integer.Parse(item.SubItems(1).Text))
+            Next
 
+            Phone.ChangeView(New ProfileView(Housemate))
         End Sub
 
         Private Class ListViewItemComparer
