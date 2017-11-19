@@ -38,6 +38,11 @@ Namespace UI
                 Case GetType(JoinHouseholdView)
                     AddHandler DirectCast(viewControl, JoinHouseholdView).RequestingHousehold,
                         Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
+                Case GetType(ChoresView)
+                    AddHandler DirectCast(viewControl, ChoresView).RequestingVolunteer, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
+                    AddHandler DirectCast(viewControl, ChoresView).RequestingExclusion, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
+                Case GetType(HouseholdView)
+                    AddHandler DirectCast(viewControl, HouseholdView).RemovedHousemate, Sub(sender As Object, e As EventArgs) RaiseEvent NotificationSend(Me, e)
             End Select
         End Sub
 
@@ -106,9 +111,28 @@ Namespace UI
             Select Case response.OriginalRequest.RequestedAction
                 Case Request.RequestAction.JoinHousehold
                     If response.Success Then
-                        JoinHousehold(response.OriginalRequest.RequestedObject)
+                        'JoinHousehold(response.OriginalRequest.RequestedObject)
+                        Dim joiningHousehold As Household = response.OriginalRequest.RequestedObject
+                        joiningHousehold.Housemates.Add(Me.Profile)
+                        Household = joiningHousehold
+                        ChangeView(New HomeView)
                     End If
-                Case Else
+                Case Request.RequestAction.Volunteer
+                    If response.Success Then
+                        Dim chore As Chore = response.OriginalRequest.RequestedObject
+                        chore.Volunteer = Profile
+                        If ViewPanel.Controls(0).GetType = GetType(ChoresView) Then
+                            ChangeView(New ChoresView)
+                        End If
+                    End If
+                Case Request.RequestAction.Exclusion
+                    If response.Success Then
+                        Dim chore As Chore = response.OriginalRequest.RequestedObject
+                        chore.Exclusions.Add(Profile)
+                        If ViewPanel.Controls(0).GetType = GetType(ChoresView) Then
+                            ChangeView(New ChoresView)
+                        End If
+                    End If
             End Select
         End Sub
 
@@ -124,6 +148,14 @@ Namespace UI
 
         Public Sub JoinHouseholdView_JoiningHousehold(sender As Object, e As EventArgs)
             RaiseEvent RequestSend(Me, e)
+        End Sub
+
+        Public Sub VolunteerChore(ByRef chore As Chore)
+            chore.Volunteer = Profile
+        End Sub
+
+        Public Sub ExcludeChore(ByRef chore As Chore)
+            chore.Exclusions.Add(Profile)
         End Sub
 
         Public Sub JoinHousehold(ByRef joiningHousehold As Household)

@@ -1,9 +1,11 @@
 ﻿Imports System.ComponentModel
 Imports CollaboShare.UI.Controls
+Imports CollaboShare.UI.Dialogs
 
 Namespace UI.Views
     Public Class ChoresView
-
+        Public Event RequestingVolunteer As EventHandler
+        Public Event RequestingExclusion As EventHandler
         <DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)>
         Public ReadOnly Property Household() As Household
             Get
@@ -32,7 +34,9 @@ Namespace UI.Views
             AddHandler newChoreItem.Edit, AddressOf ChoreItem_Edit
             AddHandler newChoreItem.Delete, AddressOf ChoreItem_Delete
             AddHandler newChoreItem.Volunteer, AddressOf ChoreItem_Volunteer
+            AddHandler newChoreItem.CancelVolunteer, AddressOf ChoreItem_CancelVolunteer
             AddHandler newChoreItem.Exclude, AddressOf ChoreItem_Exclude
+            AddHandler newChoreItem.CancelExclude, AddressOf ChoreItem_CancelExclude
             ChoresFlowLayoutPanel.Controls.Add(newChoreItem)
         End Sub
 
@@ -40,16 +44,37 @@ Namespace UI.Views
             Dim choreItem As ChoreItemControl = sender
             'RaiseEvent ViewChore(choreItem, e)
             Phone.ChangeView(New ViewChoreView(choreItem.Chore))
+
         End Sub
 
         Private Sub ChoreItem_Volunteer(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            'RaiseEvent VolunteerChore(choreItem, e)
+            Dim requestedChore = choreItem.Chore
+            Dim request As Request = New Request.VolunteerRequest(Phone.Profile, Phone.Household, requestedChore)
+            RaiseEvent RequestingVolunteer(sender, New RequestEventArgs(request))
+        End Sub
+
+        Public Sub ChoreItem_CancelVolunteer(sender As Object, e As EventArgs)
+            Dim choreItem As ChoreItemControl = sender
+            choreItem.Chore.Volunteer = Nothing
+            Dim notification As New Notification(Phone.Profile, New List(Of Housemate)({Phone.Profile}), "You have cancelled volunteering for chore '" + choreItem.Chore.Name + "'.")
+            Phone.ShowNotificationControl(New NotificationControl(notification))
+            Phone.ChangeView(New ChoresView)
+        End Sub
+
+        Public Sub ChoreItem_CancelExclude(sender As Object, e As EventArgs)
+            Dim choreItem As ChoreItemControl = sender
+            choreItem.Chore.Exclusions.Remove(Phone.Profile)
+            Dim notification As New Notification(Phone.Profile, New List(Of Housemate)({Phone.Profile}), "You have cancelled your exclusion from chore '" + choreItem.Chore.Name + "'.")
+            Phone.ShowNotificationControl(New NotificationControl(notification))
+            Phone.ChangeView(New ChoresView)
         End Sub
 
         Private Sub ChoreItem_Exclude(sender As Object, e As EventArgs)
             Dim choreItem As ChoreItemControl = sender
-            'RaiseEvent ExcludeChore(choreItem, e)
+            Dim requestedChore = choreItem.Chore
+            Dim request As Request = New Request.ExclusionRequest(Phone.Profile, Phone.Household, requestedChore)
+            RaiseEvent RequestingVolunteer(sender, New RequestEventArgs(request))
         End Sub
 
         Private Sub ChoreItem_Edit(sender As Object, e As EventArgs)

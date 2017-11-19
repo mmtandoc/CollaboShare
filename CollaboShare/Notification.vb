@@ -1,8 +1,13 @@
-﻿Public Class Notification
+﻿Imports CollaboShare.UI
+
+Public Class Notification
     Public Property Sender As Housemate
     Public Property Message As String
-    Public Sub New(ByRef sender As Housemate, message As String)
+    Public Property Recipients As New List(Of Housemate)
+
+    Public Sub New(ByRef sender As Housemate, recipients As List(Of Housemate), message As String)
         Me.Sender = sender
+        Me.Recipients = recipients
         Me.Message = message
     End Sub
 End Class

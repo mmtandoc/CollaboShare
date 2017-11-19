@@ -12,6 +12,20 @@
     Public Sub New()
     End Sub
 
+    Public Sub RemoveHousemate(ByRef housemate As Housemate)
+        If Housemates.Contains(housemate) Then
+            For Each c As Chore In Chores
+                If c.Volunteer.Equals(housemate) Then
+                    c.Volunteer = Nothing
+                End If
+                If c.Exclusions.Contains(housemate) Then
+                    c.Exclusions.Remove(housemate)
+                End If
+            Next
+            Housemates.Remove(housemate)
+        End If
+    End Sub
+
     Public Function RequestJoin(ByRef newHousemate)
         Dim answers As List(Of Boolean) = New List(Of Boolean)
         For Each housemate As Housemate In Housemates

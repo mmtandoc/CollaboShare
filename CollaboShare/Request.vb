@@ -57,6 +57,22 @@
         End Sub
     End Class
 
+    Public Class ExclusionRequest
+        Inherits Request
+
+        Public Sub New(ByRef sender As Housemate, ByRef household As Household, ByRef chore As Chore)
+            Me.Sender = sender
+            RequestedObject = chore
+            Recipients = household.Housemates.FindAll(Function(h) Not h.Name.Equals(Me.Sender.Name))
+            Message = sender.Name & " would like to be excluded from chore '" & chore.Name + "'."
+            RequestedAction = RequestAction.Exclusion
+            Type = RequestType.YesNo
+
+            YesMessage = "Your request for exclusion from chore '" + chore.Name + "' was accepted."
+            YesMessage = "Your request for exclusion from chore '" + chore.Name + "' was refused."
+        End Sub
+    End Class
+
     Public Class ExtensionRequest
         Inherits Request
         Public Sub New(ByRef sender As Housemate, ByRef household As Household, ByRef task As ToDoList.Task, extensionDays As Integer)

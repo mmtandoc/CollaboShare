@@ -31,6 +31,8 @@
             Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.OverflowButton = New System.Windows.Forms.Button()
+            Me.CancelVolunteerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+            Me.CancelExclusionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.ContextMenuStrip1.SuspendLayout()
             Me.SuspendLayout()
             '
@@ -48,32 +50,32 @@
             'ContextMenuStrip1
             '
             Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-            Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolunteerToolStripMenuItem, Me.ExcludeToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
+            Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolunteerToolStripMenuItem, Me.CancelVolunteerToolStripMenuItem, Me.ExcludeToolStripMenuItem, Me.CancelExclusionToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
             Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-            Me.ContextMenuStrip1.Size = New System.Drawing.Size(125, 92)
+            Me.ContextMenuStrip1.Size = New System.Drawing.Size(164, 158)
             '
             'VolunteerToolStripMenuItem
             '
             Me.VolunteerToolStripMenuItem.Name = "VolunteerToolStripMenuItem"
-            Me.VolunteerToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+            Me.VolunteerToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
             Me.VolunteerToolStripMenuItem.Text = "Volunteer"
             '
             'ExcludeToolStripMenuItem
             '
             Me.ExcludeToolStripMenuItem.Name = "ExcludeToolStripMenuItem"
-            Me.ExcludeToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+            Me.ExcludeToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
             Me.ExcludeToolStripMenuItem.Text = "Exclude"
             '
             'EditToolStripMenuItem
             '
             Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-            Me.EditToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+            Me.EditToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
             Me.EditToolStripMenuItem.Text = "Edit"
             '
             'DeleteToolStripMenuItem
             '
             Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-            Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+            Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
             Me.DeleteToolStripMenuItem.Text = "Delete"
             '
             'OverflowButton
@@ -87,6 +89,20 @@
             Me.OverflowButton.TabIndex = 9
             Me.OverflowButton.UseVisualStyleBackColor = True
             '
+            'CancelVolunteerToolStripMenuItem
+            '
+            Me.CancelVolunteerToolStripMenuItem.Name = "CancelVolunteerToolStripMenuItem"
+            Me.CancelVolunteerToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+            Me.CancelVolunteerToolStripMenuItem.Text = "Cancel Volunteer"
+            Me.CancelVolunteerToolStripMenuItem.Visible = False
+            '
+            'CancelExclusionToolStripMenuItem
+            '
+            Me.CancelExclusionToolStripMenuItem.Name = "CancelExclusionToolStripMenuItem"
+            Me.CancelExclusionToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+            Me.CancelExclusionToolStripMenuItem.Text = "Cancel Exclusion"
+            Me.CancelExclusionToolStripMenuItem.Visible = False
+            '
             'ChoreItemControl
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -94,7 +110,7 @@
             Me.ContextMenuStrip = Me.ContextMenuStrip1
             Me.Controls.Add(Me.OverflowButton)
             Me.Controls.Add(Me.ChoreButton)
-            Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+            Me.Margin = New System.Windows.Forms.Padding(2)
             Me.Name = "ChoreItemControl"
             Me.Size = New System.Drawing.Size(265, 42)
             Me.ContextMenuStrip1.ResumeLayout(False)
@@ -109,5 +125,7 @@
         Friend WithEvents ExcludeToolStripMenuItem As ToolStripMenuItem
         Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
         Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents CancelVolunteerToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents CancelExclusionToolStripMenuItem As ToolStripMenuItem
     End Class
 End NameSpace

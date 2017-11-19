@@ -23,6 +23,8 @@ Public Class Chore
 
     Public Property PeopleRequired As Integer
     Public Property Changes As New Dictionary(Of Chore, Housemate)
+    Public Property Volunteer As Housemate = Nothing
+    Public Property Exclusions As New List(Of Housemate)
 
     Public ReadOnly Property Rating As Integer
         Get

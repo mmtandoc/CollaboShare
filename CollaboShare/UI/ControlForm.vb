@@ -66,6 +66,7 @@ Namespace UI
             states.Add("Scenario 1",
                        New State({stateHousehold}.ToList(), New State.UserState(),
                                  New State.UserState(stateHousehold, stateHousehold.Housemates(0))))
+            states.Add("Scenario 2", New State(New List(Of Household), New State.UserState, New State.UserState))
         End Sub
 
         Public Function GetOtherPhone(phone As PhoneForm)
@@ -73,14 +74,22 @@ Namespace UI
         End Function
 
         Private Sub PhoneForm_NotificationSend(sender As Object, e As NotificationEventArgs)
-            Dim recipient As PhoneForm = GetOtherPhone(sender)
-            recipient.ShowNotificationControl(New NotificationControl(e.Notification))
+            Dim otherPhone As PhoneForm = GetOtherPhone(sender)
+            If Not IsNothing(otherPhone) Then
+                If e.Notification.Recipients.Contains(otherPhone.Profile) Then
+                    otherPhone.ShowNotificationControl(New NotificationControl(e.Notification))
+                End If
+            End If
         End Sub
 
         Private Async Sub PhoneForm_RequestSend(sender As PhoneForm, e As RequestEventArgs)
             Dim recipient As PhoneForm = GetOtherPhone(sender)
-            Dim response = Await recipient.ShowRequestControl(New RequestControl(e.Request))
-            If response = DialogResult.Yes Then
+            If Not IsNothing(recipient.Household) Then
+                Dim response = Await recipient.ShowRequestControl(New RequestControl(e.Request))
+                If response = DialogResult.Yes Then
+                    sender.ReceiveResponse(New Response(True, e.Request))
+                End If
+            Else
                 sender.ReceiveResponse(New Response(True, e.Request))
             End If
         End Sub
@@ -89,8 +98,12 @@ Namespace UI
             CreateDefaultStates()
         End Sub
 
-        Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Scenario1Button.Click
+        Private Sub Scenario1Button_Click(sender As Object, e As EventArgs) Handles Scenario1Button.Click
             ChangeState(states("Scenario 1"))
+        End Sub
+
+        Private Sub Scenario2Button_Click(sender As Object, e As EventArgs) Handles Scenario2Button.Click
+            ChangeState(states("Scenario 2"))
         End Sub
     End Class
 End Namespace

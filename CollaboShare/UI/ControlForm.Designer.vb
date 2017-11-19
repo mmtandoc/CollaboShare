@@ -24,7 +24,7 @@
         <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
             Me.Scenario1Button = New System.Windows.Forms.Button()
-            Me.Button1 = New System.Windows.Forms.Button()
+            Me.Scenario2Button = New System.Windows.Forms.Button()
             Me.SuspendLayout()
             '
             'Scenario1Button
@@ -36,21 +36,21 @@
             Me.Scenario1Button.Text = "Scenario 1"
             Me.Scenario1Button.UseVisualStyleBackColor = True
             '
-            'Button1
+            'Scenario2Button
             '
-            Me.Button1.Location = New System.Drawing.Point(173, 12)
-            Me.Button1.Name = "Button1"
-            Me.Button1.Size = New System.Drawing.Size(75, 23)
-            Me.Button1.TabIndex = 1
-            Me.Button1.Text = "Scenario 2"
-            Me.Button1.UseVisualStyleBackColor = True
+            Me.Scenario2Button.Location = New System.Drawing.Point(173, 12)
+            Me.Scenario2Button.Name = "Scenario2Button"
+            Me.Scenario2Button.Size = New System.Drawing.Size(75, 23)
+            Me.Scenario2Button.TabIndex = 1
+            Me.Scenario2Button.Text = "Scenario 2"
+            Me.Scenario2Button.UseVisualStyleBackColor = True
             '
             'ControlForm
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.ClientSize = New System.Drawing.Size(260, 46)
-            Me.Controls.Add(Me.Button1)
+            Me.Controls.Add(Me.Scenario2Button)
             Me.Controls.Add(Me.Scenario1Button)
             Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
             Me.Margin = New System.Windows.Forms.Padding(2)
@@ -63,6 +63,6 @@
         End Sub
 
         Friend WithEvents Scenario1Button As Button
-        Friend WithEvents Button1 As Button
+        Friend WithEvents Scenario2Button As Button
     End Class
 End Namespace

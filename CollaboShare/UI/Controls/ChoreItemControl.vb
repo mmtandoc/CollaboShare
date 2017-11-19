@@ -2,9 +2,18 @@
     Public Class ChoreItemControl
         Public Event View As EventHandler
         Public Event Volunteer As EventHandler
+        Public Event CancelVolunteer As EventHandler
         Public Event Exclude As EventHandler
+        Public Event CancelExclude As EventHandler
         Public Event Delete As EventHandler
         Public Event Edit As EventHandler
+
+        Public ReadOnly Property Phone() As PhoneForm
+            Get
+                Return FindForm()
+            End Get
+        End Property
+
 
         Public Property Chore As Chore
         Public Sub New(ByRef chore As Chore)
@@ -14,6 +23,24 @@
 
             ' Add any initialization after the InitializeComponent() call.
             Me.ChoreButton.Text = chore.Name
+        End Sub
+
+        Protected Overrides Sub OnLoad(e As EventArgs)
+            If Not IsNothing(Chore.Volunteer) Then
+                If Chore.Volunteer.Equals(Phone.Profile) Then
+                    VolunteerToolStripMenuItem.Visible = False
+                    CancelVolunteerToolStripMenuItem.Visible = True
+                Else
+                    VolunteerToolStripMenuItem.Visible = False
+                    CancelVolunteerToolStripMenuItem.Visible = False
+                End If
+            End If
+
+
+            If Chore.Exclusions.Contains(Phone.Profile) Then
+                ExcludeToolStripMenuItem.Visible = False
+                CancelExclusionToolStripMenuItem.Visible = True
+            End If
         End Sub
 
         Private Sub OverflowButton_Click(sender As Object, e As EventArgs) Handles OverflowButton.Click
@@ -41,6 +68,14 @@
 
         Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
             RaiseEvent Delete(Me, EventArgs.Empty)
+        End Sub
+
+        Private Sub CancelVolunteerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CancelVolunteerToolStripMenuItem.Click
+            RaiseEvent CancelVolunteer(Me, EventArgs.Empty)
+        End Sub
+
+        Private Sub CancelExclusionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CancelExclusionToolStripMenuItem.Click
+            RaiseEvent CancelExclude(Me, EventArgs.Empty)
         End Sub
     End Class
 End NameSpace
