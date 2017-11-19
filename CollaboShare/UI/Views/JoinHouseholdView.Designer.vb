@@ -23,11 +23,13 @@
         'Do not modify it using the code editor.
         <System.Diagnostics.DebuggerStepThrough()> _
         Private Sub InitializeComponent()
+            Me.components = New System.ComponentModel.Container()
             Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
             Me.HouseholdsFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
             Me.NewHouseholdButton = New System.Windows.Forms.Button()
             Me.Panel1 = New System.Windows.Forms.Panel()
             Me.Label1 = New System.Windows.Forms.Label()
+            Me.RefreshTimer = New System.Windows.Forms.Timer(Me.components)
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.Panel1.SuspendLayout()
             Me.SuspendLayout()
@@ -82,6 +84,11 @@
             Me.Label1.TabIndex = 1
             Me.Label1.Text = "Join a household"
             '
+            'RefreshTimer
+            '
+            Me.RefreshTimer.Enabled = True
+            Me.RefreshTimer.Interval = 1000
+            '
             'JoinHouseholdView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -103,5 +110,6 @@
         Friend WithEvents Label1 As Label
         Friend WithEvents NewHouseholdButton As Button
         Friend WithEvents HouseholdsFlowLayoutPanel As FlowLayoutPanel
+        Friend WithEvents RefreshTimer As Timer
     End Class
 End NameSpace

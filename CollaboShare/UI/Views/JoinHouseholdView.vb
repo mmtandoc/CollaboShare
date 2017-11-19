@@ -16,10 +16,16 @@ Namespace UI.Views
 
         Protected Overrides Sub OnLoad(e As EventArgs)
             MyBase.OnLoad(e)
-            Me.HouseholdsFlowLayoutPanel.Controls.Clear()
-            For Each household As Household In PhoneForm.Households
-                AddNewHouseholdButton(household)
-            Next
+            ShowHouseholds()
+        End Sub
+
+        Public Sub ShowHouseholds()
+            If HouseholdsFlowLayoutPanel.Controls.Count <> PhoneForm.Households.Count Then
+                Me.HouseholdsFlowLayoutPanel.Controls.Clear()
+                For Each household As Household In PhoneForm.Households
+                    AddNewHouseholdButton(household)
+                Next
+            End If
         End Sub
 
 
@@ -46,6 +52,10 @@ Namespace UI.Views
 
         Private Sub NewHouseholdButton_Click(sender As Object, e As EventArgs) Handles NewHouseholdButton.Click
             Phone.ChangeView(New CreateHouseholdView)
+        End Sub
+
+        Private Sub RefreshTimer_Tick(sender As Object, e As EventArgs) Handles RefreshTimer.Tick
+            ShowHouseholds()
         End Sub
     End Class
 End Namespace
