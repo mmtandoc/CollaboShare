@@ -35,6 +35,8 @@
             Me.Label3 = New System.Windows.Forms.Label()
             Me.EmailAddressLabel = New System.Windows.Forms.Label()
             Me.PhotoPictureBox = New System.Windows.Forms.PictureBox()
+            Me.ToDoListButton = New System.Windows.Forms.Button()
+            Me.ChorePreferencesButton = New System.Windows.Forms.Button()
             Me.Panel1.SuspendLayout()
             Me.FlowLayoutPanel1.SuspendLayout()
             CType(Me.PhotoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +91,8 @@
             Me.FlowLayoutPanel1.Controls.Add(Me.Label3)
             Me.FlowLayoutPanel1.Controls.Add(Me.EmailAddressLabel)
             Me.FlowLayoutPanel1.Controls.Add(Me.PhotoPictureBox)
+            Me.FlowLayoutPanel1.Controls.Add(Me.ToDoListButton)
+            Me.FlowLayoutPanel1.Controls.Add(Me.ChorePreferencesButton)
             Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
             Me.FlowLayoutPanel1.Location = New System.Drawing.Point(1, 44)
             Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
@@ -164,6 +168,24 @@
             Me.PhotoPictureBox.TabIndex = 11
             Me.PhotoPictureBox.TabStop = False
             '
+            'ToDoListButton
+            '
+            Me.ToDoListButton.Location = New System.Drawing.Point(8, 262)
+            Me.ToDoListButton.Name = "ToDoListButton"
+            Me.ToDoListButton.Size = New System.Drawing.Size(100, 23)
+            Me.ToDoListButton.TabIndex = 12
+            Me.ToDoListButton.Text = "See To-Do List"
+            Me.ToDoListButton.UseVisualStyleBackColor = True
+            '
+            'ChorePreferencesButton
+            '
+            Me.ChorePreferencesButton.Location = New System.Drawing.Point(8, 291)
+            Me.ChorePreferencesButton.Name = "ChorePreferencesButton"
+            Me.ChorePreferencesButton.Size = New System.Drawing.Size(149, 21)
+            Me.ChorePreferencesButton.TabIndex = 13
+            Me.ChorePreferencesButton.Text = "Set Chore Preferences"
+            Me.ChorePreferencesButton.UseVisualStyleBackColor = True
+            '
             'ProfileView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -196,5 +218,7 @@
         Friend WithEvents Label3 As Label
         Friend WithEvents EmailAddressLabel As Label
         Friend WithEvents PhotoPictureBox As PictureBox
+        Friend WithEvents ToDoListButton As Button
+        Friend WithEvents ChorePreferencesButton As Button
     End Class
 End NameSpace

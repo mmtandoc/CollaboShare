@@ -20,6 +20,8 @@ Namespace UI.Views
 
         Protected Overrides Sub OnLoad(e As EventArgs)
             MyBase.OnLoad(e)
+            NameLabel.Text = Phone.Household.Name
+            AddressLabel.Text = Phone.Household.Address
             Me.HousemateFlowLayoutPanel.Controls.Clear()
             For Each housemate As Housemate In Phone.Household.Housemates
                 If Not housemate.Equals(Phone.Profile) Then

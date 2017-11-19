@@ -15,6 +15,8 @@ Namespace UI
 
         Private ReadOnly _firstRun As Boolean = True
 
+        Private Property PastViews As New Stack(Of Control)
+
 
         Public Sub New(userState As State.UserState)
             If userState.IsEmpty Then
@@ -48,7 +50,21 @@ Namespace UI
             NavPanel.Visible = Not hideNavBarViews.Contains(viewType)
         End Sub
 
+        Public Sub PreviousView()
+            If PastViews.Count <> 0 Then
+                ChangeView(PastViews.Pop)
+            End If
+        End Sub
+
         Public Sub ChangeView(newView As Control)
+            If ViewPanel.Controls.Count <> 0 Then
+                PastViews.Push(ViewPanel.Controls(0))
+            End If
+
+            If newView.GetType() Is GetType(HomeView) Then
+                PastViews.Clear()
+            End If
+
             newView.Dock = DockStyle.Fill
             ToggleNavBar(newView)
             AddViewEventHandlers(newView)

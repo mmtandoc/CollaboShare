@@ -72,7 +72,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Distribution.vb" />
     <Compile Include="Notification.vb" />
+    <Compile Include="Offer.vb" />
     <Compile Include="Recurrence.vb" />
     <Compile Include="Request.vb" />
     <Compile Include="Response.vb" />
@@ -88,6 +90,18 @@
       <DependentUpon>ChoreRatingControl.vb</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\ChoreRatingControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\DurationPopupControl.Designer.vb">
+      <DependentUpon>DurationPopupControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\DurationPopupControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExtensionPopupControl.Designer.vb">
+      <DependentUpon>ExtensionPopupControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ExtensionPopupControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Controls\HouseholdControl.Designer.vb">
@@ -144,10 +158,10 @@
     <Compile Include="UI\ControlForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Views\ExtensionView.Designer.vb">
-      <DependentUpon>ExtensionView.vb</DependentUpon>
+    <Compile Include="UI\Views\ChorePreferencesView.Designer.vb">
+      <DependentUpon>ChorePreferencesView.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\ExtensionView.vb">
+    <Compile Include="UI\Views\ChorePreferencesView.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Views\ViewChoreView.Designer.vb">
@@ -297,6 +311,12 @@
     <EmbeddedResource Include="UI\Controls\ChoreRatingControl.resx">
       <DependentUpon>ChoreRatingControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\DurationPopupControl.resx">
+      <DependentUpon>DurationPopupControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExtensionPopupControl.resx">
+      <DependentUpon>ExtensionPopupControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\HouseholdControl.resx">
       <DependentUpon>HouseholdControl.vb</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlForm.resx">
       <DependentUpon>ControlForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\ChorePreferencesView.resx">
+      <DependentUpon>ChorePreferencesView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CreateChoreView.resx">
       <DependentUpon>CreateChoreView.vb</DependentUpon>

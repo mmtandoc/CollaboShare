@@ -7,6 +7,7 @@
         JoinHousehold
         Volunteer
         Exclusion
+        Extension
         ProposedDistribution
         CustomDistribution
         Trade
@@ -18,8 +19,11 @@
     Public Property Message As String
     Public Property RequestedAction As RequestAction
     Public Property RequestedObject
-    Public Property ViewPage As View
-    Public Property ViewObject
+    Public Property ViewPage As View = Nothing
+    Public Property ViewObject = Nothing
+
+    Public Property YesMessage As String
+    Public Property NoMessage As String
 
     Public Class JoinHouseholdRequest
         Inherits Request
@@ -31,8 +35,10 @@
             Message = sender.Name + " would like to join your household."
             Type = RequestType.YesNo
             RequestedAction = RequestAction.JoinHousehold
-            ViewPage = Nothing
-            ViewObject = Nothing
+
+            YesMessage = "You have been accepted into the household."
+            NoMessage = "You were not accepted into the household"
+
         End Sub
     End Class
     Public Class VolunteerRequest
@@ -41,13 +47,38 @@
         Public Sub New(ByRef sender As Housemate, ByRef household As Household, ByRef chore As Chore)
             Me.Sender = sender
             RequestedObject = chore
-            Recipients = household.Housemates.FindAll(Function(h) h.Name.Equals(Me.Sender.Name))
+            Recipients = household.Housemates.FindAll(Function(h) Not h.Name.Equals(Me.Sender.Name))
+            Message = sender.Name & " would like to volunteer for chore '" & chore.Name + "'."
             RequestedAction = RequestAction.Volunteer
             Type = RequestType.YesNo
-            ViewPage = Nothing
-            ViewObject = Nothing
+
+            YesMessage = "Your request to volunteer for chore '" + chore.Name + "' was accepted."
+            YesMessage = "Your request to volunteer for chore '" + chore.Name + "' was refused."
         End Sub
     End Class
+
+    Public Class ExtensionRequest
+        Inherits Request
+        Public Sub New(ByRef sender As Housemate, ByRef household As Household, ByRef task As ToDoList.Task, extensionDays As Integer)
+            Me.Sender = sender
+            RequestedObject = New Tuple(Of ToDoList.Task, Integer)(task, extensionDays)
+            Message = sender.Name + " would like to extend the task '" + task.RelatedChore.Name + "' from " + task.Instance.ToShortDateString() + " to " + task.Instance.AddDays(extensionDays).ToShortDateString + "."
+            Recipients = household.Housemates.FindAll(Function(h) Not h.Name.Equals(Me.Sender.Name))
+            RequestedAction = RequestAction.Extension
+            Type = RequestType.YesNo
+
+            YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + "' from " + task.Instance.ToShortDateString() + " to " + task.Instance.AddDays(extensionDays).ToShortDateString + " was accepted."
+            YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + "' from " + task.Instance.ToShortDateString() + " to " + task.Instance.AddDays(extensionDays).ToShortDateString + " was refused."
+        End Sub
+    End Class
+
+    Public Function GetResponse(accepted As Boolean)
+        If accepted Then
+            Return New Response(True, YesMessage, Me)
+        Else
+            Return New Response(False, NoMessage, Me)
+        End If
+    End Function
 
 
 End Class

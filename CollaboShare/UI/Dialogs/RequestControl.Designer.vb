@@ -40,7 +40,7 @@
             'AcceptButton
             '
             Me.AcceptButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.AcceptButton.Location = New System.Drawing.Point(147, 84)
+            Me.AcceptButton.Location = New System.Drawing.Point(144, 90)
             Me.AcceptButton.Name = "AcceptButton"
             Me.AcceptButton.Size = New System.Drawing.Size(75, 30)
             Me.AcceptButton.TabIndex = 5
@@ -50,7 +50,7 @@
             'CancelButton
             '
             Me.CancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.CancelButton.Location = New System.Drawing.Point(19, 84)
+            Me.CancelButton.Location = New System.Drawing.Point(16, 90)
             Me.CancelButton.Name = "CancelButton"
             Me.CancelButton.Size = New System.Drawing.Size(75, 30)
             Me.CancelButton.TabIndex = 4
