@@ -13,7 +13,7 @@
                 Case 2
                     result = New MonthlyRecurrence(dueDate, 1)
                 Case 3
-                    result = New MonthlyRecurrence(dueDate, 1)
+                    result = New YearlyRecurrence(dueDate, 1)
                 Case Else
                     Select Case CustomTabControl.SelectedIndex
                         Case 0
@@ -21,13 +21,16 @@
                             result = New DailyRecurrence(dueDate, interval)
                         Case 1
                             Dim interval = WeeklyNumericUpDown.Value
+                            Dim daysOfWeek() As Boolean = {SundayCheckBox.Checked, MondayCheckBox.Checked, TuesdayCheckBox.Checked, WednesdayCheckBox.Checked, ThursdayCheckBox.Checked, FridayCheckBox.Checked, SaturdayCheckBox.Checked}
+                            Dim firstDay = Array.FindIndex(daysOfWeek, Function(d) d = True)
+                            dueDate = dueDate.AddDays(-(dueDate.DayOfWeek) + firstDay)
                             result = New WeeklyRecurrence(dueDate, interval)
                         Case 2
                             Dim interval = MonthlyNumericUpDown.Value
                             result = New MonthlyRecurrence(dueDate, interval)
-                        Case Else
+                        Case 3
                             Dim interval = AnnuallyNumericUpDown.Value
-                            result = New MonthlyRecurrence(dueDate, interval)
+                            result = New YearlyRecurrence(dueDate, interval)
                     End Select
             End Select
             Return result
