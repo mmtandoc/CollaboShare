@@ -2,7 +2,7 @@
 
 Namespace UI.Views
     Public Class HouseholdView
-
+        Public Event RemovedHousemate As EventHandler
         Public ReadOnly Property Phone() As PhoneForm
             Get
                 Return FindForm()
@@ -47,7 +47,13 @@ Namespace UI.Views
             Dim housemateItem As HousemateItemControl = sender
             Phone.Household.Housemates.Remove(housemateItem.Housemate)
             HousemateFlowLayoutPanel.Controls.Remove(housemateItem)
-            'TODO: Redistribute chores
+            Dim notification As New Notification(Phone.Profile, Phone.Household.Housemates.FindAll(Function(h) Not h.Equals(Phone.Profile)), housemateItem.Housemate.Name + " has been removed from the household.")
+            RaiseEvent RemovedHousemate(Me, New NotificationEventArgs(notification))
+            Phone.Household.DistributeChores()
+        End Sub
+
+        Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
+            Phone.ChangeView(New HomeView)
         End Sub
     End Class
 End Namespace

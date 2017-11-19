@@ -31,8 +31,8 @@
             Me.Label4 = New System.Windows.Forms.Label()
             Me.AddressLabel = New System.Windows.Forms.Label()
             Me.Label3 = New System.Windows.Forms.Label()
-            Me.BackButton = New System.Windows.Forms.Button()
             Me.HousemateFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
+            Me.BackButton = New System.Windows.Forms.Button()
             Me.Panel1.SuspendLayout()
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
@@ -122,6 +122,14 @@
             Me.Label3.TabIndex = 8
             Me.Label3.Text = "Housemates:"
             '
+            'HousemateFlowLayoutPanel
+            '
+            Me.HousemateFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+            Me.HousemateFlowLayoutPanel.Location = New System.Drawing.Point(8, 102)
+            Me.HousemateFlowLayoutPanel.Name = "HousemateFlowLayoutPanel"
+            Me.HousemateFlowLayoutPanel.Size = New System.Drawing.Size(250, 219)
+            Me.HousemateFlowLayoutPanel.TabIndex = 11
+            '
             'BackButton
             '
             Me.BackButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -132,14 +140,6 @@
             Me.BackButton.Text = "Back"
             Me.BackButton.UseVisualStyleBackColor = True
             '
-            'HousemateFlowLayoutPanel
-            '
-            Me.HousemateFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-            Me.HousemateFlowLayoutPanel.Location = New System.Drawing.Point(8, 102)
-            Me.HousemateFlowLayoutPanel.Name = "HousemateFlowLayoutPanel"
-            Me.HousemateFlowLayoutPanel.Size = New System.Drawing.Size(250, 219)
-            Me.HousemateFlowLayoutPanel.TabIndex = 11
-            '
             'HouseholdView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -147,7 +147,7 @@
             Me.Controls.Add(Me.Panel1)
             Me.Controls.Add(Me.FlowLayoutPanel1)
             Me.Controls.Add(Me.BackButton)
-            Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+            Me.Margin = New System.Windows.Forms.Padding(2)
             Me.Name = "HouseholdView"
             Me.Size = New System.Drawing.Size(267, 416)
             Me.Panel1.ResumeLayout(False)
