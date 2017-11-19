@@ -22,7 +22,7 @@ Public Class Chore
     End Property
 
     Public Property PeopleRequired As Integer
-    Public Property Changes As New Dictionary(Of String, Chore)
+    Public Property Changes As New Dictionary(Of Chore, Housemate)
 
     Public ReadOnly Property Rating As Integer
         Get
@@ -30,22 +30,30 @@ Public Class Chore
         End Get
     End Property
 
-    Public Sub New(name As String, description As String, frequency As IRecurrence, duration As TimeSpan, dueDate As DateTime, peopleRequired As Integer, editor As Housemate)
+    Public Sub New(name As String, description As String, frequency As IRecurrence, duration As TimeSpan, peopleRequired As Integer, editor As Housemate)
         Me.Name = name
         Me.Description = description
         Me.Frequency = frequency
         Durations.Add(editor.Name, duration)
         Me.PeopleRequired = peopleRequired
-        Changes.Add(editor.Name, Me)
+        Changes.Add(Me, editor)
     End Sub
 
-    Public Sub Edit(name As String, description As String, frequency As IRecurrence, duration As TimeSpan, dueDate As DateTime, peopleRequired As Integer, editor As Housemate)
+    Public Sub Edit(name As String, description As String, frequency As IRecurrence, duration As TimeSpan, peopleRequired As Integer, editor As Housemate)
         Me.Name = name
         Me.Description = description
         Me.Frequency = frequency
-        Durations.Add(editor.Name, duration)
+        If Durations.ContainsKey(editor.Name) Then
+            Durations(editor.Name) = duration
+        Else
+            Durations.Add(editor.Name, duration)
+        End If
+
         Me.PeopleRequired = peopleRequired
-        Changes.Add(editor.Name, Me)
+
+        If Not Changes.ContainsKey(Me) Then
+            Changes.Add(Me, editor)
+        End If
     End Sub
 
     Private Function CalculateRating() As Integer

@@ -9,7 +9,7 @@
         End Property
 
         Public Function CreateChore()
-            Return New Chore(NameTextBox.Text, DescriptionTextBox.Text, RecurrenceControl1.GetRecurrence, New TimeSpan(0, Integer.Parse(DurationMaskedTextBox.Text), 0), RecurrenceControl1.DueDateDateTimePicker.Value, PeopleRequiredNumericUpDown.Value, Phone.Profile)
+            Return New Chore(NameTextBox.Text, DescriptionTextBox.Text, RecurrenceControl1.GetRecurrence, New TimeSpan(0, Integer.Parse(DurationMaskedTextBox.Text), 0), PeopleRequiredNumericUpDown.Value, Phone.Profile)
         End Function
 
         Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click

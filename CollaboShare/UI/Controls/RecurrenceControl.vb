@@ -34,13 +34,26 @@
         End Function
 
         Public Sub SetRecurrence(recurrence As IRecurrence)
-            DueDateDateTimePicker.Value = recurrence.StartDate
+            DueDateDateTimePicker.Value = recurrence.GetNextDate
             If recurrence.Interval = 1 Then
                 Select Case TypeName(recurrence)
                     Case "DailyRecurrence"
                         FrequencyComboBox.SelectedIndex = 0
                     Case "WeeklyRecurrence"
-                        FrequencyComboBox.SelectedIndex = 1
+                        If CType(recurrence, WeeklyRecurrence).DaysOfWeek.Count(Function(d) d = True) > 1 Then
+                            FrequencyComboBox.SelectedIndex = 4
+                            CustomTabControl.SelectedIndex = 1
+                            WeeklyNumericUpDown.Value = recurrence.Interval
+
+                            Dim daysOfWeek = CType(recurrence, WeeklyRecurrence).DaysOfWeek
+                            Dim daysOfWeekCheckBoxes = {SundayCheckBox, MondayCheckBox, TuesdayCheckBox, WednesdayCheckBox, ThursdayCheckBox, FridayCheckBox, SaturdayCheckBox}
+
+                            For index = 0 To 6
+                                daysOfWeekCheckBoxes(index).Checked = daysOfWeek(index)
+                            Next
+                        Else
+                            FrequencyComboBox.SelectedIndex = 1
+                        End If
                     Case "MonthlyRecurrence"
                         FrequencyComboBox.SelectedIndex = 2
                     Case "YearlyRecurrence"
@@ -75,7 +88,7 @@
         End Sub
 
         Private Sub FrequencyComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FrequencyComboBox.SelectedIndexChanged
-            If FrequencyComboBox.SelectedText = "Custom..." Then
+            If FrequencyComboBox.SelectedIndex = 4 Then
                 CustomTabControl.Visible = True
             Else
                 CustomTabControl.Visible = False

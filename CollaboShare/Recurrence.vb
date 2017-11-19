@@ -80,7 +80,17 @@ Public Class WeeklyRecurrence
     End Function
 
     Public Function GetNextDate(afterDate As DateTime) As DateTime Implements IRecurrence.GetNextDate
-        Return DateTime.Now
+        Dim nextDate As DateTime = Me.StartDate.AddDays(-(StartDate.DayOfWeek))
+        While True
+            Do Until nextDate.DayOfWeek = 6
+                If nextDate.CompareTo(afterDate) > 0 Or DaysOfWeek.ElementAt(nextDate.DayOfWeek) Then
+                    Return nextDate
+                End If
+                nextDate = nextDate.AddDays(1)
+            Loop
+            nextDate = nextDate.AddDays(((Interval - 1) * 7) + 1)
+        End While
+        Return nextDate
     End Function
 
     Public Function GetAverageFrequency() As TimeSpan Implements IRecurrence.GetAverageFrequency

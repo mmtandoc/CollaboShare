@@ -48,19 +48,19 @@ Namespace UI
                                                })
             stateHousehold.Chores.AddRange({
                                                New Chore("Wash the dishes", "", New DailyRecurrence(Date.Now, 2),
-                                                         New TimeSpan(0, 20, 0), Date.Now.AddDays(1), 1,
+                                                         New TimeSpan(0, 20, 0), 1,
                                                          stateHousehold.Housemates(0)),
                                                New Chore("Clean the kitchen", "",
-                                                         New WeeklyRecurrence(Date.Now.AddDays(-1), 1),
-                                                         New TimeSpan(0, 20, 0), Date.Now.AddDays(1), 1,
+                                                         New WeeklyRecurrence(Date.Now.AddDays(-8), 1),
+                                                         New TimeSpan(0, 20, 0), 1,
                                                          stateHousehold.Housemates(1)),
                                                New Chore("Take out the garbage", "",
-                                                         New WeeklyRecurrence(Date.Now.AddDays(-1), 1),
-                                                         New TimeSpan(0, 10, 0), Date.Now.AddDays(1), 1,
+                                                         New WeeklyRecurrence(Date.Now.AddDays(-8), 1),
+                                                         New TimeSpan(0, 10, 0), 1,
                                                          stateHousehold.Housemates(0)),
                                                New Chore("Buy groceries", "",
-                                                         New WeeklyRecurrence(Date.Now.AddDays(-1), 1),
-                                                         New TimeSpan(0, 10, 0), Date.Now.AddDays(1), 1,
+                                                         New WeeklyRecurrence(Date.Now.AddDays(-8), 1),
+                                                         New TimeSpan(0, 10, 0), 1,
                                                          stateHousehold.Housemates(1))
                                            })
             states.Add("Scenario 1",
