@@ -29,10 +29,22 @@ Namespace UI.Views
             DueDateLabel.Text = "Due date: " + chore.DueDate.ToShortDateString
             FrequencyLabel.Text = chore.Frequency.ToString
             DescriptionLabel.Text = chore.Description
+            ratingLabel.Text = chore.Rating
+
+
+
         End Sub
 
         Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
             Phone.ChangeView(New ChoresView)
+        End Sub
+
+        Private Sub NameLabel_Click(sender As Object, e As EventArgs) Handles NameLabel.Click
+
+        End Sub
+
+        Private Sub Label7_Click(sender As Object, e As EventArgs) Handles RatingofChore.Click
+
         End Sub
     End Class
 End Namespace

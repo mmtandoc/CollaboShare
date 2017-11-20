@@ -26,6 +26,8 @@
             Me.Panel1 = New System.Windows.Forms.Panel()
             Me.Label8 = New System.Windows.Forms.Label()
             Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+            Me.Label6 = New System.Windows.Forms.Label()
+            Me.NameLabel = New System.Windows.Forms.Label()
             Me.Label5 = New System.Windows.Forms.Label()
             Me.DueDateLabel = New System.Windows.Forms.Label()
             Me.Label4 = New System.Windows.Forms.Label()
@@ -37,8 +39,8 @@
             Me.Label1 = New System.Windows.Forms.Label()
             Me.DescriptionLabel = New System.Windows.Forms.Label()
             Me.BackButton = New System.Windows.Forms.Button()
-            Me.Label6 = New System.Windows.Forms.Label()
-            Me.NameLabel = New System.Windows.Forms.Label()
+            Me.ratingLabel = New System.Windows.Forms.Label()
+            Me.RatingofChore = New System.Windows.Forms.Label()
             Me.Panel1.SuspendLayout()
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
@@ -77,12 +79,34 @@
             Me.FlowLayoutPanel1.Controls.Add(Me.DurationLabel)
             Me.FlowLayoutPanel1.Controls.Add(Me.Label1)
             Me.FlowLayoutPanel1.Controls.Add(Me.DescriptionLabel)
+            Me.FlowLayoutPanel1.Controls.Add(Me.RatingofChore)
+            Me.FlowLayoutPanel1.Controls.Add(Me.ratingLabel)
             Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
             Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 46)
             Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
             Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
             Me.FlowLayoutPanel1.Size = New System.Drawing.Size(264, 328)
             Me.FlowLayoutPanel1.TabIndex = 16
+            '
+            'Label6
+            '
+            Me.Label6.AutoSize = True
+            Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label6.Location = New System.Drawing.Point(8, 0)
+            Me.Label6.Name = "Label6"
+            Me.Label6.Size = New System.Drawing.Size(43, 15)
+            Me.Label6.TabIndex = 12
+            Me.Label6.Text = "Chore:"
+            '
+            'NameLabel
+            '
+            Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.NameLabel.Location = New System.Drawing.Point(8, 15)
+            Me.NameLabel.Name = "NameLabel"
+            Me.NameLabel.Size = New System.Drawing.Size(231, 27)
+            Me.NameLabel.TabIndex = 11
+            Me.NameLabel.Text = "ChoreName"
+            Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
             '
             'Label5
             '
@@ -181,7 +205,7 @@
             Me.DescriptionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.DescriptionLabel.Location = New System.Drawing.Point(8, 228)
             Me.DescriptionLabel.Name = "DescriptionLabel"
-            Me.DescriptionLabel.Size = New System.Drawing.Size(242, 89)
+            Me.DescriptionLabel.Size = New System.Drawing.Size(242, 64)
             Me.DescriptionLabel.TabIndex = 1
             Me.DescriptionLabel.Text = "Description"
             '
@@ -195,25 +219,23 @@
             Me.BackButton.Text = "Back"
             Me.BackButton.UseVisualStyleBackColor = True
             '
-            'Label6
+            'ratingLabel
             '
-            Me.Label6.AutoSize = True
-            Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.Label6.Location = New System.Drawing.Point(8, 0)
-            Me.Label6.Name = "Label6"
-            Me.Label6.Size = New System.Drawing.Size(43, 15)
-            Me.Label6.TabIndex = 12
-            Me.Label6.Text = "Chore:"
+            Me.ratingLabel.AutoSize = True
+            Me.ratingLabel.Location = New System.Drawing.Point(8, 305)
+            Me.ratingLabel.Name = "ratingLabel"
+            Me.ratingLabel.Size = New System.Drawing.Size(38, 13)
+            Me.ratingLabel.TabIndex = 13
+            Me.ratingLabel.Text = "Rating"
             '
-            'NameLabel
+            'RatingofChore
             '
-            Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.NameLabel.Location = New System.Drawing.Point(8, 15)
-            Me.NameLabel.Name = "NameLabel"
-            Me.NameLabel.Size = New System.Drawing.Size(231, 27)
-            Me.NameLabel.TabIndex = 11
-            Me.NameLabel.Text = "ChoreName"
-            Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+            Me.RatingofChore.AutoSize = True
+            Me.RatingofChore.Location = New System.Drawing.Point(8, 292)
+            Me.RatingofChore.Name = "RatingofChore"
+            Me.RatingofChore.Size = New System.Drawing.Size(38, 13)
+            Me.RatingofChore.TabIndex = 14
+            Me.RatingofChore.Text = "Rating"
             '
             'ViewChoreView
             '
@@ -248,5 +270,7 @@
         Friend WithEvents Label1 As Label
         Friend WithEvents Label6 As Label
         Friend WithEvents NameLabel As Label
+        Friend WithEvents ratingLabel As Label
+        Friend WithEvents RatingofChore As Label
     End Class
 End Namespace
