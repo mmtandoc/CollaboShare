@@ -6,6 +6,8 @@ Public Class Household
     Public Property Housemates As List(Of Housemate) = New List(Of Housemate)
     Public Property Chores As List(Of Chore) = New List(Of Chore)
 
+    Public Property TradeOffers As New List(Of Offer)
+
     Private _Distribution As Distribution = Nothing
     Public Property Distribution As Distribution
         Get

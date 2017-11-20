@@ -25,8 +25,9 @@ Public Class ToDoList
             Return DueDate.CompareTo(other.DueDate)
         End Function
 
-
-
+        Public Overrides Function ToString() As String
+            Return RelatedChore.Name + " (" + Instance.ToShortDateString() + ")"
+        End Function
     End Class
 End Class
 

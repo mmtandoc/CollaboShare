@@ -386,6 +386,9 @@
     <EmbeddedResource Include="UI\Views\CreateDistributionView.resx">
       <DependentUpon>CreateDistributionView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\CreateTradeView.resx">
+      <DependentUpon>CreateTradeView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CurrentDistributionView.resx">
       <DependentUpon>CurrentDistributionView.vb</DependentUpon>
     </EmbeddedResource>
