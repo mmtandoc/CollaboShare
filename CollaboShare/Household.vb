@@ -1,4 +1,6 @@
-﻿Public Class Household
+﻿Imports CollaboShare.UI
+
+Public Class Household
     Public Property Name As String
     Public Property Address As String
     Public Property Housemates As List(Of Housemate) = New List(Of Housemate)
@@ -50,7 +52,17 @@
     End Function
 
     Public Function DistributeChores() As Distribution
-        Return New Distribution(Me)
+        Dim choreInstances As New Dictionary(Of Chore, SortedDictionary(Of Instance, Housemate))
+        Dim rng As New Random()
+        For Each c As Chore In Me.Chores
+            choreInstances(c) = New SortedDictionary(Of Instance, Housemate)
+            Dim instances As List(Of Instance) = c.Frequency.GetInstances
+            For Each i As Instance In instances
+                Dim randomHousemate = Me.Housemates(rng.Next(0, Me.Housemates.Count))
+                choreInstances(c).Add(i, randomHousemate)
+            Next
+        Next
+        Return New Distribution(choreInstances)
     End Function
 
     Public Sub UpdateToDoLists()

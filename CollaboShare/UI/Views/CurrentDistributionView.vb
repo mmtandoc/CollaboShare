@@ -25,7 +25,7 @@
         End Sub
 
         Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
-            Phone.PreviousView()
+            Phone.ChangeView(New HomeView)
         End Sub
 
         Private Sub CustomDistributionButton_Click(sender As Object, e As EventArgs) Handles CustomDistributionButton.Click
@@ -33,7 +33,7 @@
         End Sub
 
         Private Sub ProposedDistributionButton_Click(sender As Object, e As EventArgs) Handles ProposedDistributionButton.Click
-            Phone.ChangeView(New ProposedDistributionView(Phone.AutoDistribution))
+            Phone.ChangeView(New ProposedDistributionView(Phone.Household.DistributeChores()))
         End Sub
     End Class
 End Namespace

@@ -46,6 +46,8 @@
         Private Sub AcceptButton_Click(sender As Object, e As EventArgs) Handles AcceptButton.Click
             If Not IsNothing(Phone.CurrentRequest) Then
                 Phone.CurrentRequest.DialogResult = DialogResult.Yes
+            Else
+                Phone.Household.Distribution = Distribution
             End If
             Phone.PreviousView()
         End Sub

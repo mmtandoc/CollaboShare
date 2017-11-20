@@ -25,7 +25,6 @@
         Private Sub InitializeComponent()
             Me.Panel1 = New System.Windows.Forms.Panel()
             Me.Label1 = New System.Windows.Forms.Label()
-            Me.AcceptButton = New System.Windows.Forms.Button()
             Me.BackButton = New System.Windows.Forms.Button()
             Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
             Me.Panel2 = New System.Windows.Forms.Panel()
@@ -56,16 +55,6 @@
             Me.Label1.Size = New System.Drawing.Size(236, 24)
             Me.Label1.TabIndex = 1
             Me.Label1.Text = "View current distribution"
-            '
-            'AcceptButton
-            '
-            Me.AcceptButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.AcceptButton.Location = New System.Drawing.Point(152, 374)
-            Me.AcceptButton.Name = "AcceptButton"
-            Me.AcceptButton.Size = New System.Drawing.Size(75, 30)
-            Me.AcceptButton.TabIndex = 11
-            Me.AcceptButton.Text = "Accept"
-            Me.AcceptButton.UseVisualStyleBackColor = True
             '
             'BackButton
             '
@@ -131,7 +120,6 @@
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.Controls.Add(Me.Panel1)
-            Me.Controls.Add(Me.AcceptButton)
             Me.Controls.Add(Me.BackButton)
             Me.Controls.Add(Me.FlowLayoutPanel1)
             Me.Name = "CurrentDistributionView"
@@ -147,7 +135,6 @@
 
         Friend WithEvents Panel1 As Panel
         Friend WithEvents Label1 As Label
-        Friend WithEvents AcceptButton As Button
         Friend WithEvents BackButton As Button
         Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
         Friend WithEvents Panel2 As Panel
