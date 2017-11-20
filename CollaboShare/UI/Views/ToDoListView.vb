@@ -80,5 +80,9 @@ Namespace UI.Views
             Dim request As Request = New Request.ExtensionRequest(Profile, Phone.Household, controlSender.Task, Integer.Parse(controlSender.ExtensionMaskedTextBox.Text))
             RaiseEvent RequestingExtension(sender, New RequestEventArgs(request))
         End Sub
+
+        Private Sub TasksFlowLayoutPanel_Paint(sender As Object, e As PaintEventArgs) Handles TasksFlowLayoutPanel.Paint
+
+        End Sub
     End Class
 End Namespace

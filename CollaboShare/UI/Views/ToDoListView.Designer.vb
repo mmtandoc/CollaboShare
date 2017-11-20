@@ -24,8 +24,8 @@
         <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
             Me.Panel1 = New System.Windows.Forms.Panel()
-            Me.TasksFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
             Me.ToDoListLabel = New System.Windows.Forms.Label()
+            Me.TasksFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
             Me.Panel1.SuspendLayout()
             Me.SuspendLayout()
             '
@@ -39,14 +39,6 @@
             Me.Panel1.Size = New System.Drawing.Size(267, 40)
             Me.Panel1.TabIndex = 15
             '
-            'TasksFlowLayoutPanel
-            '
-            Me.TasksFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-            Me.TasksFlowLayoutPanel.Location = New System.Drawing.Point(0, 39)
-            Me.TasksFlowLayoutPanel.Name = "TasksFlowLayoutPanel"
-            Me.TasksFlowLayoutPanel.Size = New System.Drawing.Size(267, 377)
-            Me.TasksFlowLayoutPanel.TabIndex = 2
-            '
             'ToDoListLabel
             '
             Me.ToDoListLabel.AutoSize = True
@@ -56,6 +48,14 @@
             Me.ToDoListLabel.Size = New System.Drawing.Size(97, 24)
             Me.ToDoListLabel.TabIndex = 1
             Me.ToDoListLabel.Text = "To-do list"
+            '
+            'TasksFlowLayoutPanel
+            '
+            Me.TasksFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+            Me.TasksFlowLayoutPanel.Location = New System.Drawing.Point(0, 39)
+            Me.TasksFlowLayoutPanel.Name = "TasksFlowLayoutPanel"
+            Me.TasksFlowLayoutPanel.Size = New System.Drawing.Size(267, 377)
+            Me.TasksFlowLayoutPanel.TabIndex = 2
             '
             'ToDoListView
             '

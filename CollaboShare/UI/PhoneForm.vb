@@ -50,6 +50,8 @@ Namespace UI
                     AddHandler DirectCast(viewControl, CreateDistributionView).RequestingDistribution, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
                 Case GetType(ToDoListView)
                     AddHandler DirectCast(viewControl, ToDoListView).RequestingExtension, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
+                Case GetType(CreateTradeView)
+                    AddHandler DirectCast(viewControl, CreateTradeView).CreatedTrade, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
             End Select
         End Sub
 
