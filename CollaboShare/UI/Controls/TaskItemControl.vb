@@ -1,4 +1,5 @@
 ﻿Imports System.Security.Cryptography.X509Certificates
+Imports CollaboShare.UI.Controls
 
 Public Class TaskItemControl
     Public Event View As EventHandler

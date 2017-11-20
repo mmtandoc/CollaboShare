@@ -1,6 +1,7 @@
 ﻿Namespace UI.Controls
     Public Class ExtensionPopupControl
         Public Event Closed As EventHandler
+        Public Event RequestingExtension As EventHandler
         Public Property Housemate As Housemate
         Public Property Task As ToDoList.Task
 
@@ -19,11 +20,15 @@
         Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
             Accepted = False
             RaiseEvent Closed(Me, EventArgs.Empty)
+            Me.Visible = False
         End Sub
 
         Private Sub AcceptButton_Click(sender As Object, e As EventArgs) Handles AcceptButton.Click
             Accepted = True
+            RaiseEvent RequestingExtension(Me, EventArgs.Empty)
             RaiseEvent Closed(Me, EventArgs.Empty)
+            Me.Tag = Integer.Parse(ExtensionMaskedTextBox.Text)
+            Me.Visible = False
         End Sub
     End Class
 End Namespace

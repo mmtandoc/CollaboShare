@@ -4,6 +4,7 @@ Namespace UI.Views
     Public Class ToDoListView
         Public Event RequestingExtension As EventHandler
         Public Property Profile As Housemate
+        Dim WithEvents ExtensionControl As ExtensionPopupControl = Nothing
         Public ReadOnly Property Phone() As PhoneForm
             Get
                 Return FindForm()
@@ -62,6 +63,19 @@ Namespace UI.Views
         End Sub
 
         Private Sub TaskItem_RequestExtension(sender As Object, e As EventArgs)
+            Dim taskSender As TaskItemControl = sender
+            ExtensionControl = New ExtensionPopupControl(Phone.Profile, taskSender.Task)
+            Phone.Controls.Add(ExtensionControl)
+            ExtensionControl.BringToFront()
+            AddHandler ExtensionControl.RequestingExtension, AddressOf ExtensionPopupControl_RequestExtension
+            AddHandler ExtensionControl.Closed, Sub()
+                                                    Phone.Controls.Remove(ExtensionControl)
+                                                    ExtensionControl = Nothing
+                                                End Sub
+        End Sub
+
+
+        Private Sub ExtensionPopupControl_RequestExtension(sender As Object, e As EventArgs)
             Dim controlSender As ExtensionPopupControl = sender
             Dim request As Request = New Request.ExtensionRequest(Profile, Phone.Household, controlSender.Task, Integer.Parse(controlSender.ExtensionMaskedTextBox.Text))
             RaiseEvent RequestingExtension(sender, New RequestEventArgs(request))

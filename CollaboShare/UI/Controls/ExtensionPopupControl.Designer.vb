@@ -91,6 +91,7 @@
             Me.Controls.Add(Me.Label1)
             Me.Controls.Add(Me.CancelButton)
             Me.Controls.Add(Me.AcceptButton)
+            Me.Location = New System.Drawing.Point(16, 143)
             Me.Name = "ExtensionPopupControl"
             Me.Size = New System.Drawing.Size(234, 130)
             Me.ResumeLayout(False)

@@ -29,10 +29,10 @@
             '
             'MessageLabel
             '
-            Me.MessageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.MessageLabel.Location = New System.Drawing.Point(14, 13)
+            Me.MessageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.MessageLabel.Location = New System.Drawing.Point(5, 5)
             Me.MessageLabel.Name = "MessageLabel"
-            Me.MessageLabel.Size = New System.Drawing.Size(208, 64)
+            Me.MessageLabel.Size = New System.Drawing.Size(225, 82)
             Me.MessageLabel.TabIndex = 11
             Me.MessageLabel.Text = "NOTIFICATION MESSAGE"
             '

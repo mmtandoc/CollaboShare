@@ -84,8 +84,8 @@ Public Class Request
             RequestedAction = RequestAction.Extension
             Type = RequestType.YesNo
 
-            YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + "' from " + task.Instance.ToShortDateString() + " to " + task.Instance.AddDays(extensionDays).ToShortDateString + " was accepted."
-            YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + "' from " + task.Instance.ToShortDateString() + " to " + task.Instance.AddDays(extensionDays).ToShortDateString + " was refused."
+            YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + " was accepted."
+            YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + " was refused."
         End Sub
     End Class
 

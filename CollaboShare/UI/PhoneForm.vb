@@ -47,7 +47,8 @@ Namespace UI
                     AddHandler DirectCast(viewControl, HouseholdView).RemovedHousemate, Sub(sender As Object, e As EventArgs) RaiseEvent NotificationSend(Me, e)
                 Case GetType(CreateDistributionView)
                     AddHandler DirectCast(viewControl, CreateDistributionView).RequestingDistribution, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
-
+                Case GetType(ToDoListView)
+                    AddHandler DirectCast(viewControl, ToDoListView).RequestingExtension, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
             End Select
         End Sub
 
@@ -145,6 +146,14 @@ Namespace UI
                         Dim distribution As Distribution = response.OriginalRequest.RequestedObject
                         Household.Distribution = distribution
                     End If
+                Case Request.RequestAction.Extension
+                    If response.Success Then
+                        Dim taskTuple As Tuple(Of ToDoList.Task, Integer) = response.OriginalRequest.RequestedObject
+                        taskTuple.Item1.ExtensionDays += taskTuple.Item2
+                        If ViewPanel.Controls(0).GetType = GetType(ToDoListView) Then
+                            ChangeView(New ToDoListView(Profile))
+                        End If
+                    End If
             End Select
         End Sub
 
@@ -197,7 +206,7 @@ Namespace UI
         End Sub
 
         Private Sub DistributionButton_Click(sender As Object, e As EventArgs) Handles DistributionButton.Click
-            ChangeView(New CreateDistributionView)
+            ChangeView(New CurrentDistributionView)
         End Sub
     End Class
 End Namespace
