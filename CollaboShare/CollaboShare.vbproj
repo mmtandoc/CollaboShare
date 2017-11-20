@@ -452,6 +452,12 @@
     <EmbeddedResource Include="UI\Views\ViewChoreView.resx">
       <DependentUpon>ViewChoreView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\ViewTaskView.resx">
+      <DependentUpon>ViewTaskView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\ViewTradeView.resx">
+      <DependentUpon>ViewTradeView.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">

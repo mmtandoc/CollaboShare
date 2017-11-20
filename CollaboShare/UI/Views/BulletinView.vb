@@ -19,5 +19,7 @@
         Private Sub NewTradeButton_Click(sender As Object, e As EventArgs) Handles NewTradeButton.Click
             Phone.ChangeView(New CreateTradeView())
         End Sub
+
+
     End Class
 End NameSpace

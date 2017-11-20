@@ -57,5 +57,7 @@ Namespace UI.Views
         Private Sub RefreshTimer_Tick(sender As Object, e As EventArgs) Handles RefreshTimer.Tick
             ShowHouseholds()
         End Sub
+
+
     End Class
 End Namespace

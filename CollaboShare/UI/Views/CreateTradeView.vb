@@ -14,8 +14,15 @@
         End Sub
 
         Public Function GetOffer() As Offer
-            Dim offeredTasks As List(Of ToDoList.Task) = TasksCheckedListBox.CheckedItems.OfType(Of ToDoList.Task)
-            'Return New Offer(Phone.Profile, offeredTasks)
+            Dim offeredTasks As New List(Of ToDoList.Task)
+            For Each t As ToDoList.Task In TasksCheckedListBox.CheckedItems
+                offeredTasks.Add(t)
+            Next
+            If offeredTasks.Count = 0 Then
+                Return Nothing
+
+            End If
+            Return New Offer(Phone.Profile, offeredTasks)
         End Function
 
         Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
@@ -24,7 +31,7 @@
 
         Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
             Dim request As New Request.OfferRequest(Phone.Profile, Phone.Household, GetOffer)
-            'RaiseEvent CreatedTrade(Me, RequestEventArgs(request))
+            RaiseEvent CreatedTrade(Me, New RequestEventArgs(request))
         End Sub
     End Class
 End NameSpace
