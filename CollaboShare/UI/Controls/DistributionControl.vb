@@ -11,17 +11,20 @@
                     .AutoSize = True,
                     .Font = New Font("Microsoft Sans Serif", 9.25!, FontStyle.Bold, GraphicsUnit.Point, 0),
                     .Location = New Point(3, 0),
-                    .Text = c.Key.Name + vbNewLine + "(" + c.Key.Frequency.ToString + ")"
+                    .Text = c.Key.Name + vbNewLine + "(" + c.Key.Frequency.ToString + ")",
+                    .Margin = New Padding(0, 5, 0, 2)
                     }
             FlowLayoutPanel1.Controls.Add(choreLabel)
             For Each i As KeyValuePair(Of Instance, Housemate) In c.Value
                 Dim instanceLabel As New Label With {
-                        .Text = i.Key.ToString() + "    (" + i.Value.Name + ")",
+                .Text = i.Key.ToString() + "    (" + i.Value.Name.Split(" "c)(0) + ")",
                         .AutoSize = True,
-                        .Font = New Font("Microsoft Sans Serif", 8.25!, FontStyle.Regular, GraphicsUnit.Point, 0),
-                        .Location = New Point(3, 0)
+                        .Font = New Font("Microsoft Sans Serif", 9.25!, FontStyle.Regular, GraphicsUnit.Point, 0),
+                        .Location = New Point(3, 0),
+                        .Margin = New Padding(0, 2, 0, 2)
                         }
                 FlowLayoutPanel1.Controls.Add(instanceLabel)
+
             Next
         Next
     End Sub

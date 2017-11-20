@@ -25,6 +25,7 @@
         Private Sub InitializeComponent()
             Me.Scenario1Button = New System.Windows.Forms.Button()
             Me.Scenario2Button = New System.Windows.Forms.Button()
+            Me.RestartButton = New System.Windows.Forms.Button()
             Me.SuspendLayout()
             '
             'Scenario1Button
@@ -45,11 +46,21 @@
             Me.Scenario2Button.Text = "Scenario 2"
             Me.Scenario2Button.UseVisualStyleBackColor = True
             '
+            'RestartButton
+            '
+            Me.RestartButton.Location = New System.Drawing.Point(92, 69)
+            Me.RestartButton.Name = "RestartButton"
+            Me.RestartButton.Size = New System.Drawing.Size(75, 23)
+            Me.RestartButton.TabIndex = 2
+            Me.RestartButton.Text = "RESTART"
+            Me.RestartButton.UseVisualStyleBackColor = True
+            '
             'ControlForm
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.ClientSize = New System.Drawing.Size(260, 46)
+            Me.ClientSize = New System.Drawing.Size(260, 104)
+            Me.Controls.Add(Me.RestartButton)
             Me.Controls.Add(Me.Scenario2Button)
             Me.Controls.Add(Me.Scenario1Button)
             Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -64,5 +75,6 @@
 
         Friend WithEvents Scenario1Button As Button
         Friend WithEvents Scenario2Button As Button
+        Friend WithEvents RestartButton As Button
     End Class
 End Namespace

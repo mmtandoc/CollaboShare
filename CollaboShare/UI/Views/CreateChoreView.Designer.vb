@@ -60,8 +60,8 @@ Namespace UI.Views
             Me.FlowLayoutPanel1.Controls.Add(Me.NameTextBox)
             Me.FlowLayoutPanel1.Controls.Add(Me.Label5)
             Me.FlowLayoutPanel1.Controls.Add(Me.DescriptionTextBox)
-            Me.FlowLayoutPanel1.Controls.Add(Me.RecurrenceControl1)
             Me.FlowLayoutPanel1.Controls.Add(Me.Panel2)
+            Me.FlowLayoutPanel1.Controls.Add(Me.RecurrenceControl1)
             Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
             Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 41)
             Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
@@ -99,7 +99,7 @@ Namespace UI.Views
             '
             'RecurrenceControl1
             '
-            Me.RecurrenceControl1.Location = New System.Drawing.Point(8, 91)
+            Me.RecurrenceControl1.Location = New System.Drawing.Point(8, 146)
             Me.RecurrenceControl1.Name = "RecurrenceControl1"
             Me.RecurrenceControl1.Size = New System.Drawing.Size(251, 177)
             Me.RecurrenceControl1.TabIndex = 16
@@ -110,7 +110,7 @@ Namespace UI.Views
             Me.Panel2.Controls.Add(Me.Label3)
             Me.Panel2.Controls.Add(Me.DurationMaskedTextBox)
             Me.Panel2.Controls.Add(Me.PeopleRequiredNumericUpDown)
-            Me.Panel2.Location = New System.Drawing.Point(8, 274)
+            Me.Panel2.Location = New System.Drawing.Point(8, 91)
             Me.Panel2.Name = "Panel2"
             Me.Panel2.Size = New System.Drawing.Size(251, 49)
             Me.Panel2.TabIndex = 18
@@ -151,6 +151,7 @@ Namespace UI.Views
             Me.PeopleRequiredNumericUpDown.Name = "PeopleRequiredNumericUpDown"
             Me.PeopleRequiredNumericUpDown.Size = New System.Drawing.Size(44, 20)
             Me.PeopleRequiredNumericUpDown.TabIndex = 0
+            Me.PeopleRequiredNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
             '
             'Panel1
             '

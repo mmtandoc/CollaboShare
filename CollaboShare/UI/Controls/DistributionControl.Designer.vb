@@ -29,9 +29,9 @@ Partial Class DistributionControl
         '
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 7)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(267, 317)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(263, 321)
         Me.FlowLayoutPanel1.TabIndex = 14
         Me.FlowLayoutPanel1.WrapContents = False
         '
@@ -41,7 +41,7 @@ Partial Class DistributionControl
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Name = "DistributionControl"
-        Me.Size = New System.Drawing.Size(267, 330)
+        Me.Size = New System.Drawing.Size(269, 327)
         Me.ResumeLayout(False)
 
     End Sub

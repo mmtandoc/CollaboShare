@@ -63,10 +63,10 @@ Partial Class TaskItemControl
         'TaskNameLabel
         '
         Me.TaskNameLabel.AutoSize = True
-        Me.TaskNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TaskNameLabel.Location = New System.Drawing.Point(33, 5)
+        Me.TaskNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TaskNameLabel.Location = New System.Drawing.Point(31, 7)
         Me.TaskNameLabel.Name = "TaskNameLabel"
-        Me.TaskNameLabel.Size = New System.Drawing.Size(85, 20)
+        Me.TaskNameLabel.Size = New System.Drawing.Size(76, 16)
         Me.TaskNameLabel.TabIndex = 11
         Me.TaskNameLabel.Text = "TaskName"
         '
@@ -74,7 +74,7 @@ Partial Class TaskItemControl
         '
         Me.OverflowButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.MoreVertical
         Me.OverflowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.OverflowButton.Location = New System.Drawing.Point(227, 1)
+        Me.OverflowButton.Location = New System.Drawing.Point(198, 1)
         Me.OverflowButton.Margin = New System.Windows.Forms.Padding(2)
         Me.OverflowButton.Name = "OverflowButton"
         Me.OverflowButton.Size = New System.Drawing.Size(26, 29)
@@ -89,7 +89,7 @@ Partial Class TaskItemControl
         Me.Controls.Add(Me.OverflowButton)
         Me.Controls.Add(Me.CompletedResizableCheckBox)
         Me.Name = "TaskItemControl"
-        Me.Size = New System.Drawing.Size(255, 31)
+        Me.Size = New System.Drawing.Size(228, 31)
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

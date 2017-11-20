@@ -28,33 +28,34 @@ Namespace UI.Views
 
         Protected Overrides Sub OnLoad(e As EventArgs)
             MyBase.OnLoad(e)
-            TasksFlowLayoutPanel.Controls.Clear()
+
             If IsOwner Then
                 ToDoListLabel.Text = "My To-do list"
             Else
                 ToDoListLabel.Text = Profile.Name.Split(" "c)(0) + "'s To-do list"
             End If
+            If Profile.ToDoList.Count > 0 Then
+                TasksFlowLayoutPanel.Controls.Clear()
+                Profile.ToDoList.Sort()
+                Dim dateGroups = Profile.ToDoList.GroupBy(Function(k) New With {Key .DueDate = k.DueDate.Date})
 
-            Profile.ToDoList.Sort()
-            Dim dateGroups = Profile.ToDoList.GroupBy(Function(k) New With {Key .DueDate = k.DueDate.Date})
 
-
-            For Each dateGroup In dateGroups
-                Dim dateLabel As New Label With {
-                        .AutoSize = True,
-                        .Font = New Font("Microsoft Sans Serif", 11.25!, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, 0),
-                        .Location = New Point(3, 0),
-                        .Text = dateGroup.Key.DueDate.ToLongDateString()
-                        }
-                TasksFlowLayoutPanel.Controls.Add(dateLabel)
-                For Each task As ToDoList.Task In dateGroup
-                    Dim taskItem As New TaskItemControl(task, IsOwner)
-                    AddHandler taskItem.View, AddressOf TaskItem_View
-                    AddHandler taskItem.RequestExtension, AddressOf TaskItem_RequestExtension
-                    TasksFlowLayoutPanel.Controls.Add(taskItem)
+                For Each dateGroup In dateGroups
+                    Dim dateLabel As New Label With {
+                            .AutoSize = True,
+                            .Font = New Font("Microsoft Sans Serif", 11.25!, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, 0),
+                            .Location = New Point(3, 0),
+                            .Text = dateGroup.Key.DueDate.ToLongDateString()
+                            }
+                    TasksFlowLayoutPanel.Controls.Add(dateLabel)
+                    For Each task As ToDoList.Task In dateGroup
+                        Dim taskItem As New TaskItemControl(task, IsOwner)
+                        AddHandler taskItem.View, AddressOf TaskItem_View
+                        AddHandler taskItem.RequestExtension, AddressOf TaskItem_RequestExtension
+                        TasksFlowLayoutPanel.Controls.Add(taskItem)
+                    Next
                 Next
-            Next
-
+            End If
         End Sub
 
         Private Sub TaskItem_View(sender As Object, e As EventArgs)
@@ -79,6 +80,10 @@ Namespace UI.Views
             Dim controlSender As ExtensionPopupControl = sender
             Dim request As Request = New Request.ExtensionRequest(Profile, Phone.Household, controlSender.Task, Integer.Parse(controlSender.ExtensionMaskedTextBox.Text))
             RaiseEvent RequestingExtension(sender, New RequestEventArgs(request))
+        End Sub
+
+        Private Sub CurrentDistributionButton_Click(sender As Object, e As EventArgs) Handles CurrentDistributionButton.Click
+            Phone.ChangeView(New CurrentDistributionView)
         End Sub
     End Class
 End Namespace

@@ -32,7 +32,7 @@
             '        FlowLayoutPanel1.Controls.Add(instanceLabel)
             '    Next
             'Next
-            FlowLayoutPanel1.Controls.Add(New DistributionControl(distribution))
+            Panel3.Controls.Add(New DistributionControl(distribution))
         End Sub
 
         Private Sub RejectButton_Click(sender As Object, e As EventArgs) Handles RejectButton.Click

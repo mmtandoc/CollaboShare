@@ -6,7 +6,6 @@
             End Get
         End Property
 
-        Public Property Distribution As Distribution
 
         Public Sub New()
 
@@ -18,8 +17,8 @@
 
         Protected Overrides Sub OnLoad(e As EventArgs)
             If Not IsNothing(Phone.Household.Distribution) Then
-                FlowLayoutPanel1.Controls.Clear()
-                FlowLayoutPanel1.Controls.Add(New DistributionControl(Distribution))
+                Panel3.Controls.Clear()
+                Panel3.Controls.Add(New DistributionControl(Phone.Household.Distribution))
             End If
 
         End Sub
@@ -34,6 +33,11 @@
 
         Private Sub ProposedDistributionButton_Click(sender As Object, e As EventArgs) Handles ProposedDistributionButton.Click
             Phone.ChangeView(New ProposedDistributionView(Phone.Household.DistributeChores()))
+        End Sub
+
+        Private Sub ResetDistributionButton_Click(sender As Object, e As EventArgs) Handles ResetDistributionButton.Click
+            Phone.Household.Distribution = Nothing
+            Phone.ChangeView(New CurrentDistributionView)
         End Sub
     End Class
 End Namespace

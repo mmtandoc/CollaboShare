@@ -128,6 +128,12 @@
     <Compile Include="UI\Controls\InstanceControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\Controls\InstanceViewControl.Designer.vb">
+      <DependentUpon>InstanceViewControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\InstanceViewControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Controls\RecurrenceControl.Designer.vb">
       <DependentUpon>RecurrenceControl.vb</DependentUpon>
     </Compile>
@@ -359,6 +365,9 @@
     <EmbeddedResource Include="UI\Controls\InstanceControl.resx">
       <DependentUpon>InstanceControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\InstanceViewControl.resx">
+      <DependentUpon>InstanceViewControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\RecurrenceControl.resx">
       <DependentUpon>RecurrenceControl.vb</DependentUpon>
     </EmbeddedResource>
@@ -478,6 +487,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MoreVertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\pie-chart-with-information.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

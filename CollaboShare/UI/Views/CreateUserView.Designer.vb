@@ -136,6 +136,7 @@
             Me.Label4.Size = New System.Drawing.Size(196, 20)
             Me.Label4.TabIndex = 8
             Me.Label4.Text = "Choose a photo (optional):"
+            Me.Label4.Visible = False
             '
             'ConfirmButton
             '

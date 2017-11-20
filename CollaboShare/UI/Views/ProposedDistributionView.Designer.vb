@@ -27,14 +27,14 @@
             Me.RejectButton = New System.Windows.Forms.Button()
             Me.Panel1 = New System.Windows.Forms.Panel()
             Me.Label1 = New System.Windows.Forms.Label()
-            Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+            Me.Panel3 = New System.Windows.Forms.Panel()
             Me.Panel1.SuspendLayout()
             Me.SuspendLayout()
             '
             'AcceptButton
             '
             Me.AcceptButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.AcceptButton.Location = New System.Drawing.Point(152, 361)
+            Me.AcceptButton.Location = New System.Drawing.Point(168, 377)
             Me.AcceptButton.Name = "AcceptButton"
             Me.AcceptButton.Size = New System.Drawing.Size(75, 30)
             Me.AcceptButton.TabIndex = 7
@@ -44,7 +44,7 @@
             'RejectButton
             '
             Me.RejectButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.RejectButton.Location = New System.Drawing.Point(24, 361)
+            Me.RejectButton.Location = New System.Drawing.Point(21, 376)
             Me.RejectButton.Name = "RejectButton"
             Me.RejectButton.Size = New System.Drawing.Size(75, 30)
             Me.RejectButton.TabIndex = 6
@@ -71,21 +71,18 @@
             Me.Label1.TabIndex = 1
             Me.Label1.Text = "View proposed distribution"
             '
-            'FlowLayoutPanel1
+            'Panel3
             '
-            Me.FlowLayoutPanel1.AutoScroll = True
-            Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-            Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 34)
-            Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-            Me.FlowLayoutPanel1.Size = New System.Drawing.Size(267, 317)
-            Me.FlowLayoutPanel1.TabIndex = 9
-            Me.FlowLayoutPanel1.WrapContents = False
+            Me.Panel3.Location = New System.Drawing.Point(0, 42)
+            Me.Panel3.Name = "Panel3"
+            Me.Panel3.Size = New System.Drawing.Size(264, 329)
+            Me.Panel3.TabIndex = 9
             '
             'ProposedDistributionView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.Controls.Add(Me.FlowLayoutPanel1)
+            Me.Controls.Add(Me.Panel3)
             Me.Controls.Add(Me.Panel1)
             Me.Controls.Add(Me.AcceptButton)
             Me.Controls.Add(Me.RejectButton)
@@ -101,6 +98,6 @@
         Friend WithEvents RejectButton As Button
         Friend WithEvents Panel1 As Panel
         Friend WithEvents Label1 As Label
-        Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+        Friend WithEvents Panel3 As Panel
     End Class
 End Namespace

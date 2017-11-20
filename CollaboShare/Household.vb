@@ -68,6 +68,9 @@ Public Class Household
     End Function
 
     Public Sub UpdateToDoLists()
+        For Each h As Housemate In Me.Housemates
+            h.ToDoList.Clear()
+        Next
         If Not IsNothing(Distribution) Then
             For Each c As KeyValuePair(Of Chore, SortedDictionary(Of Instance, Housemate)) In Distribution.ChoreInstances
                 For Each i As KeyValuePair(Of Instance, Housemate) In c.Value

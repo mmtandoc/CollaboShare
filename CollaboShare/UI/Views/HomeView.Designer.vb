@@ -24,18 +24,18 @@
         <System.Diagnostics.DebuggerStepThrough()> _
         Private Sub InitializeComponent()
             Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+            Me.DistributionButton = New System.Windows.Forms.Button()
+            Me.Label6 = New System.Windows.Forms.Label()
             Me.ToDoListButton = New System.Windows.Forms.Button()
             Me.MyProfileButton = New System.Windows.Forms.Button()
             Me.ChoresButton = New System.Windows.Forms.Button()
             Me.HouseholdButton = New System.Windows.Forms.Button()
-            Me.BulletinButton = New System.Windows.Forms.Button()
             Me.Label1 = New System.Windows.Forms.Label()
             Me.Label2 = New System.Windows.Forms.Label()
             Me.Label3 = New System.Windows.Forms.Label()
             Me.Label4 = New System.Windows.Forms.Label()
+            Me.BulletinButton = New System.Windows.Forms.Button()
             Me.Label5 = New System.Windows.Forms.Label()
-            Me.DistributionButton = New System.Windows.Forms.Button()
-            Me.Label6 = New System.Windows.Forms.Label()
             Me.TableLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
             '
@@ -44,18 +44,18 @@
             Me.TableLayoutPanel1.ColumnCount = 2
             Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
             Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+            Me.TableLayoutPanel1.Controls.Add(Me.DistributionButton, 0, 4)
+            Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 5)
             Me.TableLayoutPanel1.Controls.Add(Me.ToDoListButton, 0, 0)
             Me.TableLayoutPanel1.Controls.Add(Me.MyProfileButton, 1, 0)
             Me.TableLayoutPanel1.Controls.Add(Me.ChoresButton, 0, 2)
             Me.TableLayoutPanel1.Controls.Add(Me.HouseholdButton, 1, 2)
-            Me.TableLayoutPanel1.Controls.Add(Me.BulletinButton, 0, 4)
             Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 3)
             Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 1)
             Me.TableLayoutPanel1.Controls.Add(Me.Label3, 1, 1)
             Me.TableLayoutPanel1.Controls.Add(Me.Label4, 1, 3)
-            Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 5)
-            Me.TableLayoutPanel1.Controls.Add(Me.DistributionButton, 1, 4)
-            Me.TableLayoutPanel1.Controls.Add(Me.Label6, 1, 5)
+            Me.TableLayoutPanel1.Controls.Add(Me.BulletinButton, 1, 4)
+            Me.TableLayoutPanel1.Controls.Add(Me.Label5, 1, 5)
             Me.TableLayoutPanel1.Location = New System.Drawing.Point(19, 21)
             Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
             Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -66,8 +66,36 @@
             Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
             Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
             Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+            Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
             Me.TableLayoutPanel1.Size = New System.Drawing.Size(233, 371)
             Me.TableLayoutPanel1.TabIndex = 0
+            '
+            'DistributionButton
+            '
+            Me.DistributionButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.DistributionButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.pie_chart_with_information
+            Me.DistributionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+            Me.DistributionButton.Location = New System.Drawing.Point(7, 253)
+            Me.DistributionButton.Margin = New System.Windows.Forms.Padding(7)
+            Me.DistributionButton.Name = "DistributionButton"
+            Me.DistributionButton.Size = New System.Drawing.Size(102, 89)
+            Me.DistributionButton.TabIndex = 1
+            Me.DistributionButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+            Me.DistributionButton.UseVisualStyleBackColor = True
+            '
+            'Label6
+            '
+            Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label6.Location = New System.Drawing.Point(3, 349)
+            Me.Label6.Name = "Label6"
+            Me.Label6.Size = New System.Drawing.Size(110, 20)
+            Me.Label6.TabIndex = 1
+            Me.Label6.Text = "Distributions"
+            Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             '
             'ToDoListButton
             '
@@ -130,21 +158,6 @@
             Me.HouseholdButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
             Me.HouseholdButton.UseVisualStyleBackColor = True
             '
-            'BulletinButton
-            '
-            Me.BulletinButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Meeting
-            Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-            Me.BulletinButton.Location = New System.Drawing.Point(7, 253)
-            Me.BulletinButton.Margin = New System.Windows.Forms.Padding(7)
-            Me.BulletinButton.Name = "BulletinButton"
-            Me.BulletinButton.Size = New System.Drawing.Size(102, 89)
-            Me.BulletinButton.TabIndex = 0
-            Me.BulletinButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-            Me.BulletinButton.UseVisualStyleBackColor = True
-            '
             'Label1
             '
             Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -193,43 +206,35 @@
             Me.Label4.Text = "Household"
             Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             '
+            'BulletinButton
+            '
+            Me.BulletinButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Meeting
+            Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+            Me.BulletinButton.Enabled = False
+            Me.BulletinButton.Location = New System.Drawing.Point(123, 253)
+            Me.BulletinButton.Margin = New System.Windows.Forms.Padding(7)
+            Me.BulletinButton.Name = "BulletinButton"
+            Me.BulletinButton.Size = New System.Drawing.Size(103, 89)
+            Me.BulletinButton.TabIndex = 0
+            Me.BulletinButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+            Me.BulletinButton.UseVisualStyleBackColor = True
+            Me.BulletinButton.Visible = False
+            '
             'Label5
             '
             Me.Label5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.Label5.Location = New System.Drawing.Point(3, 349)
+            Me.Label5.Location = New System.Drawing.Point(119, 349)
             Me.Label5.Name = "Label5"
-            Me.Label5.Size = New System.Drawing.Size(110, 20)
-            Me.Label5.TabIndex = 1
+            Me.Label5.Size = New System.Drawing.Size(111, 20)
+            Me.Label5.TabIndex = 2
             Me.Label5.Text = "Trading && Polls"
             Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-            '
-            'DistributionButton
-            '
-            Me.DistributionButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.DistributionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-            Me.DistributionButton.Location = New System.Drawing.Point(123, 253)
-            Me.DistributionButton.Margin = New System.Windows.Forms.Padding(7)
-            Me.DistributionButton.Name = "DistributionButton"
-            Me.DistributionButton.Size = New System.Drawing.Size(103, 89)
-            Me.DistributionButton.TabIndex = 0
-            Me.DistributionButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-            Me.DistributionButton.UseVisualStyleBackColor = True
-            '
-            'Label6
-            '
-            Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.Label6.Location = New System.Drawing.Point(119, 349)
-            Me.Label6.Name = "Label6"
-            Me.Label6.Size = New System.Drawing.Size(111, 20)
-            Me.Label6.TabIndex = 1
-            Me.Label6.Text = "Distributions"
-            Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+            Me.Label5.Visible = False
             '
             'HomeView
             '
@@ -249,7 +254,6 @@
         Friend WithEvents MyProfileButton As Button
         Friend WithEvents ChoresButton As Button
         Friend WithEvents HouseholdButton As Button
-        Friend WithEvents BulletinButton As Button
         Friend WithEvents Label1 As Label
         Friend WithEvents Label2 As Label
         Friend WithEvents Label3 As Label
@@ -257,5 +261,6 @@
         Friend WithEvents Label5 As Label
         Friend WithEvents DistributionButton As Button
         Friend WithEvents Label6 As Label
+        Friend WithEvents BulletinButton As Button
     End Class
 End NameSpace

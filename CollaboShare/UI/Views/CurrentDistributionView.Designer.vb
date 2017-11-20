@@ -26,14 +26,15 @@
             Me.Panel1 = New System.Windows.Forms.Panel()
             Me.Label1 = New System.Windows.Forms.Label()
             Me.BackButton = New System.Windows.Forms.Button()
-            Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
             Me.Panel2 = New System.Windows.Forms.Panel()
             Me.Label2 = New System.Windows.Forms.Label()
             Me.ProposedDistributionButton = New System.Windows.Forms.Button()
             Me.CustomDistributionButton = New System.Windows.Forms.Button()
+            Me.Panel3 = New System.Windows.Forms.Panel()
+            Me.ResetDistributionButton = New System.Windows.Forms.Button()
             Me.Panel1.SuspendLayout()
-            Me.FlowLayoutPanel1.SuspendLayout()
             Me.Panel2.SuspendLayout()
+            Me.Panel3.SuspendLayout()
             Me.SuspendLayout()
             '
             'Panel1
@@ -59,39 +60,28 @@
             'BackButton
             '
             Me.BackButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.BackButton.Location = New System.Drawing.Point(24, 374)
+            Me.BackButton.Location = New System.Drawing.Point(13, 374)
             Me.BackButton.Name = "BackButton"
-            Me.BackButton.Size = New System.Drawing.Size(75, 30)
+            Me.BackButton.Size = New System.Drawing.Size(86, 42)
             Me.BackButton.TabIndex = 10
             Me.BackButton.Text = "Back"
             Me.BackButton.UseVisualStyleBackColor = True
-            '
-            'FlowLayoutPanel1
-            '
-            Me.FlowLayoutPanel1.AutoScroll = True
-            Me.FlowLayoutPanel1.Controls.Add(Me.Panel2)
-            Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-            Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 47)
-            Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-            Me.FlowLayoutPanel1.Size = New System.Drawing.Size(267, 317)
-            Me.FlowLayoutPanel1.TabIndex = 13
-            Me.FlowLayoutPanel1.WrapContents = False
             '
             'Panel2
             '
             Me.Panel2.Controls.Add(Me.Label2)
             Me.Panel2.Controls.Add(Me.ProposedDistributionButton)
             Me.Panel2.Controls.Add(Me.CustomDistributionButton)
-            Me.Panel2.Location = New System.Drawing.Point(3, 3)
+            Me.Panel2.Location = New System.Drawing.Point(9, 22)
             Me.Panel2.Name = "Panel2"
-            Me.Panel2.Size = New System.Drawing.Size(261, 122)
+            Me.Panel2.Size = New System.Drawing.Size(240, 122)
             Me.Panel2.TabIndex = 3
             '
             'Label2
             '
             Me.Label2.AutoSize = True
             Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.Label2.Location = New System.Drawing.Point(17, 10)
+            Me.Label2.Location = New System.Drawing.Point(7, 10)
             Me.Label2.Name = "Label2"
             Me.Label2.Size = New System.Drawing.Size(226, 20)
             Me.Label2.TabIndex = 3
@@ -99,7 +89,7 @@
             '
             'ProposedDistributionButton
             '
-            Me.ProposedDistributionButton.Location = New System.Drawing.Point(21, 68)
+            Me.ProposedDistributionButton.Location = New System.Drawing.Point(19, 68)
             Me.ProposedDistributionButton.Name = "ProposedDistributionButton"
             Me.ProposedDistributionButton.Size = New System.Drawing.Size(75, 51)
             Me.ProposedDistributionButton.TabIndex = 4
@@ -108,27 +98,46 @@
             '
             'CustomDistributionButton
             '
-            Me.CustomDistributionButton.Location = New System.Drawing.Point(149, 68)
+            Me.CustomDistributionButton.Location = New System.Drawing.Point(147, 68)
             Me.CustomDistributionButton.Name = "CustomDistributionButton"
             Me.CustomDistributionButton.Size = New System.Drawing.Size(75, 51)
             Me.CustomDistributionButton.TabIndex = 5
             Me.CustomDistributionButton.Text = "Create Custom Distribution"
             Me.CustomDistributionButton.UseVisualStyleBackColor = True
             '
+            'Panel3
+            '
+            Me.Panel3.Controls.Add(Me.Panel2)
+            Me.Panel3.Location = New System.Drawing.Point(4, 44)
+            Me.Panel3.Name = "Panel3"
+            Me.Panel3.Size = New System.Drawing.Size(259, 324)
+            Me.Panel3.TabIndex = 13
+            '
+            'ResetDistributionButton
+            '
+            Me.ResetDistributionButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.ResetDistributionButton.Location = New System.Drawing.Point(167, 374)
+            Me.ResetDistributionButton.Name = "ResetDistributionButton"
+            Me.ResetDistributionButton.Size = New System.Drawing.Size(86, 42)
+            Me.ResetDistributionButton.TabIndex = 14
+            Me.ResetDistributionButton.Text = "Reset Distribution"
+            Me.ResetDistributionButton.UseVisualStyleBackColor = True
+            '
             'CurrentDistributionView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+            Me.Controls.Add(Me.ResetDistributionButton)
+            Me.Controls.Add(Me.Panel3)
             Me.Controls.Add(Me.Panel1)
             Me.Controls.Add(Me.BackButton)
-            Me.Controls.Add(Me.FlowLayoutPanel1)
             Me.Name = "CurrentDistributionView"
             Me.Size = New System.Drawing.Size(267, 416)
             Me.Panel1.ResumeLayout(False)
             Me.Panel1.PerformLayout()
-            Me.FlowLayoutPanel1.ResumeLayout(False)
             Me.Panel2.ResumeLayout(False)
             Me.Panel2.PerformLayout()
+            Me.Panel3.ResumeLayout(False)
             Me.ResumeLayout(False)
 
         End Sub
@@ -136,10 +145,11 @@
         Friend WithEvents Panel1 As Panel
         Friend WithEvents Label1 As Label
         Friend WithEvents BackButton As Button
-        Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
         Friend WithEvents Panel2 As Panel
         Friend WithEvents Label2 As Label
         Friend WithEvents ProposedDistributionButton As Button
         Friend WithEvents CustomDistributionButton As Button
+        Friend WithEvents Panel3 As Panel
+        Friend WithEvents ResetDistributionButton As Button
     End Class
 End Namespace

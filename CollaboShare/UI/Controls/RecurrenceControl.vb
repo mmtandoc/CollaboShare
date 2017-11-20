@@ -24,7 +24,7 @@
                             Dim daysOfWeek() As Boolean = {SundayCheckBox.Checked, MondayCheckBox.Checked, TuesdayCheckBox.Checked, WednesdayCheckBox.Checked, ThursdayCheckBox.Checked, FridayCheckBox.Checked, SaturdayCheckBox.Checked}
                             Dim firstDay = Array.FindIndex(daysOfWeek, Function(d) d = True)
                             dueDate = dueDate.AddDays(-(dueDate.DayOfWeek) + firstDay)
-                            result = New WeeklyRecurrence(dueDate, interval)
+                            result = New WeeklyRecurrence(dueDate, interval, daysOfWeek)
                         Case 2
                             Dim interval = MonthlyNumericUpDown.Value
                             result = New MonthlyRecurrence(dueDate, interval)

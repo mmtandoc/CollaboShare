@@ -25,14 +25,20 @@ Namespace UI
         'Do not modify it using the code editor.
         <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
+            Me.components = New System.ComponentModel.Container()
             Me.NavPanel = New System.Windows.Forms.Panel()
+            Me.DistributionButton = New System.Windows.Forms.Button()
             Me.BulletinButton = New System.Windows.Forms.Button()
             Me.TodoListButton = New System.Windows.Forms.Button()
             Me.ChoresButton = New System.Windows.Forms.Button()
             Me.HouseholdButton = New System.Windows.Forms.Button()
             Me.ProfileButton = New System.Windows.Forms.Button()
             Me.ViewPanel = New System.Windows.Forms.Panel()
-            Me.DistributionButton = New System.Windows.Forms.Button()
+            Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+            Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+            Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
+            Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
+            Me.ToolTip5 = New System.Windows.Forms.ToolTip(Me.components)
             Me.NavPanel.SuspendLayout()
             Me.SuspendLayout()
             '
@@ -51,27 +57,41 @@ Namespace UI
             Me.NavPanel.Size = New System.Drawing.Size(267, 52)
             Me.NavPanel.TabIndex = 1
             '
+            'DistributionButton
+            '
+            Me.DistributionButton.BackColor = System.Drawing.SystemColors.Control
+            Me.DistributionButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.pie_chart_with_information
+            Me.DistributionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+            Me.DistributionButton.Location = New System.Drawing.Point(138, 7)
+            Me.DistributionButton.Margin = New System.Windows.Forms.Padding(2)
+            Me.DistributionButton.Name = "DistributionButton"
+            Me.DistributionButton.Size = New System.Drawing.Size(38, 38)
+            Me.DistributionButton.TabIndex = 7
+            Me.DistributionButton.UseVisualStyleBackColor = False
+            '
             'BulletinButton
             '
             Me.BulletinButton.BackColor = System.Drawing.SystemColors.Control
             Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Meeting
             Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-            Me.BulletinButton.Location = New System.Drawing.Point(224, 10)
+            Me.BulletinButton.Enabled = False
+            Me.BulletinButton.Location = New System.Drawing.Point(224, 7)
             Me.BulletinButton.Margin = New System.Windows.Forms.Padding(2)
             Me.BulletinButton.Name = "BulletinButton"
-            Me.BulletinButton.Size = New System.Drawing.Size(30, 30)
+            Me.BulletinButton.Size = New System.Drawing.Size(38, 38)
             Me.BulletinButton.TabIndex = 6
             Me.BulletinButton.UseVisualStyleBackColor = False
+            Me.BulletinButton.Visible = False
             '
             'TodoListButton
             '
             Me.TodoListButton.BackColor = System.Drawing.SystemColors.Control
             Me.TodoListButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.List
             Me.TodoListButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-            Me.TodoListButton.Location = New System.Drawing.Point(181, 10)
+            Me.TodoListButton.Location = New System.Drawing.Point(181, 7)
             Me.TodoListButton.Margin = New System.Windows.Forms.Padding(2)
             Me.TodoListButton.Name = "TodoListButton"
-            Me.TodoListButton.Size = New System.Drawing.Size(30, 30)
+            Me.TodoListButton.Size = New System.Drawing.Size(38, 38)
             Me.TodoListButton.TabIndex = 5
             Me.TodoListButton.UseVisualStyleBackColor = False
             '
@@ -80,10 +100,10 @@ Namespace UI
             Me.ChoresButton.BackColor = System.Drawing.SystemColors.Control
             Me.ChoresButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Chore
             Me.ChoresButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-            Me.ChoresButton.Location = New System.Drawing.Point(95, 10)
+            Me.ChoresButton.Location = New System.Drawing.Point(95, 7)
             Me.ChoresButton.Margin = New System.Windows.Forms.Padding(2)
             Me.ChoresButton.Name = "ChoresButton"
-            Me.ChoresButton.Size = New System.Drawing.Size(30, 30)
+            Me.ChoresButton.Size = New System.Drawing.Size(38, 38)
             Me.ChoresButton.TabIndex = 4
             Me.ChoresButton.UseVisualStyleBackColor = False
             '
@@ -92,10 +112,10 @@ Namespace UI
             Me.HouseholdButton.BackColor = System.Drawing.SystemColors.Control
             Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Home
             Me.HouseholdButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-            Me.HouseholdButton.Location = New System.Drawing.Point(9, 10)
+            Me.HouseholdButton.Location = New System.Drawing.Point(9, 7)
             Me.HouseholdButton.Margin = New System.Windows.Forms.Padding(2)
             Me.HouseholdButton.Name = "HouseholdButton"
-            Me.HouseholdButton.Size = New System.Drawing.Size(30, 30)
+            Me.HouseholdButton.Size = New System.Drawing.Size(38, 38)
             Me.HouseholdButton.TabIndex = 2
             Me.HouseholdButton.UseVisualStyleBackColor = False
             '
@@ -104,10 +124,10 @@ Namespace UI
             Me.ProfileButton.BackColor = System.Drawing.SystemColors.Control
             Me.ProfileButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.User
             Me.ProfileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-            Me.ProfileButton.Location = New System.Drawing.Point(52, 10)
+            Me.ProfileButton.Location = New System.Drawing.Point(52, 7)
             Me.ProfileButton.Margin = New System.Windows.Forms.Padding(2)
             Me.ProfileButton.Name = "ProfileButton"
-            Me.ProfileButton.Size = New System.Drawing.Size(30, 30)
+            Me.ProfileButton.Size = New System.Drawing.Size(38, 38)
             Me.ProfileButton.TabIndex = 1
             Me.ProfileButton.UseVisualStyleBackColor = False
             '
@@ -119,17 +139,25 @@ Namespace UI
             Me.ViewPanel.Size = New System.Drawing.Size(267, 416)
             Me.ViewPanel.TabIndex = 2
             '
-            'DistributionButton
+            'ToolTip1
             '
-            Me.DistributionButton.BackColor = System.Drawing.SystemColors.Control
-            Me.DistributionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-            Me.DistributionButton.Location = New System.Drawing.Point(138, 10)
-            Me.DistributionButton.Margin = New System.Windows.Forms.Padding(2)
-            Me.DistributionButton.Name = "DistributionButton"
-            Me.DistributionButton.Size = New System.Drawing.Size(30, 30)
-            Me.DistributionButton.TabIndex = 7
-            Me.DistributionButton.Text = "D"
-            Me.DistributionButton.UseVisualStyleBackColor = False
+            Me.ToolTip1.ToolTipTitle = "Household"
+            '
+            'ToolTip2
+            '
+            Me.ToolTip2.ToolTipTitle = "My Profile"
+            '
+            'ToolTip3
+            '
+            Me.ToolTip3.ToolTipTitle = "Chores"
+            '
+            'ToolTip4
+            '
+            Me.ToolTip4.ToolTipTitle = "Chore Distribution"
+            '
+            'ToolTip5
+            '
+            Me.ToolTip5.ToolTipTitle = "My To-Do List"
             '
             'PhoneForm
             '
@@ -142,6 +170,7 @@ Namespace UI
             Me.Margin = New System.Windows.Forms.Padding(2)
             Me.MaximizeBox = False
             Me.Name = "PhoneForm"
+            Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
             Me.Text = "PhoneForm"
             Me.NavPanel.ResumeLayout(False)
             Me.ResumeLayout(False)
@@ -157,5 +186,10 @@ Namespace UI
         Friend WithEvents ProfileButton As Button
         Friend WithEvents ViewPanel As Panel
         Friend WithEvents DistributionButton As Button
+        Friend WithEvents ToolTip1 As ToolTip
+        Friend WithEvents ToolTip2 As ToolTip
+        Friend WithEvents ToolTip3 As ToolTip
+        Friend WithEvents ToolTip4 As ToolTip
+        Friend WithEvents ToolTip5 As ToolTip
     End Class
 End Namespace

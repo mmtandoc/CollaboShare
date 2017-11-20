@@ -59,7 +59,9 @@ Namespace UI
             Dim hideNavBarViews =
                     {GetType(JoinHouseholdView), GetType(CreateUserView), GetType(CreateHouseholdView),
                      GetType(HomeView)}
-            NavPanel.Visible = Not hideNavBarViews.Contains(viewType)
+            For Each c As Control In NavPanel.Controls
+                c.Visible = Not hideNavBarViews.Contains(viewType)
+            Next
         End Sub
 
         Public Sub PreviousView()

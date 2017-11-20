@@ -33,12 +33,13 @@
             '
             'OverflowButton
             '
-            Me.OverflowButton.Location = New System.Drawing.Point(235, 3)
+            Me.OverflowButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.MoreVertical
+            Me.OverflowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+            Me.OverflowButton.Location = New System.Drawing.Point(222, 3)
             Me.OverflowButton.Margin = New System.Windows.Forms.Padding(2)
             Me.OverflowButton.Name = "OverflowButton"
             Me.OverflowButton.Size = New System.Drawing.Size(27, 35)
             Me.OverflowButton.TabIndex = 11
-            Me.OverflowButton.Text = "..."
             Me.OverflowButton.UseVisualStyleBackColor = True
             '
             'HousemateButton
@@ -46,7 +47,7 @@
             Me.HousemateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.HousemateButton.Location = New System.Drawing.Point(2, 3)
             Me.HousemateButton.Name = "HousemateButton"
-            Me.HousemateButton.Size = New System.Drawing.Size(232, 36)
+            Me.HousemateButton.Size = New System.Drawing.Size(215, 36)
             Me.HousemateButton.TabIndex = 10
             Me.HousemateButton.Text = "HousemateName"
             Me.HousemateButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -57,12 +58,12 @@
             Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
             Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemoveToolStripMenuItem})
             Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-            Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 48)
+            Me.ContextMenuStrip1.Size = New System.Drawing.Size(118, 26)
             '
             'RemoveToolStripMenuItem
             '
             Me.RemoveToolStripMenuItem.Name = "RemoveToolStripMenuItem"
-            Me.RemoveToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+            Me.RemoveToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
             Me.RemoveToolStripMenuItem.Text = "Remove"
             '
             'HousemateItemControl
@@ -72,7 +73,7 @@
             Me.Controls.Add(Me.OverflowButton)
             Me.Controls.Add(Me.HousemateButton)
             Me.Name = "HousemateItemControl"
-            Me.Size = New System.Drawing.Size(265, 42)
+            Me.Size = New System.Drawing.Size(252, 42)
             Me.ContextMenuStrip1.ResumeLayout(False)
             Me.ResumeLayout(False)
 

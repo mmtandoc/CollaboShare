@@ -55,7 +55,7 @@ Public Class Request
             Type = RequestType.YesNo
 
             YesMessage = "Your request to volunteer for chore '" + chore.Name + "' was accepted."
-            YesMessage = "Your request to volunteer for chore '" + chore.Name + "' was refused."
+            NoMessage = "Your request to volunteer for chore '" + chore.Name + "' was refused."
         End Sub
     End Class
 
@@ -71,7 +71,7 @@ Public Class Request
             Type = RequestType.YesNo
 
             YesMessage = "Your request for exclusion from chore '" + chore.Name + "' was accepted."
-            YesMessage = "Your request for exclusion from chore '" + chore.Name + "' was refused."
+            NoMessage = "Your request for exclusion from chore '" + chore.Name + "' was refused."
         End Sub
     End Class
 
@@ -86,7 +86,7 @@ Public Class Request
             Type = RequestType.YesNo
 
             YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + " was accepted."
-            YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + " was refused."
+            NoMessage = "Your request to extend your task '" + task.RelatedChore.Name + " was refused."
         End Sub
     End Class
 
@@ -102,7 +102,7 @@ Public Class Request
             ViewPage = New ProposedDistributionView(distribution)
 
             YesMessage = "Your custom distribution was accepted."
-            YesMessage = "Your custom distribution was rejected."
+            NoMessage = "Your custom distribution was rejected."
         End Sub
     End Class
 
@@ -120,7 +120,7 @@ Public Class Request
 
 
             YesMessage = "Your custom distribution was accepted."
-            YesMessage = "Your custom distribution was rejected."
+            NoMessage = "Your custom distribution was rejected."
         End Sub
     End Class
 

@@ -24,6 +24,7 @@ Namespace UI
                     .Name = "SubjectA_Phone",
                     .Text = "Subject A's Phone"
                     }
+            phoneForm1.Location = New Point(Me.Location.X - phoneForm1.Size.Width, Location.Y)
             AddHandler phoneForm1.RequestSend, AddressOf PhoneForm_RequestSend
             AddHandler phoneForm1.NotificationSend, AddressOf PhoneForm_NotificationSend
 
@@ -31,6 +32,7 @@ Namespace UI
                     .Name = "SubjectB_Phone",
                     .Text = "Subject B's Phone"
                     }
+            phoneForm2.Location = New Point(Me.Location.X + Size.Width, Location.Y)
             AddHandler phoneForm2.RequestSend, AddressOf PhoneForm_RequestSend
             AddHandler phoneForm2.NotificationSend, AddressOf PhoneForm_NotificationSend
 
@@ -44,11 +46,12 @@ Namespace UI
             Dim stateHousehold As New Household("B's Household")
 
             stateHousehold.Housemates.AddRange({
-                                                   New Housemate("B User", "301-252-7823", "b.user@email.com"),
+                                                   New Housemate("Bob User", "301-252-7823", "bob.user@email.com"),
                                                    New Housemate("John Smith", "123-123-1234", "john.smith@email.com")
                                                })
+
             stateHousehold.Chores.AddRange({
-                                               New Chore("Wash the dishes", "", New DailyRecurrence(Date.Now, 2),
+                                               New Chore("Wash the dishes", "", New DailyRecurrence(Date.Now.AddDays(-1), 4),
                                                          New TimeSpan(0, 20, 0), 1,
                                                          stateHousehold.Housemates(0)),
                                                New Chore("Clean the kitchen", "",
@@ -64,15 +67,29 @@ Namespace UI
                                                          New TimeSpan(0, 10, 0), 1,
                                                          stateHousehold.Housemates(1))
                                            })
+
+            stateHousehold.Housemates(0).ToDoList.AddRange({
+                                                               New ToDoList.Task(stateHousehold.Chores(0), DateTime.Now.Date.AddDays(1)),
+                                                               New ToDoList.Task(stateHousehold.Chores(1), DateTime.Now.Date),
+                                                               New ToDoList.Task(stateHousehold.Chores(2), DateTime.Now.Date),
+                                                               New ToDoList.Task(stateHousehold.Chores(3), DateTime.Now.Date)
+                                                           })
+
+
+            Dim emptyDistribution As New Distribution(stateHousehold)
+            Dim distribution As New Distribution(New Dictionary(Of Chore, SortedDictionary(Of Instance, Housemate)))
+
+            For Each c As KeyValuePair(Of Chore, SortedDictionary(Of Instance, Housemate)) In emptyDistribution.ChoreInstances
+                distribution.ChoreInstances.Add(c.Key, New SortedDictionary(Of Instance, Housemate)())
+                For Each i As KeyValuePair(Of Instance, Housemate) In c.Value
+                    distribution.ChoreInstances(c.Key).Add(i.Key, stateHousehold.Housemates(0))
+                Next
+            Next
+            stateHousehold.Distribution = distribution
+
             states.Add("Scenario 1",
                        New State({stateHousehold}.ToList(), New State.UserState(),
                                  New State.UserState(stateHousehold, stateHousehold.Housemates(0))))
-            'Dim autodistribution As New Distribution(stateHousehold)
-            'For Each c As KeyValuePair(Of Chore, SortedDictionary(Of Instance, Housemate)) In autodistribution.ChoreInstances
-            '    For Each i As KeyValuePair(Of Instance, Housemate) In c.Value
-
-            '    Next
-            'Next
             states.Add("Scenario 2", New State(New List(Of Household), New State.UserState, New State.UserState))
         End Sub
 
@@ -111,6 +128,10 @@ Namespace UI
 
         Private Sub Scenario2Button_Click(sender As Object, e As EventArgs) Handles Scenario2Button.Click
             ChangeState(states("Scenario 2"))
+        End Sub
+
+        Private Sub RestartButton_Click(sender As Object, e As EventArgs) Handles RestartButton.Click
+            Application.Restart()
         End Sub
     End Class
 End Namespace
