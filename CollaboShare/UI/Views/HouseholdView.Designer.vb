@@ -33,6 +33,7 @@
             Me.Label3 = New System.Windows.Forms.Label()
             Me.HousemateFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
             Me.BackButton = New System.Windows.Forms.Button()
+            Me.WithdrawButton = New System.Windows.Forms.Button()
             Me.Panel1.SuspendLayout()
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
@@ -69,7 +70,7 @@
             Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 51)
             Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
             Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-            Me.FlowLayoutPanel1.Size = New System.Drawing.Size(264, 328)
+            Me.FlowLayoutPanel1.Size = New System.Drawing.Size(264, 296)
             Me.FlowLayoutPanel1.TabIndex = 20
             '
             'Label5
@@ -127,7 +128,7 @@
             Me.HousemateFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
             Me.HousemateFlowLayoutPanel.Location = New System.Drawing.Point(8, 102)
             Me.HousemateFlowLayoutPanel.Name = "HousemateFlowLayoutPanel"
-            Me.HousemateFlowLayoutPanel.Size = New System.Drawing.Size(250, 219)
+            Me.HousemateFlowLayoutPanel.Size = New System.Drawing.Size(250, 180)
             Me.HousemateFlowLayoutPanel.TabIndex = 11
             '
             'BackButton
@@ -140,6 +141,16 @@
             Me.BackButton.Text = "Back"
             Me.BackButton.UseVisualStyleBackColor = True
             '
+            'WithdrawButton
+            '
+            Me.WithdrawButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.WithdrawButton.Location = New System.Drawing.Point(144, 371)
+            Me.WithdrawButton.Name = "WithdrawButton"
+            Me.WithdrawButton.Size = New System.Drawing.Size(114, 41)
+            Me.WithdrawButton.TabIndex = 12
+            Me.WithdrawButton.Text = "Withdraw from household"
+            Me.WithdrawButton.UseVisualStyleBackColor = True
+            '
             'HouseholdView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -147,6 +158,7 @@
             Me.Controls.Add(Me.Panel1)
             Me.Controls.Add(Me.FlowLayoutPanel1)
             Me.Controls.Add(Me.BackButton)
+            Me.Controls.Add(Me.WithdrawButton)
             Me.Margin = New System.Windows.Forms.Padding(2)
             Me.Name = "HouseholdView"
             Me.Size = New System.Drawing.Size(267, 416)
@@ -168,5 +180,6 @@
         Friend WithEvents Label3 As Label
         Friend WithEvents BackButton As Button
         Friend WithEvents HousemateFlowLayoutPanel As FlowLayoutPanel
+        Friend WithEvents WithdrawButton As Button
     End Class
 End NameSpace

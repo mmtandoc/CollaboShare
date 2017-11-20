@@ -12,6 +12,7 @@
             'RaiseEvent Confirmed(Me, EventArgs.Empty)
             Phone.Household = New Household(NameTextBox.Text, AddressTextBox.Text)
             PhoneForm.Households.Add(Phone.Household)
+            Phone.Household.Housemates.Add(Phone.Profile)
             Phone.ChangeView(New HomeView)
         End Sub
 

@@ -3,6 +3,7 @@
 Namespace UI.Views
     Public Class HouseholdView
         Public Event RemovedHousemate As EventHandler
+        Public Event Withdrawed As EventHandler
         Public ReadOnly Property Phone() As PhoneForm
             Get
                 Return FindForm()
@@ -54,6 +55,14 @@ Namespace UI.Views
 
         Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
             Phone.ChangeView(New HomeView)
+        End Sub
+
+        Private Sub WithdrawButton_Click(sender As Object, e As EventArgs) Handles WithdrawButton.Click
+            Dim notification As New Notification(Phone.Profile, Phone.Household.Housemates.FindAll(Function(h) Not h.Equals(Phone.Profile)), Phone.Profile.Name + " has withdrawed from the household.")
+            RaiseEvent Withdrawed(Me, New NotificationEventArgs(notification))
+            Phone.Household.Housemates.Remove(Phone.Profile)
+            Phone.Household = Nothing
+            Phone.ChangeView(New JoinHouseholdView)
         End Sub
     End Class
 End Namespace
