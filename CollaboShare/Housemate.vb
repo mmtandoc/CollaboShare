@@ -18,4 +18,8 @@
         Me.Email = email
         Me.Photo = photo
     End Sub
+
+    Public Overrides Function ToString() As String
+        Return Name
+    End Function
 End Class

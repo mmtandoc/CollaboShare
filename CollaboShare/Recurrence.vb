@@ -1,4 +1,5 @@
 ﻿
+Imports System.Runtime.CompilerServices
 
 Public Interface IRecurrence
     Property StartDate As DateTime
@@ -9,6 +10,8 @@ Public Interface IRecurrence
     Function GetNextDate(afterDate As DateTime) As DateTime
 
     Function GetAverageFrequency() As TimeSpan
+
+    Function GetInstances() As List(Of Instance)
 
     Function ToString() As String
 End Interface
@@ -25,19 +28,27 @@ Public Class DailyRecurrence
     End Sub
 
     Public Function GetNextDate() As DateTime Implements IRecurrence.GetNextDate
-        Return GetNextDate(DateTime.Now)
+        Return GetNextDate(DateTime.Now.Date)
     End Function
 
     Public Function GetNextDate(afterDate As DateTime) As DateTime Implements IRecurrence.GetNextDate
         Dim nextDate As DateTime = _StartDate
-        While nextDate.CompareTo(afterDate) > 0
-            nextDate = nextDate.AddDays(_Interval)
+        While nextDate.Date.CompareTo(afterDate.Date) <= 0
+            nextDate = nextDate.AddDays(Interval)
         End While
         Return nextDate
     End Function
 
     Public Function GetAverageFrequency() As TimeSpan Implements IRecurrence.GetAverageFrequency
         Return TimeSpan.FromDays(Interval)
+    End Function
+
+    Public Function GetInstances() As List(Of Instance) Implements IRecurrence.GetInstances
+        Dim instances As New List(Of Instance)
+        For i = 0 To 6
+            instances.Add(New Instance(Me, i + 1))
+        Next
+        Return instances
     End Function
 
     Public Overrides Function ToString() As String Implements IRecurrence.ToString
@@ -52,7 +63,6 @@ End Class
 Public Class WeeklyRecurrence
     Implements IRecurrence
     Private _weekdays As Boolean() = {False, True, True, True, True, True, False}
-    Private _weekends As Boolean() = {True, False, False, False, False, False, True}
 
     Public Property DaysOfWeek As Boolean() = {False, False, False, False, False, False, False}
 
@@ -76,19 +86,23 @@ Public Class WeeklyRecurrence
     End Sub
 
     Public Function GetNextDate() As DateTime Implements IRecurrence.GetNextDate
-        Return GetNextDate(DateTime.Now)
+        Return GetNextDate(DateTime.Now.Date)
     End Function
 
     Public Function GetNextDate(afterDate As DateTime) As DateTime Implements IRecurrence.GetNextDate
         Dim nextDate As DateTime = Me.StartDate.AddDays(-(StartDate.DayOfWeek))
-        While True
-            Do Until nextDate.DayOfWeek = 6
-                If nextDate.CompareTo(afterDate) > 0 Or DaysOfWeek.ElementAt(nextDate.DayOfWeek) Then
-                    Return nextDate
+        Dim done As Boolean = False
+        While Not done
+            For i As Integer = 0 To 7
+                If nextDate.Date.CompareTo(afterDate.Date) > 0 And DaysOfWeek.ElementAt(nextDate.DayOfWeek) Then
+                    done = True
+                    Exit For
                 End If
                 nextDate = nextDate.AddDays(1)
-            Loop
-            nextDate = nextDate.AddDays(((Interval - 1) * 7) + 1)
+            Next
+            If Not done Then
+                nextDate = nextDate.AddDays(((Interval - 1) * 7) + 1)
+            End If
         End While
         Return nextDate
     End Function
@@ -97,11 +111,21 @@ Public Class WeeklyRecurrence
         Return TimeSpan.FromDays((Interval * 7) / DaysOfWeek.Count(Function(x) x = True))
     End Function
 
+    Public Function GetInstances() As List(Of Instance) Implements IRecurrence.GetInstances
+        Dim instances As New List(Of Instance)
+        For i = 0 To 6
+            If DaysOfWeek(i) Then
+                instances.Add(New Instance(Me, i + 1))
+            End If
+        Next
+        Return instances
+    End Function
+
     Public Overrides Function ToString() As String Implements IRecurrence.ToString
         Dim daysOfWeekStrings As New List(Of String)
         For i = 0 To 6
             If DaysOfWeek(i) Then
-                daysOfWeekStrings.Add(WeekdayName(i, True, FirstDayOfWeek.Sunday))
+                daysOfWeekStrings.Add(WeekdayName(i + 1, True, FirstDayOfWeek.Sunday))
             End If
         Next
 
@@ -132,12 +156,12 @@ Public Class MonthlyRecurrence
     End Sub
 
     Public Function GetNextDate() As DateTime Implements IRecurrence.GetNextDate
-        Return GetNextDate(DateTime.Now)
+        Return GetNextDate(DateTime.Now.Date)
     End Function
 
     Public Function GetNextDate(afterDate As DateTime) As DateTime Implements IRecurrence.GetNextDate
         Dim nextDate As DateTime = _StartDate
-        While nextDate.CompareTo(afterDate) > 0
+        While nextDate.Date.CompareTo(afterDate.Date) <= 0
             nextDate = nextDate.AddMonths(_Interval)
         End While
         Return nextDate
@@ -145,6 +169,10 @@ Public Class MonthlyRecurrence
 
     Public Function GetAverageFrequency() As TimeSpan Implements IRecurrence.GetAverageFrequency
         Return TimeSpan.FromDays(Interval * 30.44)
+    End Function
+
+    Public Function GetInstances() As List(Of Instance) Implements IRecurrence.GetInstances
+        Return {New Instance(Me, StartDate.Day)}.ToList()
     End Function
 
     Public Overrides Function ToString() As String Implements IRecurrence.ToString
@@ -167,12 +195,12 @@ Public Class YearlyRecurrence
     End Sub
 
     Public Function GetNextDate() As DateTime Implements IRecurrence.GetNextDate
-        Return GetNextDate(DateTime.Now)
+        Return GetNextDate(DateTime.Now.Date)
     End Function
 
     Public Function GetNextDate(afterDate As DateTime) As DateTime Implements IRecurrence.GetNextDate
         Dim nextDate As DateTime = Me.StartDate
-        While nextDate.CompareTo(afterDate) > 0
+        While nextDate.Date.CompareTo(afterDate.Date) <= 0
             nextDate = nextDate.AddYears(Me.Interval)
         End While
         Return nextDate
@@ -180,6 +208,10 @@ Public Class YearlyRecurrence
 
     Public Function GetAverageFrequency() As TimeSpan Implements IRecurrence.GetAverageFrequency
         Return TimeSpan.FromDays(Interval * 365.25)
+    End Function
+
+    Public Function GetInstances() As List(Of Instance) Implements IRecurrence.GetInstances
+        Return {New Instance(Me, StartDate.DayOfYear)}.ToList()
     End Function
 
     Public Overrides Function ToString() As String Implements IRecurrence.ToString

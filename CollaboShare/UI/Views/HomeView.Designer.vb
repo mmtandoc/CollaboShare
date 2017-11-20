@@ -34,6 +34,8 @@
             Me.Label3 = New System.Windows.Forms.Label()
             Me.Label4 = New System.Windows.Forms.Label()
             Me.Label5 = New System.Windows.Forms.Label()
+            Me.DistributionButton = New System.Windows.Forms.Button()
+            Me.Label6 = New System.Windows.Forms.Label()
             Me.TableLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
             '
@@ -52,6 +54,8 @@
             Me.TableLayoutPanel1.Controls.Add(Me.Label3, 1, 1)
             Me.TableLayoutPanel1.Controls.Add(Me.Label4, 1, 3)
             Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 5)
+            Me.TableLayoutPanel1.Controls.Add(Me.DistributionButton, 1, 4)
+            Me.TableLayoutPanel1.Controls.Add(Me.Label6, 1, 5)
             Me.TableLayoutPanel1.Location = New System.Drawing.Point(19, 21)
             Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
             Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -70,7 +74,7 @@
             Me.ToDoListButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.ToDoListButton.BackgroundImage = Global.CollaboShare.My.Resources.List
+            Me.ToDoListButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.List
             Me.ToDoListButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.ToDoListButton.Location = New System.Drawing.Point(7, 7)
             Me.ToDoListButton.Margin = New System.Windows.Forms.Padding(7)
@@ -85,7 +89,7 @@
             Me.MyProfileButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.MyProfileButton.BackgroundImage = Global.CollaboShare.My.Resources.User
+            Me.MyProfileButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.User
             Me.MyProfileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.MyProfileButton.Location = New System.Drawing.Point(123, 7)
             Me.MyProfileButton.Margin = New System.Windows.Forms.Padding(7)
@@ -100,7 +104,7 @@
             Me.ChoresButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My.Resources.Chore
+            Me.ChoresButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Chore
             Me.ChoresButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.ChoresButton.Location = New System.Drawing.Point(7, 130)
             Me.ChoresButton.Margin = New System.Windows.Forms.Padding(7)
@@ -115,7 +119,7 @@
             Me.HouseholdButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My.Resources.Home
+            Me.HouseholdButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Home
             Me.HouseholdButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.HouseholdButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
             Me.HouseholdButton.Location = New System.Drawing.Point(123, 130)
@@ -131,7 +135,7 @@
             Me.BulletinButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Meeting
+            Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Meeting
             Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.BulletinButton.Location = New System.Drawing.Point(7, 253)
             Me.BulletinButton.Margin = New System.Windows.Forms.Padding(7)
@@ -201,6 +205,32 @@
             Me.Label5.Text = "Trading && Polls"
             Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             '
+            'DistributionButton
+            '
+            Me.DistributionButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.DistributionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+            Me.DistributionButton.Location = New System.Drawing.Point(123, 253)
+            Me.DistributionButton.Margin = New System.Windows.Forms.Padding(7)
+            Me.DistributionButton.Name = "DistributionButton"
+            Me.DistributionButton.Size = New System.Drawing.Size(103, 89)
+            Me.DistributionButton.TabIndex = 0
+            Me.DistributionButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+            Me.DistributionButton.UseVisualStyleBackColor = True
+            '
+            'Label6
+            '
+            Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label6.Location = New System.Drawing.Point(119, 349)
+            Me.Label6.Name = "Label6"
+            Me.Label6.Size = New System.Drawing.Size(111, 20)
+            Me.Label6.TabIndex = 1
+            Me.Label6.Text = "Distributions"
+            Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+            '
             'HomeView
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -225,5 +255,7 @@
         Friend WithEvents Label3 As Label
         Friend WithEvents Label4 As Label
         Friend WithEvents Label5 As Label
+        Friend WithEvents DistributionButton As Button
+        Friend WithEvents Label6 As Label
     End Class
 End NameSpace

@@ -4,6 +4,18 @@
     Public Property Housemates As List(Of Housemate) = New List(Of Housemate)
     Public Property Chores As List(Of Chore) = New List(Of Chore)
 
+    Private _Distribution As Distribution = Nothing
+    Public Property Distribution As Distribution
+        Get
+            Return _Distribution
+        End Get
+        Set
+            _Distribution = Value
+            UpdateToDoLists()
+        End Set
+    End Property
+
+
     Public Sub New(ByVal name, Optional ByVal address = "")
         Me.Name = name
         Me.Address = address
@@ -37,7 +49,19 @@
         Return Not answers.Contains(True)
     End Function
 
-    Public Sub DistributeChores()
+    Public Function DistributeChores() As Distribution
+        Return New Distribution(Me)
+    End Function
 
+    Public Sub UpdateToDoLists()
+        If Not IsNothing(Distribution) Then
+            For Each c As KeyValuePair(Of Chore, SortedDictionary(Of Instance, Housemate)) In Distribution.ChoreInstances
+                For Each i As KeyValuePair(Of Instance, Housemate) In c.Value
+                    Dim task As New ToDoList.Task(c.Key, i.Key.GetNextDate)
+                    i.Value.ToDoList.Add(task)
+                Next
+            Next
+        End If
     End Sub
+
 End Class

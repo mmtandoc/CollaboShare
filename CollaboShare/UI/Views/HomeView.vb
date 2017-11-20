@@ -25,5 +25,9 @@
         Private Sub BulletinButton_Click(sender As Object, e As EventArgs) Handles BulletinButton.Click
             Phone.ChangeView(New BulletinView)
         End Sub
+
+        Private Sub DistributionButton_Click(sender As Object, e As EventArgs) Handles DistributionButton.Click
+            Phone.ChangeView(New CurrentDistributionView)
+        End Sub
     End Class
 End Namespace

@@ -1,8 +1,11 @@
-﻿Public Class State
+﻿Imports CollaboShare
+
+Public Class State
     Public Property Households As New List(Of Household)
     Public Property SubjectA As UserState
 
     Public Property SubjectB As UserState
+    Public Property AutoDistribution As Distribution
 
     Public Sub New(households As List(Of Household), subjectAState As UserState, subjectBState As UserState)
         Me.Households = households

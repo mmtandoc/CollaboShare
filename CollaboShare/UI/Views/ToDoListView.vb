@@ -2,6 +2,7 @@
 
 Namespace UI.Views
     Public Class ToDoListView
+        Public Event RequestingExtension As EventHandler
         Public Property Profile As Housemate
         Public ReadOnly Property Phone() As PhoneForm
             Get
@@ -34,15 +35,15 @@ Namespace UI.Views
             End If
 
             Profile.ToDoList.Sort()
-            Dim dateGroups = Profile.ToDoList.GroupBy(Function(k) New With {Key .DueDate = k.DueDate})
+            Dim dateGroups = Profile.ToDoList.GroupBy(Function(k) New With {Key .DueDate = k.DueDate.Date})
 
 
-            For Each dateGroup As IGrouping(Of DateTime, ToDoList.Task) In dateGroups
+            For Each dateGroup In dateGroups
                 Dim dateLabel As New Label With {
                         .AutoSize = True,
                         .Font = New Font("Microsoft Sans Serif", 11.25!, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, 0),
                         .Location = New Point(3, 0),
-                        .Text = dateGroup.Key.ToLongDateString()
+                        .Text = dateGroup.Key.DueDate.ToLongDateString()
                         }
                 TasksFlowLayoutPanel.Controls.Add(dateLabel)
                 For Each task As ToDoList.Task In dateGroup
@@ -63,6 +64,7 @@ Namespace UI.Views
         Private Sub TaskItem_RequestExtension(sender As Object, e As EventArgs)
             Dim controlSender As ExtensionPopupControl = sender
             Dim request As Request = New Request.ExtensionRequest(Profile, Phone.Household, controlSender.Task, Integer.Parse(controlSender.ExtensionMaskedTextBox.Text))
+            RaiseEvent RequestingExtension(sender, New RequestEventArgs(request))
         End Sub
     End Class
 End Namespace

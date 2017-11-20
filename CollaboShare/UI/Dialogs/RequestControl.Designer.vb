@@ -30,7 +30,7 @@
             '
             'MessageLabel
             '
-            Me.MessageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.MessageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.MessageLabel.Location = New System.Drawing.Point(13, 12)
             Me.MessageLabel.Name = "MessageLabel"
             Me.MessageLabel.Size = New System.Drawing.Size(208, 64)

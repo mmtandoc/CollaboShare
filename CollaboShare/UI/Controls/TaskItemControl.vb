@@ -30,4 +30,11 @@ Public Class TaskItemControl
     Private Sub CompletedResizableCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles CompletedResizableCheckBox.CheckedChanged
         Task.Completed = CompletedResizableCheckBox.Checked
     End Sub
+
+    Private Sub OverflowButton_Click(sender As Object, e As EventArgs) Handles OverflowButton.Click
+        Dim btnSender As Button = sender
+        Dim ptLowerLeft = New Point(0, btnSender.Height)
+        ptLowerLeft = btnSender.PointToScreen(ptLowerLeft)
+        ContextMenuStrip1.Show(ptLowerLeft)
+    End Sub
 End Class

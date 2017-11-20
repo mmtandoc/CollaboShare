@@ -17,6 +17,8 @@ Namespace UI
 
         Private Property PastViews As New Stack(Of Control)
 
+        Public Property CurrentRequest As RequestControl = Nothing
+        Public Shared Property AutoDistribution As Distribution
 
         Public Sub New(userState As State.UserState)
             If userState.IsEmpty Then
@@ -43,6 +45,9 @@ Namespace UI
                     AddHandler DirectCast(viewControl, ChoresView).RequestingExclusion, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
                 Case GetType(HouseholdView)
                     AddHandler DirectCast(viewControl, HouseholdView).RemovedHousemate, Sub(sender As Object, e As EventArgs) RaiseEvent NotificationSend(Me, e)
+                Case GetType(CreateDistributionView)
+                    AddHandler DirectCast(viewControl, CreateDistributionView).RequestingDistribution, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
+
             End Select
         End Sub
 
@@ -78,6 +83,7 @@ Namespace UI
         End Sub
 
         Public Async Function ShowRequestControl(requestControl As RequestControl) As Task(Of DialogResult)
+            CurrentRequest = requestControl
             Me.Controls.Add(requestControl)
             DirectCast(requestControl, Control).BringToFront()
             Dim getResultTask As DialogResult = Await Task.Run(Function()
@@ -85,6 +91,7 @@ Namespace UI
                                                                    Return requestControl.DialogResult
                                                                End Function)
             Me.Controls.Remove(requestControl)
+            CurrentRequest = Nothing
             Return getResultTask
         End Function
 
@@ -132,6 +139,11 @@ Namespace UI
                         If ViewPanel.Controls(0).GetType = GetType(ChoresView) Then
                             ChangeView(New ChoresView)
                         End If
+                    End If
+                Case Request.RequestAction.CustomDistribution
+                    If response.Success Then
+                        Dim distribution As Distribution = response.OriginalRequest.RequestedObject
+                        Household.Distribution = distribution
                     End If
             End Select
         End Sub
@@ -182,6 +194,10 @@ Namespace UI
 
         Private Sub BulletinButton_Click(sender As Object, e As EventArgs) Handles BulletinButton.Click
             ChangeView(New BulletinView)
+        End Sub
+
+        Private Sub DistributionButton_Click(sender As Object, e As EventArgs) Handles DistributionButton.Click
+            ChangeView(New CreateDistributionView)
         End Sub
     End Class
 End Namespace

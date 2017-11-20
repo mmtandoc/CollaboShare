@@ -92,6 +92,12 @@
     <Compile Include="UI\Controls\ChoreRatingControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\Controls\DistributionControl.Designer.vb">
+      <DependentUpon>DistributionControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\DistributionControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Controls\DurationPopupControl.Designer.vb">
       <DependentUpon>DurationPopupControl.vb</DependentUpon>
     </Compile>
@@ -114,6 +120,12 @@
       <DependentUpon>HousemateItemControl.vb</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\HousemateItemControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\InstanceControl.Designer.vb">
+      <DependentUpon>InstanceControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\InstanceControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Controls\RecurrenceControl.Designer.vb">
@@ -162,6 +174,24 @@
       <DependentUpon>ChorePreferencesView.vb</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\ChorePreferencesView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\CreateDistributionView.Designer.vb">
+      <DependentUpon>CreateDistributionView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\CreateDistributionView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\CurrentDistributionView.Designer.vb">
+      <DependentUpon>CurrentDistributionView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\CurrentDistributionView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\ProposedDistributionView.Designer.vb">
+      <DependentUpon>ProposedDistributionView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\ProposedDistributionView.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Views\ViewChoreView.Designer.vb">
@@ -311,6 +341,9 @@
     <EmbeddedResource Include="UI\Controls\ChoreRatingControl.resx">
       <DependentUpon>ChoreRatingControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\DistributionControl.resx">
+      <DependentUpon>DistributionControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\DurationPopupControl.resx">
       <DependentUpon>DurationPopupControl.vb</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\HousemateItemControl.resx">
       <DependentUpon>HousemateItemControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\InstanceControl.resx">
+      <DependentUpon>InstanceControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\RecurrenceControl.resx">
       <DependentUpon>RecurrenceControl.vb</DependentUpon>
@@ -346,6 +382,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CreateChoreView.resx">
       <DependentUpon>CreateChoreView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\CreateDistributionView.resx">
+      <DependentUpon>CreateDistributionView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\CurrentDistributionView.resx">
+      <DependentUpon>CurrentDistributionView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\EditChoreView.resx">
       <DependentUpon>EditChoreView.vb</DependentUpon>
@@ -388,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\ProfileView.resx">
       <DependentUpon>ProfileView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\ProposedDistributionView.resx">
+      <DependentUpon>ProposedDistributionView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\ToDoListView.resx">
       <DependentUpon>ToDoListView.vb</DependentUpon>

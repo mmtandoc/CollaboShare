@@ -3,7 +3,7 @@
 
 
         Public Function GetRecurrence() As IRecurrence
-            Dim result As IRecurrence
+            Dim result As IRecurrence = Nothing
             Dim dueDate = DueDateDateTimePicker.Value
             Select Case FrequencyComboBox.SelectedIndex
                 Case 0

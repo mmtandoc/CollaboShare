@@ -1,4 +1,6 @@
-﻿Public Class Request
+﻿Imports CollaboShare.UI.Views
+
+Public Class Request
     Public Enum RequestType
         YesNo
         ViewIgnore
@@ -19,8 +21,7 @@
     Public Property Message As String
     Public Property RequestedAction As RequestAction
     Public Property RequestedObject
-    Public Property ViewPage As View = Nothing
-    Public Property ViewObject = Nothing
+    Public Property ViewPage = Nothing
 
     Public Property YesMessage As String
     Public Property NoMessage As String
@@ -85,6 +86,22 @@
 
             YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + "' from " + task.Instance.ToShortDateString() + " to " + task.Instance.AddDays(extensionDays).ToShortDateString + " was accepted."
             YesMessage = "Your request to extend your task '" + task.RelatedChore.Name + "' from " + task.Instance.ToShortDateString() + " to " + task.Instance.AddDays(extensionDays).ToShortDateString + " was refused."
+        End Sub
+    End Class
+
+    Public Class DistributionRequest
+        Inherits Request
+        Public Sub New(ByRef sender As Housemate, ByRef household As Household, ByRef distribution As Distribution)
+            Me.Sender = sender
+            RequestedObject = distribution
+            Message = sender.Name + " would like to propose a custom distribution of chores."
+            Recipients = household.Housemates.FindAll(Function(h) Not h.Name.Equals(Me.Sender.Name))
+            RequestedAction = RequestAction.CustomDistribution
+            Type = RequestType.ViewIgnore
+            ViewPage = New ProposedDistributionView(distribution)
+
+            YesMessage = "Your custom distribution was accepted."
+            YesMessage = "Your custom distribution was rejected."
         End Sub
     End Class
 

@@ -19,6 +19,7 @@ Namespace UI
 
             phoneForms.Clear()
             PhoneForm.Households = state.Households
+            PhoneForm.AutoDistribution = state.AutoDistribution
             Dim phoneForm1 = New PhoneForm(state.SubjectA) With {
                     .Name = "SubjectA_Phone",
                     .Text = "Subject A's Phone"
@@ -66,6 +67,12 @@ Namespace UI
             states.Add("Scenario 1",
                        New State({stateHousehold}.ToList(), New State.UserState(),
                                  New State.UserState(stateHousehold, stateHousehold.Housemates(0))))
+            'Dim autodistribution As New Distribution(stateHousehold)
+            'For Each c As KeyValuePair(Of Chore, SortedDictionary(Of Instance, Housemate)) In autodistribution.ChoreInstances
+            '    For Each i As KeyValuePair(Of Instance, Housemate) In c.Value
+
+            '    Next
+            'Next
             states.Add("Scenario 2", New State(New List(Of Household), New State.UserState, New State.UserState))
         End Sub
 
