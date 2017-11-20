@@ -29,6 +29,7 @@ Namespace UI.Views
             DueDateLabel.Text = "Due date: " + chore.DueDate.ToShortDateString
             FrequencyLabel.Text = chore.Frequency.ToString
             DescriptionLabel.Text = chore.Description
+            rating.Text = chore.Rating
         End Sub
 
         Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click

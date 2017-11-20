@@ -26,6 +26,8 @@
             Me.Panel1 = New System.Windows.Forms.Panel()
             Me.Label8 = New System.Windows.Forms.Label()
             Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+            Me.Label6 = New System.Windows.Forms.Label()
+            Me.NameLabel = New System.Windows.Forms.Label()
             Me.Label5 = New System.Windows.Forms.Label()
             Me.DueDateLabel = New System.Windows.Forms.Label()
             Me.Label4 = New System.Windows.Forms.Label()
@@ -37,8 +39,8 @@
             Me.Label1 = New System.Windows.Forms.Label()
             Me.DescriptionLabel = New System.Windows.Forms.Label()
             Me.BackButton = New System.Windows.Forms.Button()
-            Me.Label6 = New System.Windows.Forms.Label()
-            Me.NameLabel = New System.Windows.Forms.Label()
+            Me.ratingLabel = New System.Windows.Forms.Label()
+            Me.rating = New System.Windows.Forms.Label()
             Me.Panel1.SuspendLayout()
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
@@ -75,6 +77,8 @@
             Me.FlowLayoutPanel1.Controls.Add(Me.PeopleRequiredLabel)
             Me.FlowLayoutPanel1.Controls.Add(Me.Label2)
             Me.FlowLayoutPanel1.Controls.Add(Me.DurationLabel)
+            Me.FlowLayoutPanel1.Controls.Add(Me.ratingLabel)
+            Me.FlowLayoutPanel1.Controls.Add(Me.rating)
             Me.FlowLayoutPanel1.Controls.Add(Me.Label1)
             Me.FlowLayoutPanel1.Controls.Add(Me.DescriptionLabel)
             Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
@@ -83,6 +87,26 @@
             Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
             Me.FlowLayoutPanel1.Size = New System.Drawing.Size(264, 328)
             Me.FlowLayoutPanel1.TabIndex = 16
+            '
+            'Label6
+            '
+            Me.Label6.AutoSize = True
+            Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label6.Location = New System.Drawing.Point(8, 0)
+            Me.Label6.Name = "Label6"
+            Me.Label6.Size = New System.Drawing.Size(43, 15)
+            Me.Label6.TabIndex = 12
+            Me.Label6.Text = "Chore:"
+            '
+            'NameLabel
+            '
+            Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.NameLabel.Location = New System.Drawing.Point(8, 15)
+            Me.NameLabel.Name = "NameLabel"
+            Me.NameLabel.Size = New System.Drawing.Size(231, 27)
+            Me.NameLabel.TabIndex = 11
+            Me.NameLabel.Text = "ChoreName"
+            Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
             '
             'Label5
             '
@@ -168,7 +192,7 @@
             '
             Me.Label1.AutoSize = True
             Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.Label1.Location = New System.Drawing.Point(8, 210)
+            Me.Label1.Location = New System.Drawing.Point(8, 236)
             Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
             Me.Label1.Name = "Label1"
             Me.Label1.Size = New System.Drawing.Size(72, 15)
@@ -179,9 +203,9 @@
             '
             Me.DescriptionLabel.BackColor = System.Drawing.SystemColors.HighlightText
             Me.DescriptionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.DescriptionLabel.Location = New System.Drawing.Point(8, 228)
+            Me.DescriptionLabel.Location = New System.Drawing.Point(8, 254)
             Me.DescriptionLabel.Name = "DescriptionLabel"
-            Me.DescriptionLabel.Size = New System.Drawing.Size(242, 89)
+            Me.DescriptionLabel.Size = New System.Drawing.Size(218, 69)
             Me.DescriptionLabel.TabIndex = 1
             Me.DescriptionLabel.Text = "Description"
             '
@@ -195,25 +219,23 @@
             Me.BackButton.Text = "Back"
             Me.BackButton.UseVisualStyleBackColor = True
             '
-            'Label6
+            'ratingLabel
             '
-            Me.Label6.AutoSize = True
-            Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.Label6.Location = New System.Drawing.Point(8, 0)
-            Me.Label6.Name = "Label6"
-            Me.Label6.Size = New System.Drawing.Size(43, 15)
-            Me.Label6.TabIndex = 12
-            Me.Label6.Text = "Chore:"
+            Me.ratingLabel.AutoSize = True
+            Me.ratingLabel.Location = New System.Drawing.Point(8, 210)
+            Me.ratingLabel.Name = "ratingLabel"
+            Me.ratingLabel.Size = New System.Drawing.Size(41, 13)
+            Me.ratingLabel.TabIndex = 13
+            Me.ratingLabel.Text = "Rating:"
             '
-            'NameLabel
+            'rating
             '
-            Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.NameLabel.Location = New System.Drawing.Point(8, 15)
-            Me.NameLabel.Name = "NameLabel"
-            Me.NameLabel.Size = New System.Drawing.Size(231, 27)
-            Me.NameLabel.TabIndex = 11
-            Me.NameLabel.Text = "ChoreName"
-            Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+            Me.rating.AutoSize = True
+            Me.rating.Location = New System.Drawing.Point(8, 223)
+            Me.rating.Name = "rating"
+            Me.rating.Size = New System.Drawing.Size(13, 13)
+            Me.rating.TabIndex = 14
+            Me.rating.Text = "0"
             '
             'ViewChoreView
             '
@@ -248,5 +270,7 @@
         Friend WithEvents Label1 As Label
         Friend WithEvents Label6 As Label
         Friend WithEvents NameLabel As Label
+        Friend WithEvents ratingLabel As Label
+        Friend WithEvents rating As Label
     End Class
 End Namespace

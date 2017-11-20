@@ -64,9 +64,10 @@ Public Class Chore
         Dim peopleRequiredWeight = 1
 
         'Dim rating = (durationWeight * Duration.TotalMinutes) / ((peopleRequiredWeight * PeopleRequired) * (frequencyWeight * Recurrence.Value))
-        Dim rating = 5
+        Dim rating = (durationWeight * Duration.TotalMinutes) * (frequencyWeight * Frequency.GetAverageFrequency().TotalHours) / ((peopleRequiredWeight * PeopleRequired))
+        Return rating / 750
 
-        Return rating
+
     End Function
 
 End Class
