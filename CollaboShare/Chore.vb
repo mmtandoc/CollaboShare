@@ -63,11 +63,13 @@ Public Class Chore
         Dim durationWeight = 1
         Dim peopleRequiredWeight = 1
 
-        'Dim rating = (durationWeight * Duration.TotalMinutes) / ((peopleRequiredWeight * PeopleRequired) * (frequencyWeight * Recurrence.Value))
-        Dim rating = (durationWeight * Duration.TotalMinutes) * (frequencyWeight * Frequency.GetAverageFrequency().TotalHours) / ((peopleRequiredWeight * PeopleRequired))
-        Return rating / 750
-
-
+        'Dim result = (durationWeight * Duration.TotalMinutes) / (750 * (frequencyWeight * Frequency.GetAverageFrequency().TotalHours) * (peopleRequiredWeight * PeopleRequired))
+        Dim result = 9.9010523505106773E-01 - (-7.0038938830998876E-02 * Duration.TotalMinutes) * Math.Exp(-1.0379921496656792E-01 * Frequency.GetAverageFrequency().TotalDays)
+        If result > 5 Then
+            Return 5
+        Else
+            Return result
+        End If
     End Function
 
 End Class
