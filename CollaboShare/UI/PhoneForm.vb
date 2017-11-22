@@ -34,6 +34,13 @@ Namespace UI
 
             ' Add any initialization after the InitializeComponent() call.
         End Sub
+        Protected Overrides Sub OnLoad(e As EventArgs)
+            If _firstRun Then
+                ChangeView(New CreateUserView)
+            Else
+                ChangeView(New HomeView)
+            End If
+        End Sub
 
         Private Sub AddViewEventHandlers(ByRef viewControl As Control)
             Select Case viewControl.GetType()
@@ -124,7 +131,6 @@ Namespace UI
             Select Case response.OriginalRequest.RequestedAction
                 Case Request.RequestAction.JoinHousehold
                     If response.Success Then
-                        'JoinHousehold(response.OriginalRequest.RequestedObject)
                         Dim joiningHousehold As Household = response.OriginalRequest.RequestedObject
                         joiningHousehold.Housemates.Add(Me.Profile)
                         Household = joiningHousehold
@@ -134,6 +140,9 @@ Namespace UI
                     If response.Success Then
                         Dim chore As Chore = response.OriginalRequest.RequestedObject
                         chore.Volunteer = Profile
+                        If chore.Exclusions.Contains(Profile) Then
+                            chore.Exclusions.Remove(Profile)
+                        End If
                         If ViewPanel.Controls(0).GetType = GetType(ChoresView) Then
                             ChangeView(New ChoresView)
                         End If
@@ -142,6 +151,9 @@ Namespace UI
                     If response.Success Then
                         Dim chore As Chore = response.OriginalRequest.RequestedObject
                         chore.Exclusions.Add(Profile)
+                        If chore.Volunteer Is Profile Then
+                            chore.Volunteer = Nothing
+                        End If
                         If ViewPanel.Controls(0).GetType = GetType(ChoresView) Then
                             ChangeView(New ChoresView)
                         End If
@@ -162,33 +174,6 @@ Namespace UI
             End Select
         End Sub
 
-        Protected Overrides Sub OnLoad(e As EventArgs)
-            If _firstRun Then
-                ChangeView(New CreateUserView)
-            Else
-                ChangeView(New HomeView)
-            End If
-        End Sub
-
-        'JoinHouseholdView event handlers
-
-        Public Sub JoinHouseholdView_JoiningHousehold(sender As Object, e As EventArgs)
-            RaiseEvent RequestSend(Me, e)
-        End Sub
-
-        Public Sub VolunteerChore(ByRef chore As Chore)
-            chore.Volunteer = Profile
-        End Sub
-
-        Public Sub ExcludeChore(ByRef chore As Chore)
-            chore.Exclusions.Add(Profile)
-        End Sub
-
-        Public Sub JoinHousehold(ByRef joiningHousehold As Household)
-            joiningHousehold.Housemates.Add(Me.Profile)
-            Household = joiningHousehold
-            ChangeView(New HomeView)
-        End Sub
 
         Private Sub ProfileButton_Click(sender As Object, e As EventArgs) Handles ProfileButton.Click
             ChangeView(New ProfileView(Profile))

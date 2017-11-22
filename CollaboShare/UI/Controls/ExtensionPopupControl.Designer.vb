@@ -25,9 +25,10 @@
         Private Sub InitializeComponent()
             Me.AcceptButton = New System.Windows.Forms.Button()
             Me.Label2 = New System.Windows.Forms.Label()
-            Me.ExtensionMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
             Me.Label1 = New System.Windows.Forms.Label()
             Me.CancelButton = New System.Windows.Forms.Button()
+            Me.DaysNumericUpDown = New System.Windows.Forms.NumericUpDown()
+            CType(Me.DaysNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             '
             'AcceptButton
@@ -50,17 +51,6 @@
             Me.Label2.TabIndex = 15
             Me.Label2.Text = "days"
             '
-            'ExtensionMaskedTextBox
-            '
-            Me.ExtensionMaskedTextBox.AllowPromptAsInput = False
-            Me.ExtensionMaskedTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.ExtensionMaskedTextBox.Location = New System.Drawing.Point(74, 55)
-            Me.ExtensionMaskedTextBox.Mask = "000"
-            Me.ExtensionMaskedTextBox.Name = "ExtensionMaskedTextBox"
-            Me.ExtensionMaskedTextBox.Size = New System.Drawing.Size(34, 22)
-            Me.ExtensionMaskedTextBox.TabIndex = 14
-            Me.ExtensionMaskedTextBox.ValidatingType = GetType(Integer)
-            '
             'Label1
             '
             Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -80,20 +70,30 @@
             Me.CancelButton.Text = "Cancel"
             Me.CancelButton.UseVisualStyleBackColor = True
             '
+            'DaysNumericUpDown
+            '
+            Me.DaysNumericUpDown.Location = New System.Drawing.Point(55, 55)
+            Me.DaysNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+            Me.DaysNumericUpDown.Name = "DaysNumericUpDown"
+            Me.DaysNumericUpDown.Size = New System.Drawing.Size(62, 20)
+            Me.DaysNumericUpDown.TabIndex = 16
+            Me.DaysNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
+            '
             'ExtensionPopupControl
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.BackColor = System.Drawing.SystemColors.ControlLight
             Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            Me.Controls.Add(Me.DaysNumericUpDown)
             Me.Controls.Add(Me.Label2)
-            Me.Controls.Add(Me.ExtensionMaskedTextBox)
             Me.Controls.Add(Me.Label1)
             Me.Controls.Add(Me.CancelButton)
             Me.Controls.Add(Me.AcceptButton)
             Me.Location = New System.Drawing.Point(16, 143)
             Me.Name = "ExtensionPopupControl"
             Me.Size = New System.Drawing.Size(234, 130)
+            CType(Me.DaysNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
             Me.PerformLayout()
 
@@ -101,8 +101,8 @@
 
         Friend WithEvents AcceptButton As Button
         Friend WithEvents Label2 As Label
-        Friend WithEvents ExtensionMaskedTextBox As MaskedTextBox
         Friend WithEvents Label1 As Label
         Friend WithEvents CancelButton As Button
+        Friend WithEvents DaysNumericUpDown As NumericUpDown
     End Class
 End Namespace

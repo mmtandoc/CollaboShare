@@ -38,6 +38,7 @@ Namespace UI.Views
             AddHandler newChoreItem.CancelVolunteer, AddressOf ChoreItem_CancelVolunteer
             AddHandler newChoreItem.Exclude, AddressOf ChoreItem_Exclude
             AddHandler newChoreItem.CancelExclude, AddressOf ChoreItem_CancelExclude
+            AddHandler newChoreItem.SetDuration, AddressOf ChoreItem_SetDuration
             ChoresFlowLayoutPanel.Controls.Add(newChoreItem)
         End Sub
 
@@ -98,6 +99,13 @@ Namespace UI.Views
             'RaiseEvent DeleteChore(choreItem, e)
             Phone.Household.Chores.Remove(choreItem.Chore)
             ChoresFlowLayoutPanel.Controls.Remove(choreItem)
+        End Sub
+        
+        Private Sub ChoreItem_SetDuration(sender As Object, e As EventArgs)
+            Dim choreitem As ChoreItemControl = sender
+            Dim durationControl As New DurationPopupControl(Phone.Profile, choreItem.Chore)
+            Phone.Controls.Add(durationControl)
+            durationControl.BringToFront
         End Sub
 
         Private Sub NewChoreButton_Click(sender As Object, e As EventArgs) Handles NewChoreButton.Click

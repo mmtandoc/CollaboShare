@@ -12,7 +12,6 @@ Public Class Request
         Extension
         ProposedDistribution
         CustomDistribution
-        Trade
         Offer
         Excuse
     End Enum
@@ -101,8 +100,8 @@ Public Class Request
             Type = RequestType.ViewIgnore
             ViewPage = New ProposedDistributionView(distribution)
 
-            YesMessage = "Your custom distribution was accepted."
-            NoMessage = "Your custom distribution was rejected."
+            YesMessage = "The distribution was accepted."
+            NoMessage = "The distribution was rejected."
         End Sub
     End Class
 
@@ -119,8 +118,8 @@ Public Class Request
             ViewPage = New ViewTradeView(trade)
 
 
-            YesMessage = "Your custom distribution was accepted."
-            NoMessage = "Your custom distribution was rejected."
+            'YesMessage = "Your custom distribution was accepted."
+            'NoMessage = "Your custom distribution was rejected."
         End Sub
     End Class
 

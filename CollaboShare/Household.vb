@@ -73,10 +73,12 @@ Public Class Household
         Next
         If Not IsNothing(Distribution) Then
             For Each c As KeyValuePair(Of Chore, SortedDictionary(Of Instance, Housemate)) In Distribution.ChoreInstances
-                For Each i As KeyValuePair(Of Instance, Housemate) In c.Value
-                    Dim task As New ToDoList.Task(c.Key, i.Key.GetNextDate)
-                    i.Value.ToDoList.Add(task)
-                Next
+                Dim task As New ToDoList.Task(c.Key, c.Value.First.Key.GetNextDate)
+                c.Value.First.Value.ToDoList.Add(task)
+                'For Each i As KeyValuePair(Of Instance, Housemate) In c.Value
+                '    Dim task As New ToDoList.Task(c.Key, i.Key.GetNextDate)
+                '    i.Value.ToDoList.Add(task)
+                'Next
             Next
         End If
     End Sub

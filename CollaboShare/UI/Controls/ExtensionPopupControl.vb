@@ -27,7 +27,7 @@
             Accepted = True
             RaiseEvent RequestingExtension(Me, EventArgs.Empty)
             RaiseEvent Closed(Me, EventArgs.Empty)
-            Me.Tag = Integer.Parse(ExtensionMaskedTextBox.Text)
+            Me.Tag = DaysNumericUpDown.Value
             Me.Visible = False
         End Sub
     End Class

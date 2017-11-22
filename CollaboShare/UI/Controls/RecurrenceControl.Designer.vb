@@ -111,7 +111,7 @@
             Me.DailyTabPage.Location = New System.Drawing.Point(4, 24)
             Me.DailyTabPage.Name = "DailyTabPage"
             Me.DailyTabPage.Padding = New System.Windows.Forms.Padding(3)
-            Me.DailyTabPage.Size = New System.Drawing.Size(227, 62)
+            Me.DailyTabPage.Size = New System.Drawing.Size(227, 71)
             Me.DailyTabPage.TabIndex = 0
             Me.DailyTabPage.Text = "Daily"
             Me.DailyTabPage.UseVisualStyleBackColor = True
@@ -277,7 +277,7 @@
             Me.MonthlyTabPage.Location = New System.Drawing.Point(4, 24)
             Me.MonthlyTabPage.Name = "MonthlyTabPage"
             Me.MonthlyTabPage.Padding = New System.Windows.Forms.Padding(3)
-            Me.MonthlyTabPage.Size = New System.Drawing.Size(227, 62)
+            Me.MonthlyTabPage.Size = New System.Drawing.Size(227, 71)
             Me.MonthlyTabPage.TabIndex = 2
             Me.MonthlyTabPage.Text = "Monthly"
             Me.MonthlyTabPage.UseVisualStyleBackColor = True
@@ -317,7 +317,7 @@
             Me.AnnuallyTabPage.Location = New System.Drawing.Point(4, 24)
             Me.AnnuallyTabPage.Name = "AnnuallyTabPage"
             Me.AnnuallyTabPage.Padding = New System.Windows.Forms.Padding(3)
-            Me.AnnuallyTabPage.Size = New System.Drawing.Size(227, 62)
+            Me.AnnuallyTabPage.Size = New System.Drawing.Size(227, 71)
             Me.AnnuallyTabPage.TabIndex = 3
             Me.AnnuallyTabPage.Text = "Annually"
             Me.AnnuallyTabPage.UseVisualStyleBackColor = True
@@ -362,6 +362,7 @@
             'DueDateDateTimePicker
             '
             Me.DueDateDateTimePicker.Location = New System.Drawing.Point(8, 15)
+            Me.DueDateDateTimePicker.MinDate = New Date(2017, 11, 20, 0, 0, 0, 0)
             Me.DueDateDateTimePicker.Name = "DueDateDateTimePicker"
             Me.DueDateDateTimePicker.Size = New System.Drawing.Size(200, 20)
             Me.DueDateDateTimePicker.TabIndex = 0

@@ -9,7 +9,7 @@
         End Property
 
         Public Function CreateChore()
-            Return New Chore(NameTextBox.Text, DescriptionTextBox.Text, RecurrenceControl1.GetRecurrence, New TimeSpan(0, Integer.Parse(DurationMaskedTextBox.Text), 0), PeopleRequiredNumericUpDown.Value, Phone.Profile)
+            Return New Chore(NameTextBox.Text, DescriptionTextBox.Text, RecurrenceControl1.GetRecurrence, New TimeSpan(0, DurationNumericUpDown.Value, 0), PeopleRequiredNumericUpDown.Value, Phone.Profile)
         End Function
 
         Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
@@ -19,6 +19,11 @@
         Private Sub ConfirmButton_Click(sender As Object, e As EventArgs) Handles ConfirmButton.Click
             Phone.Household.Chores.Add(CreateChore())
             Phone.ChangeView(New ChoresView)
+        End Sub
+
+
+        Private Sub SetButtonEnable(sender As Object, e As EventArgs) Handles RecurrenceControl1.Modified
+            ConfirmButton.Enabled = True
         End Sub
     End Class
 End Namespace

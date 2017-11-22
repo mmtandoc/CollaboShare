@@ -35,10 +35,6 @@ Namespace UI
             Me.ProfileButton = New System.Windows.Forms.Button()
             Me.ViewPanel = New System.Windows.Forms.Panel()
             Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-            Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
-            Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
-            Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
-            Me.ToolTip5 = New System.Windows.Forms.ToolTip(Me.components)
             Me.NavPanel.SuspendLayout()
             Me.SuspendLayout()
             '
@@ -67,6 +63,7 @@ Namespace UI
             Me.DistributionButton.Name = "DistributionButton"
             Me.DistributionButton.Size = New System.Drawing.Size(38, 38)
             Me.DistributionButton.TabIndex = 7
+            Me.ToolTip1.SetToolTip(Me.DistributionButton, "Distribution")
             Me.DistributionButton.UseVisualStyleBackColor = False
             '
             'BulletinButton
@@ -74,14 +71,13 @@ Namespace UI
             Me.BulletinButton.BackColor = System.Drawing.SystemColors.Control
             Me.BulletinButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.Meeting
             Me.BulletinButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-            Me.BulletinButton.Enabled = False
             Me.BulletinButton.Location = New System.Drawing.Point(224, 7)
             Me.BulletinButton.Margin = New System.Windows.Forms.Padding(2)
             Me.BulletinButton.Name = "BulletinButton"
             Me.BulletinButton.Size = New System.Drawing.Size(38, 38)
             Me.BulletinButton.TabIndex = 6
+            Me.ToolTip1.SetToolTip(Me.BulletinButton, "Trading && Polls")
             Me.BulletinButton.UseVisualStyleBackColor = False
-            Me.BulletinButton.Visible = False
             '
             'TodoListButton
             '
@@ -93,6 +89,7 @@ Namespace UI
             Me.TodoListButton.Name = "TodoListButton"
             Me.TodoListButton.Size = New System.Drawing.Size(38, 38)
             Me.TodoListButton.TabIndex = 5
+            Me.ToolTip1.SetToolTip(Me.TodoListButton, "To-do List")
             Me.TodoListButton.UseVisualStyleBackColor = False
             '
             'ChoresButton
@@ -105,6 +102,7 @@ Namespace UI
             Me.ChoresButton.Name = "ChoresButton"
             Me.ChoresButton.Size = New System.Drawing.Size(38, 38)
             Me.ChoresButton.TabIndex = 4
+            Me.ToolTip1.SetToolTip(Me.ChoresButton, "Chores")
             Me.ChoresButton.UseVisualStyleBackColor = False
             '
             'HouseholdButton
@@ -129,6 +127,7 @@ Namespace UI
             Me.ProfileButton.Name = "ProfileButton"
             Me.ProfileButton.Size = New System.Drawing.Size(38, 38)
             Me.ProfileButton.TabIndex = 1
+            Me.ToolTip1.SetToolTip(Me.ProfileButton, "My Profile")
             Me.ProfileButton.UseVisualStyleBackColor = False
             '
             'ViewPanel
@@ -138,26 +137,6 @@ Namespace UI
             Me.ViewPanel.Name = "ViewPanel"
             Me.ViewPanel.Size = New System.Drawing.Size(267, 416)
             Me.ViewPanel.TabIndex = 2
-            '
-            'ToolTip1
-            '
-            Me.ToolTip1.ToolTipTitle = "Household"
-            '
-            'ToolTip2
-            '
-            Me.ToolTip2.ToolTipTitle = "My Profile"
-            '
-            'ToolTip3
-            '
-            Me.ToolTip3.ToolTipTitle = "Chores"
-            '
-            'ToolTip4
-            '
-            Me.ToolTip4.ToolTipTitle = "Chore Distribution"
-            '
-            'ToolTip5
-            '
-            Me.ToolTip5.ToolTipTitle = "My To-Do List"
             '
             'PhoneForm
             '
@@ -187,9 +166,5 @@ Namespace UI
         Friend WithEvents ViewPanel As Panel
         Friend WithEvents DistributionButton As Button
         Friend WithEvents ToolTip1 As ToolTip
-        Friend WithEvents ToolTip2 As ToolTip
-        Friend WithEvents ToolTip3 As ToolTip
-        Friend WithEvents ToolTip4 As ToolTip
-        Friend WithEvents ToolTip5 As ToolTip
     End Class
 End Namespace

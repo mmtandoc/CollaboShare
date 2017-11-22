@@ -30,20 +30,21 @@ Namespace UI.Views
             Me.Label2 = New System.Windows.Forms.Label()
             Me.Label5 = New System.Windows.Forms.Label()
             Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
-            Me.RecurrenceControl1 = New CollaboShare.UI.Controls.RecurrenceControl()
             Me.Panel2 = New System.Windows.Forms.Panel()
             Me.Label4 = New System.Windows.Forms.Label()
             Me.Label3 = New System.Windows.Forms.Label()
-            Me.DurationMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
             Me.PeopleRequiredNumericUpDown = New System.Windows.Forms.NumericUpDown()
+            Me.RecurrenceControl1 = New CollaboShare.UI.Controls.RecurrenceControl()
             Me.Panel1 = New System.Windows.Forms.Panel()
             Me.Label1 = New System.Windows.Forms.Label()
             Me.CancelButton = New System.Windows.Forms.Button()
             Me.ConfirmButton = New System.Windows.Forms.Button()
+            Me.DurationNumericUpDown = New System.Windows.Forms.NumericUpDown()
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.Panel2.SuspendLayout()
             CType(Me.PeopleRequiredNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.Panel1.SuspendLayout()
+            CType(Me.DurationNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             '
             'NameTextBox
@@ -85,9 +86,9 @@ Namespace UI.Views
             Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label5.Location = New System.Drawing.Point(8, 44)
             Me.Label5.Name = "Label5"
-            Me.Label5.Size = New System.Drawing.Size(76, 16)
+            Me.Label5.Size = New System.Drawing.Size(138, 16)
             Me.Label5.TabIndex = 13
-            Me.Label5.Text = "Description"
+            Me.Label5.Text = "Description (optional):"
             '
             'DescriptionTextBox
             '
@@ -97,18 +98,11 @@ Namespace UI.Views
             Me.DescriptionTextBox.Size = New System.Drawing.Size(244, 22)
             Me.DescriptionTextBox.TabIndex = 12
             '
-            'RecurrenceControl1
-            '
-            Me.RecurrenceControl1.Location = New System.Drawing.Point(8, 146)
-            Me.RecurrenceControl1.Name = "RecurrenceControl1"
-            Me.RecurrenceControl1.Size = New System.Drawing.Size(251, 177)
-            Me.RecurrenceControl1.TabIndex = 16
-            '
             'Panel2
             '
+            Me.Panel2.Controls.Add(Me.DurationNumericUpDown)
             Me.Panel2.Controls.Add(Me.Label4)
             Me.Panel2.Controls.Add(Me.Label3)
-            Me.Panel2.Controls.Add(Me.DurationMaskedTextBox)
             Me.Panel2.Controls.Add(Me.PeopleRequiredNumericUpDown)
             Me.Panel2.Location = New System.Drawing.Point(8, 91)
             Me.Panel2.Name = "Panel2"
@@ -135,23 +129,21 @@ Namespace UI.Views
             Me.Label3.TabIndex = 16
             Me.Label3.Text = "Duration (minutes):"
             '
-            'DurationMaskedTextBox
-            '
-            Me.DurationMaskedTextBox.AllowPromptAsInput = False
-            Me.DurationMaskedTextBox.Location = New System.Drawing.Point(127, 4)
-            Me.DurationMaskedTextBox.Mask = "000"
-            Me.DurationMaskedTextBox.Name = "DurationMaskedTextBox"
-            Me.DurationMaskedTextBox.Size = New System.Drawing.Size(56, 20)
-            Me.DurationMaskedTextBox.TabIndex = 1
-            Me.DurationMaskedTextBox.ValidatingType = GetType(Integer)
-            '
             'PeopleRequiredNumericUpDown
             '
             Me.PeopleRequiredNumericUpDown.Location = New System.Drawing.Point(127, 27)
+            Me.PeopleRequiredNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
             Me.PeopleRequiredNumericUpDown.Name = "PeopleRequiredNumericUpDown"
             Me.PeopleRequiredNumericUpDown.Size = New System.Drawing.Size(44, 20)
             Me.PeopleRequiredNumericUpDown.TabIndex = 0
             Me.PeopleRequiredNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
+            '
+            'RecurrenceControl1
+            '
+            Me.RecurrenceControl1.Location = New System.Drawing.Point(8, 146)
+            Me.RecurrenceControl1.Name = "RecurrenceControl1"
+            Me.RecurrenceControl1.Size = New System.Drawing.Size(251, 177)
+            Me.RecurrenceControl1.TabIndex = 16
             '
             'Panel1
             '
@@ -185,6 +177,7 @@ Namespace UI.Views
             '
             'ConfirmButton
             '
+            Me.ConfirmButton.Enabled = False
             Me.ConfirmButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.ConfirmButton.Location = New System.Drawing.Point(179, 380)
             Me.ConfirmButton.Name = "ConfirmButton"
@@ -192,6 +185,15 @@ Namespace UI.Views
             Me.ConfirmButton.TabIndex = 13
             Me.ConfirmButton.Text = "Confirm"
             Me.ConfirmButton.UseVisualStyleBackColor = True
+            '
+            'DurationNumericUpDown
+            '
+            Me.DurationNumericUpDown.Location = New System.Drawing.Point(127, 4)
+            Me.DurationNumericUpDown.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+            Me.DurationNumericUpDown.Name = "DurationNumericUpDown"
+            Me.DurationNumericUpDown.Size = New System.Drawing.Size(65, 20)
+            Me.DurationNumericUpDown.TabIndex = 18
+            Me.DurationNumericUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
             '
             'CreateChoreView
             '
@@ -210,6 +212,7 @@ Namespace UI.Views
             CType(Me.PeopleRequiredNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
             Me.Panel1.ResumeLayout(False)
             Me.Panel1.PerformLayout()
+            CType(Me.DurationNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
 
         End Sub
@@ -227,7 +230,7 @@ Namespace UI.Views
         Friend WithEvents Panel2 As Panel
         Friend WithEvents Label4 As Label
         Friend WithEvents Label3 As Label
-        Friend WithEvents DurationMaskedTextBox As MaskedTextBox
         Friend WithEvents PeopleRequiredNumericUpDown As NumericUpDown
+        Friend WithEvents DurationNumericUpDown As NumericUpDown
     End Class
 End NameSpace

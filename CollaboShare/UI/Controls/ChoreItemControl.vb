@@ -7,6 +7,7 @@
         Public Event CancelExclude As EventHandler
         Public Event Delete As EventHandler
         Public Event Edit As EventHandler
+        Public Event SetDuration AS EventHandler
 
         Public ReadOnly Property Phone() As PhoneForm
             Get
@@ -76,6 +77,10 @@
 
         Private Sub CancelExclusionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CancelExclusionToolStripMenuItem.Click
             RaiseEvent CancelExclude(Me, EventArgs.Empty)
+        End Sub
+
+        Private Sub SetDurationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetDurationToolStripMenuItem.Click
+            RaiseEvent SetDuration(Me, EventArgs.Empty)
         End Sub
     End Class
 End NameSpace

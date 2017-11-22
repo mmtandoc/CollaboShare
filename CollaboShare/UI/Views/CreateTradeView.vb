@@ -22,7 +22,7 @@
                 Return Nothing
 
             End If
-            Return New Offer(Phone.Profile, offeredTasks)
+            'Return New Offer(Phone.Profile, offeredTasks)
         End Function
 
         Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click

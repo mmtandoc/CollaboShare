@@ -1,4 +1,5 @@
 ﻿Imports CollaboShare.UI
+Imports CollaboShare.UI.Controls
 Imports CollaboShare.UI.Views
 Namespace UI.Views
     Public Class ViewChoreView
@@ -29,7 +30,7 @@ Namespace UI.Views
             DueDateLabel.Text = "Due date: " + chore.DueDate.ToShortDateString
             FrequencyLabel.Text = chore.Frequency.ToString
             DescriptionLabel.Text = chore.Description
-            rating.Text = chore.Rating
+            RatingFlowLayoutPanel.Controls.Add(New ChoreRatingControl(chore.Rating))
         End Sub
 
         Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click

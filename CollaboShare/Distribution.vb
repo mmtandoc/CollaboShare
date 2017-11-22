@@ -58,7 +58,7 @@ Public Class Instance
     End Function
 
     Public Function CompareTo(other As Instance) As Integer Implements IComparable(Of Instance).CompareTo
-        Return Value.CompareTo(other.Value)
+        Return GetNextDate.CompareTo(other.GetNextDate)
     End Function
 
     Public Overrides Function ToString() As String

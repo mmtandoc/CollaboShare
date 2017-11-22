@@ -44,9 +44,13 @@ Namespace UI.Views
                     Dim dateLabel As New Label With {
                             .AutoSize = True,
                             .Font = New Font("Microsoft Sans Serif", 11.25!, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, 0),
-                            .Location = New Point(3, 0),
-                            .Text = dateGroup.Key.DueDate.ToLongDateString()
+                            .Location = New Point(3, 0)
                             }
+                    If dateGroup.Key.DueDate.Date.Equals(Now.Date) Then
+                        dateLabel.Text = dateGroup.Key.DueDate.ToLongDateString() + "Today"
+                    Else
+                        dateLabel.Text = dateGroup.Key.DueDate.ToLongDateString()
+                    End If
                     TasksFlowLayoutPanel.Controls.Add(dateLabel)
                     For Each task As ToDoList.Task In dateGroup
                         Dim taskItem As New TaskItemControl(task, IsOwner)
@@ -78,7 +82,7 @@ Namespace UI.Views
 
         Private Sub ExtensionPopupControl_RequestExtension(sender As Object, e As EventArgs)
             Dim controlSender As ExtensionPopupControl = sender
-            Dim request As Request = New Request.ExtensionRequest(Profile, Phone.Household, controlSender.Task, Integer.Parse(controlSender.ExtensionMaskedTextBox.Text))
+            Dim request As Request = New Request.ExtensionRequest(Profile, Phone.Household, controlSender.Task, controlSender.DaysNumericUpDown.Value)
             RaiseEvent RequestingExtension(sender, New RequestEventArgs(request))
         End Sub
 

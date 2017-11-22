@@ -1,6 +1,15 @@
 ﻿Namespace UI.Controls
     Public Class RecurrenceControl
+        Public Event Modified As EventHandler
 
+        Public Sub New()
+
+            ' This call is required by the designer.
+            InitializeComponent()
+
+            ' Add any initialization after the InitializeComponent() call.
+            DueDateDateTimePicker.MinDate = Now.Date
+        End Sub
 
         Public Function GetRecurrence() As IRecurrence
             Dim result As IRecurrence = Nothing
@@ -96,6 +105,27 @@
             Else
                 CustomTabControl.Visible = False
             End If
+            RaiseEvent Modified(Me, EventArgs.Empty)
+        End Sub
+
+        Private Sub DueDateDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles DueDateDateTimePicker.ValueChanged
+            Select Case DueDateDateTimePicker.Value.DayOfWeek
+                Case DayOfWeek.Sunday
+                    SundayCheckBox.Checked = True
+                Case DayOfWeek.Monday
+                    MondayCheckBox.Checked = True
+                Case DayOfWeek.Tuesday
+                    TuesdayCheckBox.Checked = True
+                Case DayOfWeek.Wednesday
+                    WednesdayCheckBox.Checked = True
+                Case DayOfWeek.Thursday
+                    ThursdayCheckBox.Checked = True
+                Case DayOfWeek.Friday
+                    FridayCheckBox.Checked = True
+                Case DayOfWeek.Saturday
+                    SaturdayCheckBox.Checked = True
+            End Select
+            RaiseEvent Modified(Me, EventArgs.Empty)
         End Sub
     End Class
 End NameSpace
