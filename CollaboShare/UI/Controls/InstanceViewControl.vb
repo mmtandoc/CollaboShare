@@ -1,3 +1,5 @@
-﻿Public Class InstanceViewControl
+﻿Namespace UI.Controls
+    Public Class InstanceViewControl
 
-End Class
+    End Class
+End NameSpace

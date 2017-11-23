@@ -16,6 +16,7 @@ Public Class Household
         Set
             _Distribution = Value
             UpdateToDoLists()
+            TradeOffers.Clear
         End Set
     End Property
 
@@ -81,6 +82,41 @@ Public Class Household
                 'Next
             Next
         End If
+    End Sub
+    
+    Public Sub Trade(offer As Offer, counteroffer As Offer.Counteroffer)
+        Dim housemate1 = offer.Creator
+        Dim housemate2 = counteroffer.Creator
+        
+        Dim changes As New Dictionary(Of Chore, SortedDictionary(Of Instance, Housemate))
+
+        For Each o In offer.OfferedInstances
+            Dim instances = Distribution.ChoreInstances.Item(o.Key).Where(Function(pair) o.Value.Contains(pair.Key))
+            If Not changes.ContainsKey(o.Key) Then
+                changes.Add(o.Key, New SortedDictionary(Of Instance,Housemate))
+            End If
+            
+            For Each i In instances
+                changes(o.Key).Add(i.Key, housemate2)
+            Next
+        Next
+        
+        For Each o In counteroffer.OfferedInstances
+            Dim instances = Distribution.ChoreInstances.Item(o.Key).Where(Function(pair) o.Value.Contains(pair.Key))
+            If Not changes.ContainsKey(o.Key) Then
+                changes.Add(o.Key, New SortedDictionary(Of Instance,Housemate))
+            End If
+            For Each i In instances
+                changes(o.Key).Add(i.Key, housemate1)
+            Next
+        Next
+        
+        For Each c In changes
+            For Each i In c.Value
+                Distribution.ChoreInstances(c.Key)(i.Key) = i.Value
+            Next
+        Next
+        
     End Sub
 
 End Class

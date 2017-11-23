@@ -92,6 +92,12 @@
     <Compile Include="UI\Controls\ChoreRatingControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\Controls\CounterofferItemControl.Designer.vb">
+      <DependentUpon>CounterofferItemControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\CounterofferItemControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Controls\DistributionControl.Designer.vb">
       <DependentUpon>DistributionControl.vb</DependentUpon>
     </Compile>
@@ -132,6 +138,12 @@
       <DependentUpon>InstanceViewControl.vb</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\InstanceViewControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\OfferItemControl.Designer.vb">
+      <DependentUpon>OfferItemControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\OfferItemControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Controls\RecurrenceControl.Designer.vb">
@@ -347,6 +359,9 @@
     <EmbeddedResource Include="UI\Controls\ChoreRatingControl.resx">
       <DependentUpon>ChoreRatingControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\CounterofferItemControl.resx">
+      <DependentUpon>CounterofferItemControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\DistributionControl.resx">
       <DependentUpon>DistributionControl.vb</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\InstanceViewControl.resx">
       <DependentUpon>InstanceViewControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\OfferItemControl.resx">
+      <DependentUpon>OfferItemControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\RecurrenceControl.resx">
       <DependentUpon>RecurrenceControl.vb</DependentUpon>
@@ -391,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CreateChoreView.resx">
       <DependentUpon>CreateChoreView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\CreateCounterofferView.resx">
+      <DependentUpon>CreateCounterofferView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CreateDistributionView.resx">
       <DependentUpon>CreateDistributionView.vb</DependentUpon>
@@ -451,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\ViewChoreView.resx">
       <DependentUpon>ViewChoreView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\ViewCounterofferView.resx">
+      <DependentUpon>ViewCounterofferView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\ViewTaskView.resx">
       <DependentUpon>ViewTaskView.vb</DependentUpon>

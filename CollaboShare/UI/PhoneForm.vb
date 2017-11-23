@@ -58,7 +58,9 @@ Namespace UI
                 Case GetType(ToDoListView)
                     AddHandler DirectCast(viewControl, ToDoListView).RequestingExtension, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
                 Case GetType(CreateTradeView)
-                    AddHandler DirectCast(viewControl, CreateTradeView).CreatedTrade, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
+                    AddHandler DirectCast(viewControl, CreateTradeView).CreatedTrade, Sub(sender As Object, e As EventArgs) RaiseEvent NotificationSend(Me, e)
+                Case GetType(ViewCounterofferView)
+                    AddHandler DirectCast(viewControl, ViewCounterofferView).AcceptedCounteroffer, Sub(sender As Object, e As EventArgs) RaiseEvent NotificationSend(Me, e)
             End Select
         End Sub
 

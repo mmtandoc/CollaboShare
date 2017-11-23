@@ -1,4 +1,6 @@
-﻿Namespace UI.Views
+﻿Imports CollaboShare.UI.Controls
+
+Namespace UI.Views
     Public Class CurrentDistributionView
         Public ReadOnly Property Phone() As PhoneForm
             Get

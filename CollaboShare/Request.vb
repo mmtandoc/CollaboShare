@@ -105,23 +105,23 @@ Public Class Request
         End Sub
     End Class
 
-    Public Class OfferRequest
-        Inherits Request
+    'Public Class OfferRequest
+    '    Inherits Request
 
-        Public Sub New(ByRef sender As Housemate, ByRef household As Household, ByRef trade As Offer)
-            Me.Sender = sender
-            RequestedObject = trade
-            Message = sender.Name + " created a trade request."
-            Recipients = household.Housemates.FindAll(Function(h) Not h.Name.Equals(Me.Sender.Name))
-            RequestedAction = RequestAction.Offer
-            Type = RequestType.ViewIgnore
-            ViewPage = New ViewTradeView(trade)
+    '    Public Sub New(ByRef sender As Housemate, ByRef household As Household, ByRef trade As Offer)
+    '        Me.Sender = sender
+    '        RequestedObject = trade
+    '        Message = sender.Name + " created a trade request."
+    '        Recipients = household.Housemates.FindAll(Function(h) Not h.Name.Equals(Me.Sender.Name))
+    '        RequestedAction = RequestAction.Offer
+    '        Type = RequestType.ViewIgnore
+    '        ViewPage = New ViewTradeView(trade)
 
 
-            'YesMessage = "Your custom distribution was accepted."
-            'NoMessage = "Your custom distribution was rejected."
-        End Sub
-    End Class
+    '        'YesMessage = "Your custom distribution was accepted."
+    '        'NoMessage = "Your custom distribution was rejected."
+    '    End Sub
+    'End Class
 
     Public Function GetResponse(accepted As Boolean)
         If accepted Then
