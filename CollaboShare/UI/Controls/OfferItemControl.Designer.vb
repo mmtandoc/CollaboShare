@@ -37,7 +37,7 @@
         Me.OfferButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.OfferButton.Location = New System.Drawing.Point(3, 3)
         Me.OfferButton.Name = "OfferButton"
-        Me.OfferButton.Size = New System.Drawing.Size(197, 31)
+        Me.OfferButton.Size = New System.Drawing.Size(216, 31)
         Me.OfferButton.TabIndex = 10
         Me.OfferButton.Text = "Offer"
         Me.OfferButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -66,7 +66,7 @@
         '
         Me.OverflowButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.MoreVertical
         Me.OverflowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.OverflowButton.Location = New System.Drawing.Point(205, 3)
+        Me.OverflowButton.Location = New System.Drawing.Point(224, 3)
         Me.OverflowButton.Margin = New System.Windows.Forms.Padding(2)
         Me.OverflowButton.Name = "OverflowButton"
         Me.OverflowButton.Size = New System.Drawing.Size(22, 31)
@@ -80,7 +80,7 @@
         Me.Controls.Add(Me.OfferButton)
         Me.Controls.Add(Me.OverflowButton)
         Me.Name = "OfferItemControl"
-        Me.Size = New System.Drawing.Size(228, 37)
+        Me.Size = New System.Drawing.Size(248, 37)
         Me.ContextMenuStrip1.ResumeLayout(false)
         Me.ResumeLayout(false)
 

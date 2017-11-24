@@ -37,7 +37,7 @@
         Me.CounterOfferButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.CounterOfferButton.Location = New System.Drawing.Point(2, 3)
         Me.CounterOfferButton.Name = "CounterOfferButton"
-        Me.CounterOfferButton.Size = New System.Drawing.Size(202, 31)
+        Me.CounterOfferButton.Size = New System.Drawing.Size(216, 31)
         Me.CounterOfferButton.TabIndex = 12
         Me.CounterOfferButton.Text = "Offer"
         Me.CounterOfferButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -66,7 +66,7 @@
         '
         Me.OverflowButton.BackgroundImage = Global.CollaboShare.My.Resources.Resources.MoreVertical
         Me.OverflowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.OverflowButton.Location = New System.Drawing.Point(209, 3)
+        Me.OverflowButton.Location = New System.Drawing.Point(223, 3)
         Me.OverflowButton.Margin = New System.Windows.Forms.Padding(2)
         Me.OverflowButton.Name = "OverflowButton"
         Me.OverflowButton.Size = New System.Drawing.Size(22, 31)
@@ -80,7 +80,7 @@
         Me.Controls.Add(Me.CounterOfferButton)
         Me.Controls.Add(Me.OverflowButton)
         Me.Name = "CounterofferItemControl"
-        Me.Size = New System.Drawing.Size(234, 37)
+        Me.Size = New System.Drawing.Size(247, 37)
         Me.ContextMenuStrip1.ResumeLayout(false)
         Me.ResumeLayout(false)
 

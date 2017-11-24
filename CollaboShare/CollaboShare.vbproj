@@ -75,6 +75,7 @@
     <Compile Include="Distribution.vb" />
     <Compile Include="Notification.vb" />
     <Compile Include="Offer.vb" />
+    <Compile Include="Poll.vb" />
     <Compile Include="Recurrence.vb" />
     <Compile Include="Request.vb" />
     <Compile Include="Response.vb" />
