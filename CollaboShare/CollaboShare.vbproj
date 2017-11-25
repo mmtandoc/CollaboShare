@@ -201,10 +201,22 @@
     <Compile Include="UI\Views\CreateDistributionView.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\Views\CreatePollView.Designer.vb">
+      <DependentUpon>CreatePollView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\CreatePollView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\CurrentDistributionView.Designer.vb">
       <DependentUpon>CurrentDistributionView.vb</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\CurrentDistributionView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\PollResultsView.Designer.vb">
+      <DependentUpon>PollResultsView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\PollResultsView.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Views\ProposedDistributionView.Designer.vb">
@@ -352,6 +364,12 @@
     <Compile Include="UI\Views\ViewTradeView.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\Views\VotePollView.Designer.vb">
+      <DependentUpon>VotePollView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\VotePollView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\Controls\ChoreItemControl.resx">
@@ -417,6 +435,9 @@
     <EmbeddedResource Include="UI\Views\CreateDistributionView.resx">
       <DependentUpon>CreateDistributionView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\CreatePollView.resx">
+      <DependentUpon>CreatePollView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\CreateTradeView.resx">
       <DependentUpon>CreateTradeView.vb</DependentUpon>
     </EmbeddedResource>
@@ -462,6 +483,9 @@
     <EmbeddedResource Include="UI\Views\JoinHouseholdView.resx">
       <DependentUpon>JoinHouseholdView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\PollResultsView.resx">
+      <DependentUpon>PollResultsView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\ProfileView.resx">
       <DependentUpon>ProfileView.vb</DependentUpon>
     </EmbeddedResource>
@@ -482,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\ViewTradeView.resx">
       <DependentUpon>ViewTradeView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\VotePollView.resx">
+      <DependentUpon>VotePollView.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -522,5 +549,6 @@
   <ItemGroup>
     <Content Include="Resources\pie-chart-with-information.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -43,43 +43,50 @@ Namespace UI
         End Sub
 
         Public Sub CreateDefaultStates()
-            Dim stateHousehold As New Household("B's Household")
+            Dim stateHousehold As New Household("Bob's Household")
+            states.Add("Scenario 1", New State(New List(Of Household), New State.UserState, New State.UserState))
 
-            stateHousehold.Housemates.AddRange({
+            stateHousehold.Housemates.AddRange({ _
                                                    New Housemate("Bob User", "301-252-7823", "bob.user@email.com"),
                                                    New Housemate("John Smith", "123-123-1234", "john.smith@email.com")
                                                })
 
-            stateHousehold.Chores.AddRange({
-                                               New Chore("Wash the dishes", "", New DailyRecurrence(Date.Now.AddDays(-1), 4),
+            stateHousehold.Chores.AddRange({ _
+                                               New Chore("Wash the dishes", "",
+                                                         New DailyRecurrence(Date.Now.AddDays(- 1), 4),
                                                          New TimeSpan(0, 20, 0), 1,
                                                          stateHousehold.Housemates(0)),
                                                New Chore("Clean the kitchen", "",
-                                                         New WeeklyRecurrence(Date.Now.AddDays(-8), 1),
+                                                         New WeeklyRecurrence(Date.Now.AddDays(- 8), 1),
                                                          New TimeSpan(0, 20, 0), 1,
                                                          stateHousehold.Housemates(1)),
                                                New Chore("Take out the garbage", "",
-                                                         New WeeklyRecurrence(Date.Now.AddDays(-8), 1),
+                                                         New WeeklyRecurrence(Date.Now.AddDays(- 8), 1),
                                                          New TimeSpan(0, 10, 0), 1,
                                                          stateHousehold.Housemates(0)),
                                                New Chore("Buy groceries", "",
-                                                         New WeeklyRecurrence(Date.Now.AddDays(-8), 1),
+                                                         New WeeklyRecurrence(Date.Now.AddDays(- 8), 1),
                                                          New TimeSpan(0, 10, 0), 1,
                                                          stateHousehold.Housemates(1))
                                            })
 
-            stateHousehold.Housemates(0).ToDoList.AddRange({
-                                                               New ToDoList.Task(stateHousehold.Chores(0), DateTime.Now.Date.AddDays(1)),
-                                                               New ToDoList.Task(stateHousehold.Chores(1), DateTime.Now.Date),
-                                                               New ToDoList.Task(stateHousehold.Chores(2), DateTime.Now.Date),
-                                                               New ToDoList.Task(stateHousehold.Chores(3), DateTime.Now.Date)
+            stateHousehold.Housemates(0).ToDoList.AddRange({ _
+                                                               New ToDoList.Task(stateHousehold.Chores(0),
+                                                                                 DateTime.Now.Date.AddDays(1)),
+                                                               New ToDoList.Task(stateHousehold.Chores(1),
+                                                                                 DateTime.Now.Date),
+                                                               New ToDoList.Task(stateHousehold.Chores(2),
+                                                                                 DateTime.Now.Date),
+                                                               New ToDoList.Task(stateHousehold.Chores(3),
+                                                                                 DateTime.Now.Date)
                                                            })
 
 
             Dim emptyDistribution As New Distribution(stateHousehold)
             Dim distribution As New Distribution(New Dictionary(Of Chore, SortedDictionary(Of Instance, Housemate)))
 
-            For Each c As KeyValuePair(Of Chore, SortedDictionary(Of Instance, Housemate)) In emptyDistribution.ChoreInstances
+            For Each c As KeyValuePair(Of Chore, SortedDictionary(Of Instance, Housemate)) In _
+                emptyDistribution.ChoreInstances
                 distribution.ChoreInstances.Add(c.Key, New SortedDictionary(Of Instance, Housemate)())
                 For Each i As KeyValuePair(Of Instance, Housemate) In c.Value
                     distribution.ChoreInstances(c.Key).Add(i.Key, stateHousehold.Housemates(0))
@@ -87,10 +94,9 @@ Namespace UI
             Next
             stateHousehold.Distribution = distribution
 
-            states.Add("Scenario 1",
+            states.Add("Scenario 2",
                        New State({stateHousehold}.ToList(), New State.UserState(),
                                  New State.UserState(stateHousehold, stateHousehold.Housemates(0))))
-            states.Add("Scenario 2", New State(New List(Of Household), New State.UserState, New State.UserState))
         End Sub
 
         Public Function GetOtherPhone(phone As PhoneForm)

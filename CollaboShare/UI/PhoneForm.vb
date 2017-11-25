@@ -54,7 +54,11 @@ Namespace UI
                     AddHandler DirectCast(viewControl, HouseholdView).RemovedHousemate, Sub(sender As Object, e As EventArgs) RaiseEvent NotificationSend(Me, e)
                     AddHandler DirectCast(viewControl, HouseholdView).Withdrawed, Sub(sender As Object, e As EventArgs) RaiseEvent NotificationSend(Me, e)
                 Case GetType(CreateDistributionView)
-                    AddHandler DirectCast(viewControl, CreateDistributionView).RequestingDistribution, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
+                    AddHandler DirectCast(viewControl, CreateDistributionView).RequestingDistribution,
+                        Sub(sender As Object, e As EventArgs)
+                            RaiseEvent RequestSend(Me, e)
+                            If 
+                        End Sub
                 Case GetType(ToDoListView)
                     AddHandler DirectCast(viewControl, ToDoListView).RequestingExtension, Sub(sender As Object, e As EventArgs) RaiseEvent RequestSend(Me, e)
                 Case GetType(CreateTradeView)

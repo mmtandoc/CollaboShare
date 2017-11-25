@@ -7,6 +7,10 @@ Public Class Household
     Public Property Chores As List(Of Chore) = New List(Of Chore)
 
     Public Property TradeOffers As New List(Of Offer)
+    
+    Public Property CurrentPolls As New SortedDictionary(Of Date, Poll)
+    
+    Public Property PastPolls As New SortedDictionary(Of Date, Poll)
 
     Private _Distribution As Distribution = Nothing
     Public Property Distribution As Distribution
